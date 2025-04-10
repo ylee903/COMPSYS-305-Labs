@@ -35,11 +35,12 @@ ARCHITECTURE Behavioral OF top_level_timer IS
     SIGNAL Q_sec_ones : STD_LOGIC_VECTOR(3 DOWNTO 0); -- 4-bit BCD output for Seconds Ones digit
     SIGNAL Q_sec_tens : STD_LOGIC_VECTOR(3 DOWNTO 0); -- 4-bit BCD output for Seconds Tens digit
     SIGNAL Q_min_ones : STD_LOGIC_VECTOR(3 DOWNTO 0); -- 4-bit BCD output for Minutes Ones digit
-    SIGNAL Enable : STD_LOGIC := '1'; -- Enable signal (active high, always enabled here)
+    SIGNAL Enable : STD_LOGIC := '0'; -- Enable signal (active high, always enabled here)
     SIGNAL Reset : STD_LOGIC := '0'; -- Reset signal (active high, unused here)
     SIGNAL tick_1hz : STD_LOGIC := '0'; -- One-cycle pulse indicating a 1Hz clock tick
     SIGNAL one_hz_clk : STD_LOGIC := '0'; -- Divided clock signal toggling at 1 Hz
 
+    SIGNAL last_key1 : STD_LOGIC := '1'; -- Last state of KEY[0] (push button) for edge detection
     -- === Component Declarations === These are external modules (like building blocks) that we plan to use inside this design.
 
     -- Declare the three-digit timer component (external module)
@@ -64,12 +65,23 @@ ARCHITECTURE Behavioral OF top_level_timer IS
 
 BEGIN
 
+    -- Detect falling edge on KEY[1] to start counting
+    PROCESS (CLOCK_50)
+    BEGIN
+        IF rising_edge(CLOCK_50) THEN
+            IF last_key1 = '1' AND KEY(0) = '0' THEN
+                Enable <= '1';
+            END IF;
+            last_key1 <= KEY(0);
+        END IF;
+    END PROCESS;
+
     -- === Clock Divider Process ===
     -- Purpose: Convert 50 MHz input clock into a 1 Hz pulse (tick_1hz) and toggling clock (one_hz_clk)
     PROCESS (CLOCK_50)
     BEGIN
         IF rising_edge(CLOCK_50) THEN -- Detect rising edge of 50 MHz clock
-            IF clk_divider = 9_999_999 THEN -- 49_999_999 for 1 hz, 9_999_999 for 10 hz
+            IF clk_divider = 999_999 THEN -- 49_999_999 for 1 hz, 9_999_999 for 10 hz , 999_999 for 100 hz
                 clk_divider <= (OTHERS => '0'); -- (set all bits set to zero) assign to all 26 bits of clk_divider
                 one_hz_clk <= NOT one_hz_clk; -- Toggle the 1 Hz clock signal
                 tick_1hz <= '1'; -- Generate a 1-cycle wide pulse (tick), this is done by imediatly in the next tick chaing to 0 under "Else"
@@ -117,6 +129,7 @@ BEGIN
 
     -- === Debug Output (Optional) ===
     -- LEDR(0) is currently hardcoded to '0' and not used
-    LEDR(0) <= '0';
+    LEDR(0) <= Enable;
+
 
 END ARCHITECTURE;
