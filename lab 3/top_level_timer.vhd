@@ -1,101 +1,114 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
+-- Include the IEEE standard library for basic logic types
+LIBRARY IEEE;
+-- Include standard logic definitions (e.g., std_logic, std_logic_vector)
+USE IEEE.STD_LOGIC_1164.ALL;
+-- Include arithmetic operations on unsigned/signed types
+USE IEEE.NUMERIC_STD.ALL;
 
-entity top_level_timer is
-    port (
-        CLOCK_50 : in  STD_LOGIC;
-        SW       : in  STD_LOGIC_VECTOR(9 downto 0);
-        KEY      : in  STD_LOGIC_VECTOR(0 downto 0);
-        LEDR     : out STD_LOGIC_VECTOR(0 downto 0);
-        HEX0     : out STD_LOGIC_VECTOR(6 downto 0);  -- Sec Ones
-        HEX1     : out STD_LOGIC_VECTOR(6 downto 0);  -- Sec Tens
-        HEX2     : out STD_LOGIC_VECTOR(6 downto 0)   -- Min Ones
+-- Entity declaration for the top-level timer system
+ENTITY top_level_timer IS
+    PORT (
+        CLOCK_50 : IN STD_LOGIC; -- 50 MHz system clock input
+        SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0); -- 10 input switches (used for setting time in later tasks)
+        KEY : IN STD_LOGIC_VECTOR(0 DOWNTO 0); -- Push button input (used for starting the timer in later tasks)
+        LEDR : OUT STD_LOGIC_VECTOR(0 DOWNTO 0); -- Single LED output (optional debug indicator)
+        HEX0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0); -- Seven-segment output for Seconds Ones place
+        HEX1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0); -- Seven-segment output for Seconds Tens place
+        HEX2 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0) -- Seven-segment output for Minutes Ones place
     );
-end entity;
+END ENTITY;
 
-architecture Behavioral of top_level_timer is
+-- Architecture body for top_level_timer
+ARCHITECTURE Behavioral OF top_level_timer IS
 
-    -- Internal Signals
-    signal clk_divider  : unsigned(25 downto 0) := (others => '0');
-    signal one_hz_clk   : std_logic := '0';
-    signal Q_sec_ones   : std_logic_vector(3 downto 0);
-    signal Q_sec_tens   : std_logic_vector(3 downto 0);
-    signal Q_min_ones   : std_logic_vector(3 downto 0);
-    signal Enable       : std_logic := '1';
-    signal Reset        : std_logic := '0';
-    signal tick_1hz : std_logic := '0';
-    
+    -- === Internal Signal Declarations ===
 
+    SIGNAL clk_divider : unsigned(25 DOWNTO 0) := (OTHERS => '0'); -- 26-bit counter for clock division (counts to 9,999,999)
+    SIGNAL one_hz_clk : STD_LOGIC := '0'; -- Divided clock signal toggling at 1 Hz
+    SIGNAL Q_sec_ones : STD_LOGIC_VECTOR(3 DOWNTO 0); -- 4-bit BCD output for Seconds Ones digit
+    SIGNAL Q_sec_tens : STD_LOGIC_VECTOR(3 DOWNTO 0); -- 4-bit BCD output for Seconds Tens digit
+    SIGNAL Q_min_ones : STD_LOGIC_VECTOR(3 DOWNTO 0); -- 4-bit BCD output for Minutes Ones digit
+    SIGNAL Enable : STD_LOGIC := '1'; -- Enable signal (active high, always enabled here)
+    SIGNAL Reset : STD_LOGIC := '0'; -- Reset signal (active high, unused here)
+    SIGNAL tick_1hz : STD_LOGIC := '0'; -- One-cycle pulse indicating a 1Hz clock tick
 
-    -- Components
-    component three_digit_timer
-        port (
-            Clk       : in  std_logic;
-            Reset     : in  std_logic;
-            Enable    : in  std_logic;
-            Min_ones  : out std_logic_vector(3 downto 0);
-            Sec_tens  : out std_logic_vector(3 downto 0);
-            Sec_ones  : out std_logic_vector(3 downto 0)
+    -- === Component Declarations ===
+
+    -- Declare the three-digit timer component (external module)
+    COMPONENT three_digit_timer
+        PORT (
+            Clk : IN STD_LOGIC; -- Clock input (expected to be 1 Hz)
+            Reset : IN STD_LOGIC; -- Active-high reset input
+            Enable : IN STD_LOGIC; -- Active-high enable input
+            Min_ones : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); -- Minutes Ones BCD output
+            Sec_tens : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); -- Seconds Tens BCD output
+            Sec_ones : OUT STD_LOGIC_VECTOR(3 DOWNTO 0) -- Seconds Ones BCD output
         );
-    end component;
+    END COMPONENT;
 
-    component BCD_to_SevenSeg
-        port (
-            BCD_digit     : in  std_logic_vector(3 downto 0);
-            SevenSeg_out  : out std_logic_vector(6 downto 0)
+    -- Declare the BCD-to-SevenSegment decoder component
+    COMPONENT BCD_to_SevenSeg
+        PORT (
+            BCD_digit : IN STD_LOGIC_VECTOR(3 DOWNTO 0); -- 4-bit BCD input
+            SevenSeg_out : OUT STD_LOGIC_VECTOR(6 DOWNTO 0) -- Corresponding 7-segment output
         );
-    end component;
+    END COMPONENT;
 
-begin
+BEGIN
 
-    -- Clock Divider: Generates 1 Hz clock from 50 MHz
-    process (CLOCK_50)
-    begin
-        -- clk_divider = 9_999_999
-        if rising_edge(CLOCK_50) then
-            if clk_divider = 9_999_999 then 
-                clk_divider <= (others => '0');
-                one_hz_clk <= not one_hz_clk;
-                tick_1hz <= '1';  -- 1-cycle pulse
-            else
-                clk_divider <= clk_divider + 1;
-                tick_1hz <= '0';
-            end if;
-        end if;
-    end process;
+    -- === Clock Divider Process ===
+    -- Purpose: Convert 50 MHz input clock into a 1 Hz pulse (tick_1hz) and toggling clock (one_hz_clk)
+    PROCESS (CLOCK_50)
+    BEGIN
+        IF rising_edge(CLOCK_50) THEN -- Detect rising edge of 50 MHz clock
+            IF clk_divider = 9_999_999 THEN -- If counter reaches 10 million ticks (1 second)
+                clk_divider <= (OTHERS => '0'); -- Reset the divider counter
+                one_hz_clk <= NOT one_hz_clk; -- Toggle the 1 Hz clock signal
+                tick_1hz <= '1'; -- Generate a 1-cycle wide pulse (tick)
+            ELSE
+                clk_divider <= clk_divider + 1; -- Otherwise, increment the divider counter
+                tick_1hz <= '0'; -- Clear the tick pulse
+            END IF;
+        END IF;
+    END PROCESS;
 
-    -- Instantiate the three-digit timer
+    -- === Timer Instance ===
+    -- Connects the 1 Hz tick to a three-digit BCD-based timer
     timer_inst : three_digit_timer
-        port map (
-            Clk       => tick_1hz,
-            Reset     => Reset,
-            Enable    => Enable,
-            Min_ones  => Q_min_ones,
-            Sec_tens  => Q_sec_tens,
-            Sec_ones  => Q_sec_ones
-        );
+    PORT MAP(
+        Clk => tick_1hz, -- Connect 1Hz pulse to clock input
+        Reset => Reset, -- Connect reset signal (inactive here)
+        Enable => Enable, -- Connect enable signal (always enabled)
+        Min_ones => Q_min_ones, -- Connect to internal minutes ones signal
+        Sec_tens => Q_sec_tens, -- Connect to internal seconds tens signal
+        Sec_ones => Q_sec_ones -- Connect to internal seconds ones signal
+    );
 
-    -- 7-segment decoding
+    -- === Seven-Segment Display Mapping ===
+
+    -- Map Seconds Ones (Q_sec_ones) to HEX0
     seg0 : BCD_to_SevenSeg
-        port map (
-            BCD_digit     => Q_sec_ones,
-            SevenSeg_out  => HEX0
-        );
+    PORT MAP(
+        BCD_digit => Q_sec_ones, -- Connect BCD input
+        SevenSeg_out => HEX0 -- Drive segment output
+    );
 
+    -- Map Seconds Tens (Q_sec_tens) to HEX1
     seg1 : BCD_to_SevenSeg
-        port map (
-            BCD_digit     => Q_sec_tens,
-            SevenSeg_out  => HEX1
-        );
+    PORT MAP(
+        BCD_digit => Q_sec_tens, -- Connect BCD input
+        SevenSeg_out => HEX1 -- Drive segment output
+    );
 
+    -- Map Minutes Ones (Q_min_ones) to HEX2
     seg2 : BCD_to_SevenSeg
-        port map (
-            BCD_digit     => Q_min_ones,
-            SevenSeg_out  => HEX2
-        );
+    PORT MAP(
+        BCD_digit => Q_min_ones, -- Connect BCD input
+        SevenSeg_out => HEX2 -- Drive segment output
+    );
 
-    -- Optional flag output (not used yet)
+    -- === Debug Output (Optional) ===
+    -- LEDR(0) is currently hardcoded to '0' and not used
     LEDR(0) <= '0';
 
-end architecture;
+END ARCHITECTURE;
