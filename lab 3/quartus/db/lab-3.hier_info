@@ -63,18 +63,16 @@ HEX2[6] <= BCD_to_SevenSeg:seg2.SevenSeg_out[6]
 
 |top_level_timer|three_digit_timer:timer_inst
 Clk => BCD_Counter:sec_ones_inst.Clk
-Clk => reset_timer.CLK
 Clk => en_min_ones.CLK
-Clk => reset_seconds.CLK
+Clk => reset_sec_tens.CLK
 Clk => en_sec_tens.CLK
 Clk => BCD_Counter:sec_tens_inst.Clk
 Clk => BCD_Counter:min_ones_inst.Clk
-Reset => comb.IN1
 Reset => en_sec_tens.OUTPUTSELECT
 Reset => comb.IN1
 Reset => en_min_ones.OUTPUTSELECT
-Reset => comb.IN1
-Reset => reset_timer.OUTPUTSELECT
+Reset => BCD_Counter:sec_ones_inst.Reset
+Reset => BCD_Counter:min_ones_inst.Reset
 Enable => process_0.IN1
 Enable => BCD_Counter:sec_ones_inst.Enable
 Min_ones[0] <= BCD_Counter:min_ones_inst.Q_Out[0]

@@ -26,10 +26,9 @@ ARCHITECTURE structural OF three_digit_timer IS
     SIGNAL s_sec_tens : STD_LOGIC_VECTOR(3 DOWNTO 0); -- Stores seconds tens value
     SIGNAL s_min_ones : STD_LOGIC_VECTOR(3 DOWNTO 0); -- Stores minutes ones value
 
-    SIGNAL en_sec_tens : STD_LOGIC := '0'; -- Enable for seconds tens counter
-    SIGNAL en_min_ones : STD_LOGIC := '0'; -- Enable for minutes ones counter
-    SIGNAL reset_seconds : STD_LOGIC := '0'; -- Signal to reset seconds counters
-    SIGNAL reset_timer : STD_LOGIC := '0'; -- Signal to reset the entire timer
+    SIGNAL en_sec_tens    : STD_LOGIC := '0'; -- Enable for seconds tens counter
+    SIGNAL en_min_ones    : STD_LOGIC := '0'; -- Enable for minutes ones counter
+    SIGNAL reset_sec_tens : STD_LOGIC := '0'; -- Signal to reset tens seconds counters
 
     -- === Component declaration ===
     -- BCD_Counter is a 4-bit Binary-Coded Decimal counter component
@@ -50,7 +49,7 @@ BEGIN
     sec_ones_inst : BCD_Counter
     PORT MAP(
         Clk => Clk, -- Connect clock input
-        Reset => Reset OR reset_timer, -- Reset if global reset, seconds reset, or full timer reset is active
+        Reset => Reset, -- Reset if global reset, seconds reset, or full timer reset is active
         Enable => Enable, -- Always count when enabled
         Direction => '1', -- Count up (increment)
         Q_Out => s_sec_ones -- Output connected to internal signal
@@ -76,22 +75,22 @@ BEGIN
     sec_tens_inst : BCD_Counter
     PORT MAP(
         Clk => Clk, -- Connect clock
-        Reset => Reset OR reset_seconds OR reset_timer, -- Reset on global/seconds/full reset
+        Reset => Reset OR reset_sec_tens, -- Reset on global/seconds/full reset
         Enable => en_sec_tens, -- Enabled only when seconds ones rolls over
         Direction => '1', -- Count up
         Q_Out => s_sec_tens -- Output signal
     );
 
     -- === Logic to Reset Seconds ===
-    -- When the seconds reaches 59, reset both seconds ones and seconds tens
+    -- When the seconds reaches 59, reset 10's seconds
     PROCESS (Clk)
     BEGIN
         IF rising_edge(Clk) THEN
             IF Enable = '1' AND s_sec_ones = "1000" AND s_sec_tens = "0101" THEN
                 -- If seconds = 58, prepare to reset on next tick
-                reset_seconds <= '1';
+                reset_sec_tens <= '1';
             ELSE
-                reset_seconds <= '0'; -- Otherwise no reset
+                reset_sec_tens <= '0'; -- Otherwise no reset
             END IF;
         END IF;
     END PROCESS;
@@ -117,29 +116,13 @@ BEGIN
     min_ones_inst : BCD_Counter
     PORT MAP(
         Clk => Clk, -- Connect clock
-        Reset => Reset OR reset_timer, -- Reset on global or full timer reset
+        Reset => Reset, -- Reset on global or full timer reset
         Enable => en_min_ones, -- Enable based on logic from above
         Direction => '1', -- Count up
         Q_Out => s_min_ones -- Output signal
     );
 
-    -- === Logic to Reset the Entire Timer ===
-    -- When the time reaches 3:58 (anticipating 3:59), reset the whole timer
-    PROCESS (Clk)
-    BEGIN
-        IF rising_edge(Clk) THEN
-            IF Reset = '1' THEN -- On global reset
-                reset_timer <= '0'; -- Deactivate timer reset
-            ELSIF Enable = '1' AND s_sec_ones = "1000" -- 1000 = 8 in BCD
-                AND s_sec_tens = "0101" -- 0101 = 5 in BCD
-                AND s_min_ones = "0011" THEN -- 0011 = 3 in BCD
-                -- If time is 3:58, prepare to reset whole timer on next tick
-                reset_timer <= '1';
-            ELSE
-                reset_timer <= '0'; -- Otherwise, keep disabled
-            END IF;
-        END IF;
-    END PROCESS;
+
     -- === Output Assignments ===
     -- Connect internal BCD counter outputs to entity outputs
     Sec_ones <= s_sec_ones; -- Connect seconds ones output

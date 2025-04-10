@@ -1,12 +1,12 @@
-Fitter Status : Successful - Fri Apr 11 01:05:33 2025
+Fitter Status : Successful - Fri Apr 11 01:26:41 2025
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : lab-3
 Top-level Entity Name : top_level_timer
 Family : Cyclone V
 Device : 5CEBA4F23C7
 Timing Models : Final
-Logic utilization (in ALMs) : 44 / 18,480 ( < 1 % )
-Total registers : 45
+Logic utilization (in ALMs) : 41 / 18,480 ( < 1 % )
+Total registers : 41
 Total pins : 34 / 224 ( 15 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 3,153,920 ( 0 % )
