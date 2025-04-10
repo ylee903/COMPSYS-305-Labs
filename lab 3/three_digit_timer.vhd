@@ -8,7 +8,7 @@ USE IEEE.NUMERIC_STD.ALL;
 -- Define the entity for the three-digit timer
 ENTITY three_digit_timer IS
     PORT (
-        Clk : IN STD_LOGIC; -- Clock input signal
+        Clk : IN STD_LOGIC; -- Clock input signal; STD_LOGIC is either 0/1
         Reset : IN STD_LOGIC; -- Asynchronous reset input (active high)
         Enable : IN STD_LOGIC; -- Enable input (active high)
         Min_ones : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); -- Minutes ones digit output (BCD 0–3)
@@ -98,6 +98,17 @@ BEGIN
         END IF;
     END PROCESS;
 
+    -- === Minutes Ones Digit (0–3) ===
+    -- Instantiates a BCD_Counter for minutes ones place
+    min_ones_inst : BCD_Counter
+    PORT MAP(
+        Clk => Clk, -- Connect clock
+        Reset => Reset OR reset_timer, -- Reset on global or full timer reset
+        Enable => en_min_ones, -- Enable based on logic from above
+        Direction => '1', -- Count up
+        Q_Out => s_min_ones -- Output signal
+    );
+
     -- === Logic to Reset Seconds ===
     -- When the seconds reaches 59, reset both seconds ones and seconds tens
     PROCESS (Clk)
@@ -131,18 +142,6 @@ BEGIN
             END IF;
         END IF;
     END PROCESS;
-
-    -- === Minutes Ones Digit (0–3) ===
-    -- Instantiates a BCD_Counter for minutes ones place
-    min_ones_inst : BCD_Counter
-    PORT MAP(
-        Clk => Clk, -- Connect clock
-        Reset => Reset OR reset_timer, -- Reset on global or full timer reset
-        Enable => en_min_ones, -- Enable based on logic from above
-        Direction => '1', -- Count up
-        Q_Out => s_min_ones -- Output signal
-    );
-
     -- === Output Assignments ===
     -- Connect internal BCD counter outputs to entity outputs
     Sec_ones <= s_sec_ones; -- Connect seconds ones output
