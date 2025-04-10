@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for lab-3
-Thu Apr 10 23:56:06 2025
+Fri Apr 11 00:14:13 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -121,8 +121,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------+-----------------+------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
 +------------+-----------------+------------+------+
-; 253.81 MHz ; 253.81 MHz      ; CLOCK_50   ;      ;
-; 313.97 MHz ; 313.97 MHz      ; tick_1hz   ;      ;
+; 256.08 MHz ; 256.08 MHz      ; CLOCK_50   ;      ;
+; 303.95 MHz ; 303.95 MHz      ; tick_1hz   ;      ;
 +------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -138,8 +138,8 @@ HTML report is unavailable in plain text report export.
 +----------+--------+-----------------+
 ; Clock    ; Slack  ; End Point TNS   ;
 +----------+--------+-----------------+
-; CLOCK_50 ; -2.940 ; -75.972         ;
-; tick_1hz ; -2.185 ; -34.805         ;
+; CLOCK_50 ; -2.905 ; -75.021         ;
+; tick_1hz ; -2.290 ; -34.644         ;
 +----------+--------+-----------------+
 
 
@@ -148,7 +148,7 @@ HTML report is unavailable in plain text report export.
 +----------+-------+-----------------+
 ; Clock    ; Slack ; End Point TNS   ;
 +----------+-------+-----------------+
-; tick_1hz ; 0.546 ; 0.000           ;
+; tick_1hz ; 0.532 ; 0.000           ;
 ; CLOCK_50 ; 0.666 ; 0.000           ;
 +----------+-------+-----------------+
 
@@ -170,7 +170,7 @@ No paths to report.
 +----------+--------+-------------------------------+
 ; Clock    ; Slack  ; End Point TNS                 ;
 +----------+--------+-------------------------------+
-; CLOCK_50 ; -0.538 ; -23.189                       ;
+; CLOCK_50 ; -0.538 ; -23.181                       ;
 ; tick_1hz ; -0.538 ; -17.416                       ;
 +----------+--------+-------------------------------+
 
@@ -180,14 +180,14 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; HEX0[*]   ; tick_1hz   ; 8.997 ; 9.136 ; Rise       ; tick_1hz        ;
-;  HEX0[0]  ; tick_1hz   ; 8.646 ; 8.880 ; Rise       ; tick_1hz        ;
-;  HEX0[1]  ; tick_1hz   ; 8.794 ; 8.695 ; Rise       ; tick_1hz        ;
-;  HEX0[2]  ; tick_1hz   ; 8.997 ; 9.136 ; Rise       ; tick_1hz        ;
-;  HEX0[3]  ; tick_1hz   ; 8.482 ; 8.704 ; Rise       ; tick_1hz        ;
+; HEX0[*]   ; tick_1hz   ; 9.012 ; 9.149 ; Rise       ; tick_1hz        ;
+;  HEX0[0]  ; tick_1hz   ; 8.661 ; 8.893 ; Rise       ; tick_1hz        ;
+;  HEX0[1]  ; tick_1hz   ; 8.809 ; 8.708 ; Rise       ; tick_1hz        ;
+;  HEX0[2]  ; tick_1hz   ; 9.012 ; 9.149 ; Rise       ; tick_1hz        ;
+;  HEX0[3]  ; tick_1hz   ; 8.497 ; 8.717 ; Rise       ; tick_1hz        ;
 ;  HEX0[4]  ; tick_1hz   ; 7.882 ; 8.092 ; Rise       ; tick_1hz        ;
-;  HEX0[5]  ; tick_1hz   ; 8.451 ; 8.611 ; Rise       ; tick_1hz        ;
-;  HEX0[6]  ; tick_1hz   ; 8.266 ; 8.216 ; Rise       ; tick_1hz        ;
+;  HEX0[5]  ; tick_1hz   ; 8.466 ; 8.624 ; Rise       ; tick_1hz        ;
+;  HEX0[6]  ; tick_1hz   ; 8.279 ; 8.229 ; Rise       ; tick_1hz        ;
 ; HEX1[*]   ; tick_1hz   ; 8.925 ; 8.778 ; Rise       ; tick_1hz        ;
 ;  HEX1[0]  ; tick_1hz   ; 8.227 ; 8.217 ; Rise       ; tick_1hz        ;
 ;  HEX1[1]  ; tick_1hz   ; 8.925 ; 8.778 ; Rise       ; tick_1hz        ;
@@ -201,7 +201,7 @@ No paths to report.
 ;  HEX2[1]  ; tick_1hz   ; 8.888 ; 8.748 ; Rise       ; tick_1hz        ;
 ;  HEX2[2]  ; tick_1hz   ; 9.439 ; 9.891 ; Rise       ; tick_1hz        ;
 ;  HEX2[3]  ; tick_1hz   ; 8.634 ; 8.882 ; Rise       ; tick_1hz        ;
-;  HEX2[4]  ; tick_1hz   ; 7.906 ; 8.002 ; Rise       ; tick_1hz        ;
+;  HEX2[4]  ; tick_1hz   ; 7.899 ; 8.002 ; Rise       ; tick_1hz        ;
 ;  HEX2[5]  ; tick_1hz   ; 8.727 ; 8.850 ; Rise       ; tick_1hz        ;
 ;  HEX2[6]  ; tick_1hz   ; 7.837 ; 7.799 ; Rise       ; tick_1hz        ;
 +-----------+------------+-------+-------+------------+-----------------+
@@ -217,11 +217,11 @@ No paths to report.
 ;  HEX0[1]  ; tick_1hz   ; 7.253 ; 7.175 ; Rise       ; tick_1hz        ;
 ;  HEX0[2]  ; tick_1hz   ; 6.982 ; 7.081 ; Rise       ; tick_1hz        ;
 ;  HEX0[3]  ; tick_1hz   ; 7.023 ; 7.154 ; Rise       ; tick_1hz        ;
-;  HEX0[4]  ; tick_1hz   ; 6.999 ; 7.104 ; Rise       ; tick_1hz        ;
+;  HEX0[4]  ; tick_1hz   ; 7.010 ; 7.115 ; Rise       ; tick_1hz        ;
 ;  HEX0[5]  ; tick_1hz   ; 6.979 ; 7.073 ; Rise       ; tick_1hz        ;
 ;  HEX0[6]  ; tick_1hz   ; 6.698 ; 6.658 ; Rise       ; tick_1hz        ;
 ; HEX1[*]   ; tick_1hz   ; 6.393 ; 6.431 ; Rise       ; tick_1hz        ;
-;  HEX1[0]  ; tick_1hz   ; 6.757 ; 6.827 ; Rise       ; tick_1hz        ;
+;  HEX1[0]  ; tick_1hz   ; 6.762 ; 6.827 ; Rise       ; tick_1hz        ;
 ;  HEX1[1]  ; tick_1hz   ; 6.734 ; 6.659 ; Rise       ; tick_1hz        ;
 ;  HEX1[2]  ; tick_1hz   ; 6.393 ; 6.431 ; Rise       ; tick_1hz        ;
 ;  HEX1[3]  ; tick_1hz   ; 6.574 ; 6.633 ; Rise       ; tick_1hz        ;
@@ -250,8 +250,8 @@ No synchronizer chains to report.
 +------------+-----------------+------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
 +------------+-----------------+------------+------+
-; 253.16 MHz ; 253.16 MHz      ; CLOCK_50   ;      ;
-; 316.36 MHz ; 316.36 MHz      ; tick_1hz   ;      ;
+; 255.17 MHz ; 255.17 MHz      ; CLOCK_50   ;      ;
+; 307.13 MHz ; 307.13 MHz      ; tick_1hz   ;      ;
 +------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -261,8 +261,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+--------+----------------+
 ; Clock    ; Slack  ; End Point TNS  ;
 +----------+--------+----------------+
-; CLOCK_50 ; -2.950 ; -76.540        ;
-; tick_1hz ; -2.161 ; -34.894        ;
+; CLOCK_50 ; -2.919 ; -75.696        ;
+; tick_1hz ; -2.256 ; -34.454        ;
 +----------+--------+----------------+
 
 
@@ -271,7 +271,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+-------+----------------+
 ; Clock    ; Slack ; End Point TNS  ;
 +----------+-------+----------------+
-; tick_1hz ; 0.503 ; 0.000          ;
+; tick_1hz ; 0.491 ; 0.000          ;
 ; CLOCK_50 ; 0.857 ; 0.000          ;
 +----------+-------+----------------+
 
@@ -293,7 +293,7 @@ No paths to report.
 +----------+--------+------------------------------+
 ; Clock    ; Slack  ; End Point TNS                ;
 +----------+--------+------------------------------+
-; CLOCK_50 ; -0.538 ; -21.162                      ;
+; CLOCK_50 ; -0.538 ; -21.163                      ;
 ; tick_1hz ; -0.538 ; -18.022                      ;
 +----------+--------+------------------------------+
 
@@ -303,14 +303,14 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; HEX0[*]   ; tick_1hz   ; 8.594 ; 8.738 ; Rise       ; tick_1hz        ;
-;  HEX0[0]  ; tick_1hz   ; 8.159 ; 8.384 ; Rise       ; tick_1hz        ;
-;  HEX0[1]  ; tick_1hz   ; 8.310 ; 8.237 ; Rise       ; tick_1hz        ;
-;  HEX0[2]  ; tick_1hz   ; 8.594 ; 8.738 ; Rise       ; tick_1hz        ;
-;  HEX0[3]  ; tick_1hz   ; 8.036 ; 8.234 ; Rise       ; tick_1hz        ;
+; HEX0[*]   ; tick_1hz   ; 8.607 ; 8.744 ; Rise       ; tick_1hz        ;
+;  HEX0[0]  ; tick_1hz   ; 8.172 ; 8.390 ; Rise       ; tick_1hz        ;
+;  HEX0[1]  ; tick_1hz   ; 8.323 ; 8.243 ; Rise       ; tick_1hz        ;
+;  HEX0[2]  ; tick_1hz   ; 8.607 ; 8.744 ; Rise       ; tick_1hz        ;
+;  HEX0[3]  ; tick_1hz   ; 8.049 ; 8.240 ; Rise       ; tick_1hz        ;
 ;  HEX0[4]  ; tick_1hz   ; 7.451 ; 7.575 ; Rise       ; tick_1hz        ;
-;  HEX0[5]  ; tick_1hz   ; 8.006 ; 8.140 ; Rise       ; tick_1hz        ;
-;  HEX0[6]  ; tick_1hz   ; 7.824 ; 7.797 ; Rise       ; tick_1hz        ;
+;  HEX0[5]  ; tick_1hz   ; 8.019 ; 8.146 ; Rise       ; tick_1hz        ;
+;  HEX0[6]  ; tick_1hz   ; 7.831 ; 7.804 ; Rise       ; tick_1hz        ;
 ; HEX1[*]   ; tick_1hz   ; 8.507 ; 8.347 ; Rise       ; tick_1hz        ;
 ;  HEX1[0]  ; tick_1hz   ; 7.795 ; 7.714 ; Rise       ; tick_1hz        ;
 ;  HEX1[1]  ; tick_1hz   ; 8.507 ; 8.347 ; Rise       ; tick_1hz        ;
@@ -324,7 +324,7 @@ No paths to report.
 ;  HEX2[1]  ; tick_1hz   ; 8.475 ; 8.347 ; Rise       ; tick_1hz        ;
 ;  HEX2[2]  ; tick_1hz   ; 8.962 ; 9.422 ; Rise       ; tick_1hz        ;
 ;  HEX2[3]  ; tick_1hz   ; 8.187 ; 8.472 ; Rise       ; tick_1hz        ;
-;  HEX2[4]  ; tick_1hz   ; 7.472 ; 7.538 ; Rise       ; tick_1hz        ;
+;  HEX2[4]  ; tick_1hz   ; 7.463 ; 7.538 ; Rise       ; tick_1hz        ;
 ;  HEX2[5]  ; tick_1hz   ; 8.233 ; 8.435 ; Rise       ; tick_1hz        ;
 ;  HEX2[6]  ; tick_1hz   ; 7.402 ; 7.387 ; Rise       ; tick_1hz        ;
 +-----------+------------+-------+-------+------------+-----------------+
@@ -340,7 +340,7 @@ No paths to report.
 ;  HEX0[1]  ; tick_1hz   ; 6.742 ; 6.692 ; Rise       ; tick_1hz        ;
 ;  HEX0[2]  ; tick_1hz   ; 6.510 ; 6.600 ; Rise       ; tick_1hz        ;
 ;  HEX0[3]  ; tick_1hz   ; 6.534 ; 6.668 ; Rise       ; tick_1hz        ;
-;  HEX0[4]  ; tick_1hz   ; 6.509 ; 6.613 ; Rise       ; tick_1hz        ;
+;  HEX0[4]  ; tick_1hz   ; 6.521 ; 6.625 ; Rise       ; tick_1hz        ;
 ;  HEX0[5]  ; tick_1hz   ; 6.504 ; 6.585 ; Rise       ; tick_1hz        ;
 ;  HEX0[6]  ; tick_1hz   ; 6.229 ; 6.200 ; Rise       ; tick_1hz        ;
 ; HEX1[*]   ; tick_1hz   ; 5.966 ; 5.984 ; Rise       ; tick_1hz        ;
@@ -373,8 +373,8 @@ No synchronizer chains to report.
 +----------+--------+-----------------+
 ; Clock    ; Slack  ; End Point TNS   ;
 +----------+--------+-----------------+
-; CLOCK_50 ; -1.074 ; -25.165         ;
-; tick_1hz ; -0.863 ; -10.619         ;
+; CLOCK_50 ; -1.057 ; -24.704         ;
+; tick_1hz ; -0.922 ; -10.547         ;
 +----------+--------+-----------------+
 
 
@@ -383,7 +383,7 @@ No synchronizer chains to report.
 +----------+-------+-----------------+
 ; Clock    ; Slack ; End Point TNS   ;
 +----------+-------+-----------------+
-; tick_1hz ; 0.177 ; 0.000           ;
+; tick_1hz ; 0.205 ; 0.000           ;
 ; CLOCK_50 ; 0.303 ; 0.000           ;
 +----------+-------+-----------------+
 
@@ -405,7 +405,7 @@ No paths to report.
 +----------+--------+-------------------------------+
 ; Clock    ; Slack  ; End Point TNS                 ;
 +----------+--------+-------------------------------+
-; CLOCK_50 ; -0.569 ; -12.861                       ;
+; CLOCK_50 ; -0.569 ; -12.859                       ;
 ; tick_1hz ; -0.028 ; -0.489                        ;
 +----------+--------+-------------------------------+
 
@@ -415,28 +415,28 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; HEX0[*]   ; tick_1hz   ; 4.868 ; 5.000 ; Rise       ; tick_1hz        ;
-;  HEX0[0]  ; tick_1hz   ; 4.705 ; 4.985 ; Rise       ; tick_1hz        ;
-;  HEX0[1]  ; tick_1hz   ; 4.868 ; 4.796 ; Rise       ; tick_1hz        ;
-;  HEX0[2]  ; tick_1hz   ; 4.780 ; 5.000 ; Rise       ; tick_1hz        ;
-;  HEX0[3]  ; tick_1hz   ; 4.613 ; 4.860 ; Rise       ; tick_1hz        ;
-;  HEX0[4]  ; tick_1hz   ; 4.384 ; 4.546 ; Rise       ; tick_1hz        ;
-;  HEX0[5]  ; tick_1hz   ; 4.607 ; 4.805 ; Rise       ; tick_1hz        ;
-;  HEX0[6]  ; tick_1hz   ; 4.601 ; 4.508 ; Rise       ; tick_1hz        ;
+; HEX0[*]   ; tick_1hz   ; 4.873 ; 5.006 ; Rise       ; tick_1hz        ;
+;  HEX0[0]  ; tick_1hz   ; 4.710 ; 4.991 ; Rise       ; tick_1hz        ;
+;  HEX0[1]  ; tick_1hz   ; 4.873 ; 4.802 ; Rise       ; tick_1hz        ;
+;  HEX0[2]  ; tick_1hz   ; 4.785 ; 5.006 ; Rise       ; tick_1hz        ;
+;  HEX0[3]  ; tick_1hz   ; 4.618 ; 4.866 ; Rise       ; tick_1hz        ;
+;  HEX0[4]  ; tick_1hz   ; 4.390 ; 4.546 ; Rise       ; tick_1hz        ;
+;  HEX0[5]  ; tick_1hz   ; 4.612 ; 4.811 ; Rise       ; tick_1hz        ;
+;  HEX0[6]  ; tick_1hz   ; 4.608 ; 4.515 ; Rise       ; tick_1hz        ;
 ; HEX1[*]   ; tick_1hz   ; 4.940 ; 4.775 ; Rise       ; tick_1hz        ;
 ;  HEX1[0]  ; tick_1hz   ; 4.568 ; 4.570 ; Rise       ; tick_1hz        ;
 ;  HEX1[1]  ; tick_1hz   ; 4.940 ; 4.775 ; Rise       ; tick_1hz        ;
 ;  HEX1[2]  ; tick_1hz   ; 4.718 ; 4.732 ; Rise       ; tick_1hz        ;
 ;  HEX1[3]  ; tick_1hz   ; 4.701 ; 4.719 ; Rise       ; tick_1hz        ;
-;  HEX1[4]  ; tick_1hz   ; 4.444 ; 4.656 ; Rise       ; tick_1hz        ;
+;  HEX1[4]  ; tick_1hz   ; 4.442 ; 4.656 ; Rise       ; tick_1hz        ;
 ;  HEX1[5]  ; tick_1hz   ; 4.534 ; 4.535 ; Rise       ; tick_1hz        ;
-;  HEX1[6]  ; tick_1hz   ; 4.810 ; 4.653 ; Rise       ; tick_1hz        ;
-; HEX2[*]   ; tick_1hz   ; 5.185 ; 5.517 ; Rise       ; tick_1hz        ;
+;  HEX1[6]  ; tick_1hz   ; 4.808 ; 4.653 ; Rise       ; tick_1hz        ;
+; HEX2[*]   ; tick_1hz   ; 5.185 ; 5.518 ; Rise       ; tick_1hz        ;
 ;  HEX2[0]  ; tick_1hz   ; 4.667 ; 4.762 ; Rise       ; tick_1hz        ;
 ;  HEX2[1]  ; tick_1hz   ; 4.851 ; 4.690 ; Rise       ; tick_1hz        ;
-;  HEX2[2]  ; tick_1hz   ; 5.185 ; 5.517 ; Rise       ; tick_1hz        ;
+;  HEX2[2]  ; tick_1hz   ; 5.185 ; 5.518 ; Rise       ; tick_1hz        ;
 ;  HEX2[3]  ; tick_1hz   ; 4.680 ; 4.840 ; Rise       ; tick_1hz        ;
-;  HEX2[4]  ; tick_1hz   ; 4.282 ; 4.463 ; Rise       ; tick_1hz        ;
+;  HEX2[4]  ; tick_1hz   ; 4.280 ; 4.464 ; Rise       ; tick_1hz        ;
 ;  HEX2[5]  ; tick_1hz   ; 4.725 ; 4.850 ; Rise       ; tick_1hz        ;
 ;  HEX2[6]  ; tick_1hz   ; 4.344 ; 4.278 ; Rise       ; tick_1hz        ;
 +-----------+------------+-------+-------+------------+-----------------+
@@ -452,7 +452,7 @@ No paths to report.
 ;  HEX0[1]  ; tick_1hz   ; 4.135 ; 3.999 ; Rise       ; tick_1hz        ;
 ;  HEX0[2]  ; tick_1hz   ; 3.909 ; 4.014 ; Rise       ; tick_1hz        ;
 ;  HEX0[3]  ; tick_1hz   ; 3.904 ; 4.037 ; Rise       ; tick_1hz        ;
-;  HEX0[4]  ; tick_1hz   ; 3.903 ; 4.023 ; Rise       ; tick_1hz        ;
+;  HEX0[4]  ; tick_1hz   ; 3.909 ; 4.029 ; Rise       ; tick_1hz        ;
 ;  HEX0[5]  ; tick_1hz   ; 3.900 ; 4.002 ; Rise       ; tick_1hz        ;
 ;  HEX0[6]  ; tick_1hz   ; 3.820 ; 3.795 ; Rise       ; tick_1hz        ;
 ; HEX1[*]   ; tick_1hz   ; 3.582 ; 3.640 ; Rise       ; tick_1hz        ;
@@ -485,8 +485,8 @@ No synchronizer chains to report.
 +----------+--------+----------------+
 ; Clock    ; Slack  ; End Point TNS  ;
 +----------+--------+----------------+
-; CLOCK_50 ; -1.015 ; -21.825        ;
-; tick_1hz ; -0.743 ; -8.924         ;
+; CLOCK_50 ; -0.996 ; -21.311        ;
+; tick_1hz ; -0.792 ; -8.816         ;
 +----------+--------+----------------+
 
 
@@ -495,7 +495,7 @@ No synchronizer chains to report.
 +----------+-------+----------------+
 ; Clock    ; Slack ; End Point TNS  ;
 +----------+-------+----------------+
-; tick_1hz ; 0.161 ; 0.000          ;
+; tick_1hz ; 0.173 ; 0.000          ;
 ; CLOCK_50 ; 0.294 ; 0.000          ;
 +----------+-------+----------------+
 
@@ -517,7 +517,7 @@ No paths to report.
 +----------+--------+------------------------------+
 ; Clock    ; Slack  ; End Point TNS                ;
 +----------+--------+------------------------------+
-; CLOCK_50 ; -0.610 ; -15.437                      ;
+; CLOCK_50 ; -0.610 ; -15.435                      ;
 ; tick_1hz ; -0.008 ; -0.119                       ;
 +----------+--------+------------------------------+
 
@@ -527,14 +527,14 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; HEX0[*]   ; tick_1hz   ; 4.392 ; 4.524 ; Rise       ; tick_1hz        ;
-;  HEX0[0]  ; tick_1hz   ; 4.253 ; 4.472 ; Rise       ; tick_1hz        ;
-;  HEX0[1]  ; tick_1hz   ; 4.392 ; 4.344 ; Rise       ; tick_1hz        ;
-;  HEX0[2]  ; tick_1hz   ; 4.352 ; 4.524 ; Rise       ; tick_1hz        ;
-;  HEX0[3]  ; tick_1hz   ; 4.188 ; 4.381 ; Rise       ; tick_1hz        ;
-;  HEX0[4]  ; tick_1hz   ; 3.940 ; 4.076 ; Rise       ; tick_1hz        ;
-;  HEX0[5]  ; tick_1hz   ; 4.171 ; 4.324 ; Rise       ; tick_1hz        ;
-;  HEX0[6]  ; tick_1hz   ; 4.150 ; 4.084 ; Rise       ; tick_1hz        ;
+; HEX0[*]   ; tick_1hz   ; 4.397 ; 4.530 ; Rise       ; tick_1hz        ;
+;  HEX0[0]  ; tick_1hz   ; 4.258 ; 4.478 ; Rise       ; tick_1hz        ;
+;  HEX0[1]  ; tick_1hz   ; 4.397 ; 4.350 ; Rise       ; tick_1hz        ;
+;  HEX0[2]  ; tick_1hz   ; 4.357 ; 4.530 ; Rise       ; tick_1hz        ;
+;  HEX0[3]  ; tick_1hz   ; 4.193 ; 4.387 ; Rise       ; tick_1hz        ;
+;  HEX0[4]  ; tick_1hz   ; 3.946 ; 4.076 ; Rise       ; tick_1hz        ;
+;  HEX0[5]  ; tick_1hz   ; 4.176 ; 4.330 ; Rise       ; tick_1hz        ;
+;  HEX0[6]  ; tick_1hz   ; 4.156 ; 4.090 ; Rise       ; tick_1hz        ;
 ; HEX1[*]   ; tick_1hz   ; 4.453 ; 4.325 ; Rise       ; tick_1hz        ;
 ;  HEX1[0]  ; tick_1hz   ; 4.131 ; 4.121 ; Rise       ; tick_1hz        ;
 ;  HEX1[1]  ; tick_1hz   ; 4.453 ; 4.325 ; Rise       ; tick_1hz        ;
@@ -542,13 +542,13 @@ No paths to report.
 ;  HEX1[3]  ; tick_1hz   ; 4.267 ; 4.271 ; Rise       ; tick_1hz        ;
 ;  HEX1[4]  ; tick_1hz   ; 4.012 ; 4.192 ; Rise       ; tick_1hz        ;
 ;  HEX1[5]  ; tick_1hz   ; 4.087 ; 4.075 ; Rise       ; tick_1hz        ;
-;  HEX1[6]  ; tick_1hz   ; 4.289 ; 4.196 ; Rise       ; tick_1hz        ;
+;  HEX1[6]  ; tick_1hz   ; 4.288 ; 4.196 ; Rise       ; tick_1hz        ;
 ; HEX2[*]   ; tick_1hz   ; 4.662 ; 4.943 ; Rise       ; tick_1hz        ;
 ;  HEX2[0]  ; tick_1hz   ; 4.203 ; 4.275 ; Rise       ; tick_1hz        ;
 ;  HEX2[1]  ; tick_1hz   ; 4.370 ; 4.248 ; Rise       ; tick_1hz        ;
 ;  HEX2[2]  ; tick_1hz   ; 4.662 ; 4.943 ; Rise       ; tick_1hz        ;
 ;  HEX2[3]  ; tick_1hz   ; 4.213 ; 4.352 ; Rise       ; tick_1hz        ;
-;  HEX2[4]  ; tick_1hz   ; 3.856 ; 3.990 ; Rise       ; tick_1hz        ;
+;  HEX2[4]  ; tick_1hz   ; 3.853 ; 3.991 ; Rise       ; tick_1hz        ;
 ;  HEX2[5]  ; tick_1hz   ; 4.260 ; 4.371 ; Rise       ; tick_1hz        ;
 ;  HEX2[6]  ; tick_1hz   ; 3.927 ; 3.879 ; Rise       ; tick_1hz        ;
 +-----------+------------+-------+-------+------------+-----------------+
@@ -564,7 +564,7 @@ No paths to report.
 ;  HEX0[1]  ; tick_1hz   ; 3.724 ; 3.620 ; Rise       ; tick_1hz        ;
 ;  HEX0[2]  ; tick_1hz   ; 3.524 ; 3.608 ; Rise       ; tick_1hz        ;
 ;  HEX0[3]  ; tick_1hz   ; 3.535 ; 3.635 ; Rise       ; tick_1hz        ;
-;  HEX0[4]  ; tick_1hz   ; 3.504 ; 3.601 ; Rise       ; tick_1hz        ;
+;  HEX0[4]  ; tick_1hz   ; 3.509 ; 3.606 ; Rise       ; tick_1hz        ;
 ;  HEX0[5]  ; tick_1hz   ; 3.504 ; 3.594 ; Rise       ; tick_1hz        ;
 ;  HEX0[6]  ; tick_1hz   ; 3.433 ; 3.420 ; Rise       ; tick_1hz        ;
 ; HEX1[*]   ; tick_1hz   ; 3.210 ; 3.251 ; Rise       ; tick_1hz        ;
@@ -592,18 +592,18 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+--------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                            ;
-+------------------+----------+-------+----------+---------+---------------------+
-; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -2.950   ; 0.161 ; N/A      ; N/A     ; -0.610              ;
-;  CLOCK_50        ; -2.950   ; 0.294 ; N/A      ; N/A     ; -0.610              ;
-;  tick_1hz        ; -2.185   ; 0.161 ; N/A      ; N/A     ; -0.538              ;
-; Design-wide TNS  ; -111.434 ; 0.0   ; 0.0      ; 0.0     ; -40.605             ;
-;  CLOCK_50        ; -76.540  ; 0.000 ; N/A      ; N/A     ; -23.189             ;
-;  tick_1hz        ; -34.894  ; 0.000 ; N/A      ; N/A     ; -18.022             ;
-+------------------+----------+-------+----------+---------+---------------------+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.919  ; 0.173 ; N/A      ; N/A     ; -0.610              ;
+;  CLOCK_50        ; -2.919  ; 0.294 ; N/A      ; N/A     ; -0.610              ;
+;  tick_1hz        ; -2.290  ; 0.173 ; N/A      ; N/A     ; -0.538              ;
+; Design-wide TNS  ; -110.15 ; 0.0   ; 0.0      ; 0.0     ; -40.597             ;
+;  CLOCK_50        ; -75.696 ; 0.000 ; N/A      ; N/A     ; -23.181             ;
+;  tick_1hz        ; -34.644 ; 0.000 ; N/A      ; N/A     ; -18.022             ;
++------------------+---------+-------+----------+---------+---------------------+
 
 
 +-----------------------------------------------------------------------+
@@ -611,14 +611,14 @@ No synchronizer chains to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; HEX0[*]   ; tick_1hz   ; 8.997 ; 9.136 ; Rise       ; tick_1hz        ;
-;  HEX0[0]  ; tick_1hz   ; 8.646 ; 8.880 ; Rise       ; tick_1hz        ;
-;  HEX0[1]  ; tick_1hz   ; 8.794 ; 8.695 ; Rise       ; tick_1hz        ;
-;  HEX0[2]  ; tick_1hz   ; 8.997 ; 9.136 ; Rise       ; tick_1hz        ;
-;  HEX0[3]  ; tick_1hz   ; 8.482 ; 8.704 ; Rise       ; tick_1hz        ;
+; HEX0[*]   ; tick_1hz   ; 9.012 ; 9.149 ; Rise       ; tick_1hz        ;
+;  HEX0[0]  ; tick_1hz   ; 8.661 ; 8.893 ; Rise       ; tick_1hz        ;
+;  HEX0[1]  ; tick_1hz   ; 8.809 ; 8.708 ; Rise       ; tick_1hz        ;
+;  HEX0[2]  ; tick_1hz   ; 9.012 ; 9.149 ; Rise       ; tick_1hz        ;
+;  HEX0[3]  ; tick_1hz   ; 8.497 ; 8.717 ; Rise       ; tick_1hz        ;
 ;  HEX0[4]  ; tick_1hz   ; 7.882 ; 8.092 ; Rise       ; tick_1hz        ;
-;  HEX0[5]  ; tick_1hz   ; 8.451 ; 8.611 ; Rise       ; tick_1hz        ;
-;  HEX0[6]  ; tick_1hz   ; 8.266 ; 8.216 ; Rise       ; tick_1hz        ;
+;  HEX0[5]  ; tick_1hz   ; 8.466 ; 8.624 ; Rise       ; tick_1hz        ;
+;  HEX0[6]  ; tick_1hz   ; 8.279 ; 8.229 ; Rise       ; tick_1hz        ;
 ; HEX1[*]   ; tick_1hz   ; 8.925 ; 8.778 ; Rise       ; tick_1hz        ;
 ;  HEX1[0]  ; tick_1hz   ; 8.227 ; 8.217 ; Rise       ; tick_1hz        ;
 ;  HEX1[1]  ; tick_1hz   ; 8.925 ; 8.778 ; Rise       ; tick_1hz        ;
@@ -632,7 +632,7 @@ No synchronizer chains to report.
 ;  HEX2[1]  ; tick_1hz   ; 8.888 ; 8.748 ; Rise       ; tick_1hz        ;
 ;  HEX2[2]  ; tick_1hz   ; 9.439 ; 9.891 ; Rise       ; tick_1hz        ;
 ;  HEX2[3]  ; tick_1hz   ; 8.634 ; 8.882 ; Rise       ; tick_1hz        ;
-;  HEX2[4]  ; tick_1hz   ; 7.906 ; 8.002 ; Rise       ; tick_1hz        ;
+;  HEX2[4]  ; tick_1hz   ; 7.899 ; 8.002 ; Rise       ; tick_1hz        ;
 ;  HEX2[5]  ; tick_1hz   ; 8.727 ; 8.850 ; Rise       ; tick_1hz        ;
 ;  HEX2[6]  ; tick_1hz   ; 7.837 ; 7.799 ; Rise       ; tick_1hz        ;
 +-----------+------------+-------+-------+------------+-----------------+
@@ -648,7 +648,7 @@ No synchronizer chains to report.
 ;  HEX0[1]  ; tick_1hz   ; 3.724 ; 3.620 ; Rise       ; tick_1hz        ;
 ;  HEX0[2]  ; tick_1hz   ; 3.524 ; 3.608 ; Rise       ; tick_1hz        ;
 ;  HEX0[3]  ; tick_1hz   ; 3.535 ; 3.635 ; Rise       ; tick_1hz        ;
-;  HEX0[4]  ; tick_1hz   ; 3.504 ; 3.601 ; Rise       ; tick_1hz        ;
+;  HEX0[4]  ; tick_1hz   ; 3.509 ; 3.606 ; Rise       ; tick_1hz        ;
 ;  HEX0[5]  ; tick_1hz   ; 3.504 ; 3.594 ; Rise       ; tick_1hz        ;
 ;  HEX0[6]  ; tick_1hz   ; 3.433 ; 3.420 ; Rise       ; tick_1hz        ;
 ; HEX1[*]   ; tick_1hz   ; 3.210 ; 3.251 ; Rise       ; tick_1hz        ;
@@ -894,7 +894,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Apr 10 23:56:02 2025
+    Info: Processing started: Fri Apr 11 00:14:09 2025
 Info: Command: quartus_sta lab-3 -c lab-3
 Info: qsta_default_script.tcl version: #1
 Warning (20013): Ignored assignments for entity "DE0_CV_Default" -- entity does not exist in design
@@ -935,22 +935,22 @@ Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.940
+Info (332146): Worst-case setup slack is -2.905
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -2.940       -75.972 CLOCK_50 
-    Info (332119):    -2.185       -34.805 tick_1hz 
-Info (332146): Worst-case hold slack is 0.546
+    Info (332119):    -2.905       -75.021 CLOCK_50 
+    Info (332119):    -2.290       -34.644 tick_1hz 
+Info (332146): Worst-case hold slack is 0.532
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):     0.546         0.000 tick_1hz 
+    Info (332119):     0.532         0.000 tick_1hz 
     Info (332119):     0.666         0.000 CLOCK_50 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.538
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.538       -23.189 CLOCK_50 
+    Info (332119):    -0.538       -23.181 CLOCK_50 
     Info (332119):    -0.538       -17.416 tick_1hz 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
@@ -958,22 +958,22 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -2.950
+Info (332146): Worst-case setup slack is -2.919
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -2.950       -76.540 CLOCK_50 
-    Info (332119):    -2.161       -34.894 tick_1hz 
-Info (332146): Worst-case hold slack is 0.503
+    Info (332119):    -2.919       -75.696 CLOCK_50 
+    Info (332119):    -2.256       -34.454 tick_1hz 
+Info (332146): Worst-case hold slack is 0.491
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):     0.503         0.000 tick_1hz 
+    Info (332119):     0.491         0.000 tick_1hz 
     Info (332119):     0.857         0.000 CLOCK_50 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.538
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.538       -21.162 CLOCK_50 
+    Info (332119):    -0.538       -21.163 CLOCK_50 
     Info (332119):    -0.538       -18.022 tick_1hz 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
@@ -981,50 +981,50 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -1.074
+Info (332146): Worst-case setup slack is -1.057
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.074       -25.165 CLOCK_50 
-    Info (332119):    -0.863       -10.619 tick_1hz 
-Info (332146): Worst-case hold slack is 0.177
+    Info (332119):    -1.057       -24.704 CLOCK_50 
+    Info (332119):    -0.922       -10.547 tick_1hz 
+Info (332146): Worst-case hold slack is 0.205
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):     0.177         0.000 tick_1hz 
+    Info (332119):     0.205         0.000 tick_1hz 
     Info (332119):     0.303         0.000 CLOCK_50 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.569
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.569       -12.861 CLOCK_50 
+    Info (332119):    -0.569       -12.859 CLOCK_50 
     Info (332119):    -0.028        -0.489 tick_1hz 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -1.015
+Info (332146): Worst-case setup slack is -0.996
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.015       -21.825 CLOCK_50 
-    Info (332119):    -0.743        -8.924 tick_1hz 
-Info (332146): Worst-case hold slack is 0.161
+    Info (332119):    -0.996       -21.311 CLOCK_50 
+    Info (332119):    -0.792        -8.816 tick_1hz 
+Info (332146): Worst-case hold slack is 0.173
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):     0.161         0.000 tick_1hz 
+    Info (332119):     0.173         0.000 tick_1hz 
     Info (332119):     0.294         0.000 CLOCK_50 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.610
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.610       -15.437 CLOCK_50 
+    Info (332119):    -0.610       -15.435 CLOCK_50 
     Info (332119):    -0.008        -0.119 tick_1hz 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 5130 megabytes
-    Info: Processing ended: Thu Apr 10 23:56:06 2025
+    Info: Peak virtual memory: 5107 megabytes
+    Info: Processing ended: Fri Apr 11 00:14:13 2025
     Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 

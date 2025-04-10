@@ -1,0 +1,99 @@
+Absolutely! Let's break this section down very specifically, piece by piece, to answer the question: **“What are we doing here?”**
+
+---
+
+### 🔷 Line by Line Breakdown
+
+```vhdl
+-- Define the entity for the three-digit timer
+ENTITY three_digit_timer IS
+```
+
+> **What are we doing here?**  
+We are declaring an **entity**, which is like defining a black box: we are saying **what signals go into and come out of** this block of logic, but we’re **not saying how it works yet**.  
+The name of this entity is `three_digit_timer`. It will represent a timer circuit that outputs **minutes and seconds** in a format like "M:SS" (for example, "3:59").
+
+---
+
+```vhdl
+    PORT (
+        Clk : IN STD_LOGIC; -- Clock input signal
+```
+
+> **What are we doing here?**  
+We are saying that this entity has a port (a connector) named `Clk`. It is an **input** signal (keyword `IN`) and its type is `STD_LOGIC` (a digital high/low signal).  
+This signal provides the **timing pulses** that the counter uses to know **when to update**.
+
+---
+
+```vhdl
+        Reset : IN STD_LOGIC; -- Asynchronous reset input (active high)
+```
+
+> **What are we doing here?**  
+We are adding a `Reset` port to the entity. This is also an **input** of type `STD_LOGIC`.  
+When this signal is `'1'`, it causes the timer to **reset all its digits back to zero** — no matter what the clock is doing.  
+It’s asynchronous, meaning it can happen **at any time**, not just on clock edges.
+
+---
+
+```vhdl
+        Enable : IN STD_LOGIC; -- Enable input (active high)
+```
+
+> **What are we doing here?**  
+We are adding another input called `Enable`. This tells the counter **whether it should count or not**.  
+If `Enable = '1'`, then the timer is allowed to **run and update every second**.  
+If `Enable = '0'`, then the timer **pauses** — it ignores the clock and does not count.
+
+---
+
+```vhdl
+        Min_ones : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); -- Minutes ones digit output (BCD 0–3)
+```
+
+> **What are we doing here?**  
+We are defining the **output** for the **minutes ones digit** (i.e., the ‘M’ in M:SS).  
+It’s a 4-bit `STD_LOGIC_VECTOR`, which allows us to represent values from 0 to 9 in **Binary-Coded Decimal (BCD)**.  
+In this case, it only goes up to **3**, because the timer maxes out at **3:59**.
+
+---
+
+```vhdl
+        Sec_tens : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); -- Seconds tens digit output (BCD 0–5)
+```
+
+> **What are we doing here?**  
+We are defining the **tens digit of the seconds** (e.g., the `5` in `5X` for 59 seconds).  
+Again, this is a 4-bit output in BCD, and it counts from **0 to 5**, since there are only 60 seconds in a minute.
+
+---
+
+```vhdl
+        Sec_ones : OUT STD_LOGIC_VECTOR(3 DOWNTO 0) -- Seconds ones digit output (BCD 0–9)
+```
+
+> **What are we doing here?**  
+This is the final digit: the **ones digit of the seconds** (e.g., the `9` in `X9` for 59 seconds).  
+It is also BCD, going from 0 to 9.
+
+---
+
+```vhdl
+    );
+END ENTITY;
+```
+
+> **What are we doing here?**  
+We are closing the port list and the entity declaration. At this point, we have declared **all the inputs and outputs** of our three-digit timer, but **not how it functions**. That’s defined later in the architecture section.
+
+---
+
+### 🧠 Summary:
+In this entity declaration, we are **defining the interface** (the "wiring diagram") of a timer that:
+- Counts seconds from `00` to `59`
+- Rolls over into minutes from `0` to `3`
+- Has inputs to **clock**, **reset**, and **enable/disable** counting
+- Outputs each digit in **BCD format** so they can be connected to **7-segment displays**.
+
+Let me know if you'd like an illustrated diagram to go with this explanation — or if you want help writing the architecture from scratch for a similar timer!

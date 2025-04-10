@@ -1,5 +1,5 @@
 Fitter report for lab-3
-Thu Apr 10 23:55:57 2025
+Fri Apr 11 00:14:04 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -65,7 +65,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                        ;
 +-------------------------------------+-------------------------------------------------+
-; Fitter Status                       ; Successful - Thu Apr 10 23:55:57 2025           ;
+; Fitter Status                       ; Successful - Fri Apr 11 00:14:04 2025           ;
 ; Quartus II 64-Bit Version           ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                       ; lab-3                                           ;
 ; Top-level Entity Name               ; top_level_timer                                 ;
@@ -1577,11 +1577,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------+------------------------+
 ; Interconnect Resource Type ; Usage                  ;
 +----------------------------+------------------------+
-; Block interconnects        ; 91 / 140,056 ( < 1 % ) ;
+; Block interconnects        ; 92 / 140,056 ( < 1 % ) ;
 ; C12 interconnects          ; 0 / 6,048 ( 0 % )      ;
-; C2 interconnects           ; 27 / 54,648 ( < 1 % )  ;
-; C4 interconnects           ; 10 / 25,920 ( < 1 % )  ;
-; Local interconnects        ; 40 / 36,960 ( < 1 % )  ;
+; C2 interconnects           ; 28 / 54,648 ( < 1 % )  ;
+; C4 interconnects           ; 9 / 25,920 ( < 1 % )   ;
+; Local interconnects        ; 41 / 36,960 ( < 1 % )  ;
 ; R14 interconnects          ; 2 / 5,984 ( < 1 % )    ;
 ; R3 interconnects           ; 46 / 60,192 ( < 1 % )  ;
 ; R6 interconnects           ; 31 / 127,072 ( < 1 % ) ;
@@ -1770,14 +1770,14 @@ This will disable optimization of problematic paths and expose them for further 
 ; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[1] ; three_digit_timer:timer_inst|reset_timer                          ; 0.323             ;
 ; clk_divider[0]                                                    ; tick_1hz                                                          ; 0.322             ;
 ; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[2] ; three_digit_timer:timer_inst|reset_timer                          ; 0.302             ;
-; clk_divider[6]                                                    ; tick_1hz                                                          ; 0.245             ;
-; clk_divider[3]                                                    ; tick_1hz                                                          ; 0.194             ;
+; clk_divider[6]                                                    ; tick_1hz                                                          ; 0.250             ;
+; clk_divider[3]                                                    ; tick_1hz                                                          ; 0.198             ;
 ; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[0] ; three_digit_timer:timer_inst|reset_timer                          ; 0.187             ;
 ; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[3] ; three_digit_timer:timer_inst|reset_timer                          ; 0.171             ;
-; clk_divider[7]                                                    ; tick_1hz                                                          ; 0.150             ;
-; clk_divider[8]                                                    ; tick_1hz                                                          ; 0.058             ;
-; clk_divider[5]                                                    ; tick_1hz                                                          ; 0.058             ;
-; clk_divider[4]                                                    ; tick_1hz                                                          ; 0.058             ;
+; clk_divider[7]                                                    ; tick_1hz                                                          ; 0.152             ;
+; clk_divider[8]                                                    ; tick_1hz                                                          ; 0.063             ;
+; clk_divider[5]                                                    ; tick_1hz                                                          ; 0.063             ;
+; clk_divider[4]                                                    ; tick_1hz                                                          ; 0.063             ;
 ; three_digit_timer:timer_inst|en_sec_tens                          ; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[3] ; 0.038             ;
 +-------------------------------------------------------------------+-------------------------------------------------------------------+-------------------+
 Note: This table only shows the top 23 path(s) that have the largest delay added for hold.
@@ -2163,7 +2163,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.39 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.33 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2172,8 +2172,8 @@ Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/Samuel/Documents/2025/COMPSYS-305-Labs/lab 3/quartus/output_files/lab-3.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 351 warnings
-    Info: Peak virtual memory: 5622 megabytes
-    Info: Processing ended: Thu Apr 10 23:55:57 2025
+    Info: Peak virtual memory: 5582 megabytes
+    Info: Processing ended: Fri Apr 11 00:14:05 2025
     Info: Elapsed time: 00:00:17
     Info: Total CPU time (on all processors): 00:00:16
 
