@@ -26,6 +26,7 @@ CLOCK_50 => clk_divider[22].CLK
 CLOCK_50 => clk_divider[23].CLK
 CLOCK_50 => clk_divider[24].CLK
 CLOCK_50 => clk_divider[25].CLK
+CLOCK_50 => timer_reset.CLK
 CLOCK_50 => last_key1.CLK
 CLOCK_50 => Enable.CLK
 SW[0] => ~NO_FANOUT~
