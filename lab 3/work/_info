@@ -1,0 +1,235 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+!s11e vcom 2022.1 2022.01, Jan 29 2022
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3
+T_opt
+!s110 1743736549
+VPC=Jg;HdTiPbVWK8PP23M1
+04 17 2 work test_timer_system tb 1
+=1-cc96e530f30d-67ef4ee5-18e-1614
+R0
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0
+n@_opt
+OL;O;2022.1;75
+Ebcd_counter
+Z2 w1743136740
+Z3 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
+Z4 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z5 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 8
+R1
+Z6 8C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/bcd_counter.vhd
+Z7 FC:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/bcd_counter.vhd
+l0
+L5 1
+VEgSNNLDZO;U:CWkJ5emhm2
+!s100 Pib3^P^I@KDTkVQUXgLbF2
+Z8 OL;C;2022.1;75
+32
+Z9 !s110 1743736529
+!i10b 1
+Z10 !s108 1743736529.000000
+Z11 !s90 -reportprogress|300|-work|work|C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/bcd_counter.vhd|
+Z12 !s107 C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/bcd_counter.vhd|
+!i113 0
+Z13 o-work work
+Z14 tExplicit 1 CvgOpt 0
+Abehavior
+R3
+R4
+R5
+DEx4 work 11 bcd_counter 0 22 EgSNNLDZO;U:CWkJ5emhm2
+!i122 8
+l31
+L15 70
+VO1]ML[E<m`=]eDdJj70:@2
+!s100 6:`lI4[HDfPJ97F6GUaL[1
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Ebcd_to_sevenseg
+Z15 w1743733036
+R4
+R5
+!i122 11
+R1
+Z16 8C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/BCD_to_7Seg.vhd
+Z17 FC:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/BCD_to_7Seg.vhd
+l0
+L7 1
+Ven5@P[299eSRMKzK6;:FV1
+!s100 84ooCNTQ8>D1c9U^]MPMa2
+R8
+32
+Z18 !s110 1743736538
+!i10b 1
+Z19 !s108 1743736538.000000
+Z20 !s90 -reportprogress|300|-work|work|C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/BCD_to_7Seg.vhd|
+Z21 !s107 C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/BCD_to_7Seg.vhd|
+!i113 0
+R13
+R14
+Aarc1
+R4
+R5
+DEx4 work 15 bcd_to_sevenseg 0 22 en5@P[299eSRMKzK6;:FV1
+!i122 11
+l16
+L15 14
+V:L;k6ch`eWL>Ok1bbPOM:3
+!s100 PcVikcFGVa37BaQHmL34P2
+R8
+32
+R18
+!i10b 1
+R19
+R20
+R21
+!i113 0
+R13
+R14
+Etest_timer_system
+Z22 w1743730127
+R4
+R5
+!i122 12
+R1
+Z23 8C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/test_timer_system.vhd
+Z24 FC:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/test_timer_system.vhd
+l0
+L4 1
+V^Y@oLg_mnDE30K3h4zQ[_3
+!s100 h=hCA3`=o:S]g1m57joZf3
+R8
+32
+Z25 !s110 1743736540
+!i10b 1
+Z26 !s108 1743736539.000000
+Z27 !s90 -reportprogress|300|-work|work|C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/test_timer_system.vhd|
+Z28 !s107 C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/test_timer_system.vhd|
+!i113 0
+R13
+R14
+Atb
+R4
+R5
+DEx4 work 17 test_timer_system 0 22 ^Y@oLg_mnDE30K3h4zQ[_3
+!i122 12
+l42
+L7 115
+V^_WOBeOW]fcOXH_4Q6kZF2
+!s100 ESQ6d3_1La2lz@HE1kBfU2
+R8
+32
+R25
+!i10b 1
+R26
+R27
+R28
+!i113 0
+R13
+R14
+Etop_level_timer
+Z29 w1743736143
+R3
+R4
+R5
+!i122 10
+R1
+Z30 8C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/top_level_timer.vhd
+Z31 FC:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/top_level_timer.vhd
+l0
+L5 1
+V=z9;@<?M[OJ6`T[dX>ddN3
+!s100 7OX[_akIA:aSNiAY60N`e0
+R8
+32
+Z32 !s110 1743736537
+!i10b 1
+Z33 !s108 1743736537.000000
+Z34 !s90 -reportprogress|300|-work|work|C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/top_level_timer.vhd|
+Z35 !s107 C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/top_level_timer.vhd|
+!i113 0
+R13
+R14
+Abehavioral
+R3
+R4
+R5
+DEx4 work 15 top_level_timer 0 22 =z9;@<?M[OJ6`T[dX>ddN3
+!i122 10
+l46
+L17 74
+V0cVQZI>9gMT3Q6PIXJ1V62
+!s100 @bFg7gWJ:f_?Nn]=a_dYg0
+R8
+32
+R32
+!i10b 1
+R33
+R34
+R35
+!i113 0
+R13
+R14
+Etwo_digit_counter
+Z36 w1743143371
+R3
+R4
+R5
+!i122 9
+R1
+Z37 8C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/two_digit_counter.vhd
+Z38 FC:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/two_digit_counter.vhd
+l0
+L5 1
+Vh@`<1Gfzkzf?bS2^GOKzY1
+!s100 D8h0NmNX4HJNHFg3UM@R;0
+R8
+32
+Z39 !s110 1743736534
+!i10b 1
+Z40 !s108 1743736534.000000
+Z41 !s90 -reportprogress|300|-work|work|C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/two_digit_counter.vhd|
+Z42 !s107 C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/two_digit_counter.vhd|
+!i113 0
+R13
+R14
+Astructural
+R3
+R4
+R5
+DEx4 work 17 two_digit_counter 0 22 h@`<1Gfzkzf?bS2^GOKzY1
+!i122 9
+l36
+L17 62
+VL=YaM2foNYaP4KEIll4OI0
+!s100 lgLTW?=`0`FXX:20Ohhzk2
+R8
+32
+R39
+!i10b 1
+R40
+R41
+R42
+!i113 0
+R13
+R14
