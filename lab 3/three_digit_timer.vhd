@@ -50,7 +50,7 @@ BEGIN
     sec_ones_inst : BCD_Counter
     PORT MAP(
         Clk => Clk, -- Connect clock input
-        Reset => Reset OR reset_seconds OR reset_timer, -- Reset if global reset, seconds reset, or full timer reset is active
+        Reset => Reset OR reset_timer, -- Reset if global reset, seconds reset, or full timer reset is active
         Enable => Enable, -- Always count when enabled
         Direction => '1', -- Count up (increment)
         Q_Out => s_sec_ones -- Output connected to internal signal
@@ -82,6 +82,20 @@ BEGIN
         Q_Out => s_sec_tens -- Output signal
     );
 
+    -- === Logic to Reset Seconds ===
+    -- When the seconds reaches 59, reset both seconds ones and seconds tens
+    PROCESS (Clk)
+    BEGIN
+        IF rising_edge(Clk) THEN
+            IF Enable = '1' AND s_sec_ones = "1000" AND s_sec_tens = "0101" THEN
+                -- If seconds = 58, prepare to reset on next tick
+                reset_seconds <= '1';
+            ELSE
+                reset_seconds <= '0'; -- Otherwise no reset
+            END IF;
+        END IF;
+    END PROCESS;
+
     -- === Logic to Enable Minutes Ones ===
     -- Triggered when the time is at 58 seconds (anticipating 59)
     PROCESS (Clk)
@@ -109,32 +123,16 @@ BEGIN
         Q_Out => s_min_ones -- Output signal
     );
 
-    -- === Logic to Reset Seconds ===
-    -- When the seconds reaches 59, reset both seconds ones and seconds tens
-    PROCESS (Clk)
-    BEGIN
-        IF rising_edge(Clk) THEN
-            IF Reset = '1' THEN -- On reset
-                reset_seconds <= '0'; -- Clear the seconds reset
-            ELSIF Enable = '1' AND s_sec_ones = "1000" AND s_sec_tens = "0101" THEN
-                -- If seconds = 58, prepare to reset on next tick
-                reset_seconds <= '1';
-            ELSE
-                reset_seconds <= '0'; -- Otherwise no reset
-            END IF;
-        END IF;
-    END PROCESS;
-
     -- === Logic to Reset the Entire Timer ===
-    -- When the time reaches 3:59 (anticipating 4:00), reset the whole timer
+    -- When the time reaches 3:58 (anticipating 3:59), reset the whole timer
     PROCESS (Clk)
     BEGIN
         IF rising_edge(Clk) THEN
             IF Reset = '1' THEN -- On global reset
                 reset_timer <= '0'; -- Deactivate timer reset
-            ELSIF Enable = '1' AND s_sec_ones = "1000"
-                AND s_sec_tens = "0101"
-                AND s_min_ones = "0011" THEN
+            ELSIF Enable = '1' AND s_sec_ones = "1000" -- 1000 = 8 in BCD
+                AND s_sec_tens = "0101" -- 0101 = 5 in BCD
+                AND s_min_ones = "0011" THEN -- 0011 = 3 in BCD
                 -- If time is 3:58, prepare to reset whole timer on next tick
                 reset_timer <= '1';
             ELSE

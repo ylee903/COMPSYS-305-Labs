@@ -69,7 +69,7 @@ BEGIN
     PROCESS (CLOCK_50)
     BEGIN
         IF rising_edge(CLOCK_50) THEN -- Detect rising edge of 50 MHz clock
-            IF clk_divider = 49_999_999 THEN -- 49_999_999 for 1 hz, 9_999_999 for 10 hz
+            IF clk_divider = 9_999_999 THEN -- 49_999_999 for 1 hz, 9_999_999 for 10 hz
                 clk_divider <= (OTHERS => '0'); -- (set all bits set to zero) assign to all 26 bits of clk_divider
                 one_hz_clk <= NOT one_hz_clk; -- Toggle the 1 Hz clock signal
                 tick_1hz <= '1'; -- Generate a 1-cycle wide pulse (tick), this is done by imediatly in the next tick chaing to 0 under "Else"
