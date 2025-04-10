@@ -1,0 +1,71 @@
+[33mcommit 1fbb82c81f62fb805719d73d9c086d6f3a7f9f69[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: ylee903 <79842277+ylee903@users.noreply.github.com>
+Date:   Fri Apr 11 03:18:01 2025 +1200
+
+    for now, start on button press, always reset at 3:59
+
+[33mcommit 916d03529daa86b08ba34b7243ff75512a7896ea[m
+Author: ylee903 <79842277+ylee903@users.noreply.github.com>
+Date:   Fri Apr 11 03:16:38 2025 +1200
+
+    for now, start on button press, always reset at 3:59
+
+[33mcommit 3fe5fcc1d10d1f5a15b3bc1241fbc275a58e7f7d[m
+Author: ylee903 <79842277+ylee903@users.noreply.github.com>
+Date:   Fri Apr 11 02:36:32 2025 +1200
+
+    starts on key0 press
+
+[33mcommit 467e8d5a38afa6966ed57b21c9ccb3146dbe7438[m
+Author: ylee903 <79842277+ylee903@users.noreply.github.com>
+Date:   Fri Apr 11 01:33:05 2025 +1200
+
+    made simplefied the timer, timer runds over 3:59 for now
+
+[33mcommit f15f66ae74840f4020baf67fe90d1ed0acc070c7[m
+Author: ylee903 <79842277+ylee903@users.noreply.github.com>
+Date:   Fri Apr 11 01:13:34 2025 +1200
+
+    moved blocks around"
+
+[33mcommit dcef7d80b385540cde95c0af620464aaca30b11b[m
+Author: ylee903 <79842277+ylee903@users.noreply.github.com>
+Date:   Fri Apr 11 00:58:44 2025 +1200
+
+    moved blocks around"
+
+[33mcommit f73b4b7b9a600206324c93463d0173b7a3ca8862[m
+Author: ylee903 <79842277+ylee903@users.noreply.github.com>
+Date:   Fri Apr 11 00:38:07 2025 +1200
+
+    added very detailed comments
+
+[33mcommit 0d10fbd872b121d09109487c6c1b06dbd3893e3b[m
+Author: ylee903 <79842277+ylee903@users.noreply.github.com>
+Date:   Thu Apr 10 23:58:43 2025 +1200
+
+    added very detailed comments
+
+[33mcommit 779f35104ea6ad755b61a3fd2f553776d3cd9b55[m
+Author: ylee903 <79842277+ylee903@users.noreply.github.com>
+Date:   Thu Apr 10 23:47:54 2025 +1200
+
+    current state
+
+[33mcommit 9a319a4dfa7e44acc90ccc4547efd2226b26baef[m
+Author: ylee903 <79842277+ylee903@users.noreply.github.com>
+Date:   Thu Apr 10 23:47:16 2025 +1200
+
+    Ignore problematic files
+
+[33mcommit c28822ad0f6f127c3778ca126142fb51142f445c[m
+Author: ylee903 <79842277+ylee903@users.noreply.github.com>
+Date:   Thu Apr 10 23:46:49 2025 +1200
+
+    Ignore problematic files
+
+[33mcommit 356b96d20e92fe725abbd690bb851d624998ff50[m
+Author: ylee903 <79842277+ylee903@users.noreply.github.com>
+Date:   Thu Apr 10 23:22:19 2025 +1200
+
+    initial state

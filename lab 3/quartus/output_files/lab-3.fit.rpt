@@ -1,5 +1,5 @@
 Fitter report for lab-3
-Fri Apr 11 03:16:15 2025
+Fri Apr 11 03:39:52 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -65,7 +65,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                        ;
 +-------------------------------------+-------------------------------------------------+
-; Fitter Status                       ; Successful - Fri Apr 11 03:16:15 2025           ;
+; Fitter Status                       ; Successful - Fri Apr 11 03:39:52 2025           ;
 ; Quartus II 64-Bit Version           ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                       ; lab-3                                           ;
 ; Top-level Entity Name               ; top_level_timer                                 ;
@@ -555,8 +555,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 196 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 196 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 197 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 197 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -579,7 +579,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 196     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 197     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 0       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -597,12 +597,12 @@ The pin-out file can be found in C:/Users/Samuel/Documents/2025/COMPSYS-305-Labs
 +-------------------------------------------------------------+---------------+-------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 47 / 18,480   ; < 1 % ;
 ; ALMs needed [=A-B+C]                                        ; 47            ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 54 / 18,480   ; < 1 % ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 55 / 18,480   ; < 1 % ;
 ;         [a] ALMs used for LUT logic and registers           ; 20            ;       ;
-;         [b] ALMs used for LUT logic                         ; 31            ;       ;
+;         [b] ALMs used for LUT logic                         ; 32            ;       ;
 ;         [c] ALMs used for registers                         ; 3             ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0             ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 7 / 18,480    ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 8 / 18,480    ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 18,480    ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0             ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0             ;       ;
@@ -615,11 +615,11 @@ The pin-out file can be found in C:/Users/Samuel/Documents/2025/COMPSYS-305-Labs
 ;     -- Logic LABs                                           ; 7             ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0             ;       ;
 ;                                                             ;               ;       ;
-; Combinational ALUT usage for logic                          ; 82            ;       ;
+; Combinational ALUT usage for logic                          ; 83            ;       ;
 ;     -- 7 input functions                                    ; 0             ;       ;
-;     -- 6 input functions                                    ; 12            ;       ;
-;     -- 5 input functions                                    ; 17            ;       ;
-;     -- 4 input functions                                    ; 17            ;       ;
+;     -- 6 input functions                                    ; 11            ;       ;
+;     -- 5 input functions                                    ; 18            ;       ;
+;     -- 4 input functions                                    ; 18            ;       ;
 ;     -- <=3 input functions                                  ; 36            ;       ;
 ; Combinational ALUT usage for route-throughs                 ; 1             ;       ;
 ; Dedicated logic registers                                   ; 45            ;       ;
@@ -655,7 +655,7 @@ The pin-out file can be found in C:/Users/Samuel/Documents/2025/COMPSYS-305-Labs
 ; Peak interconnect usage (total/H/V)                         ; 0% / 0% / 0%  ;       ;
 ; Maximum fan-out                                             ; 29            ;       ;
 ; Highest non-global fan-out                                  ; 27            ;       ;
-; Total fan-out                                               ; 483           ;       ;
+; Total fan-out                                               ; 486           ;       ;
 ; Average fan-out                                             ; 2.45          ;       ;
 +-------------------------------------------------------------+---------------+-------+
 
@@ -667,12 +667,12 @@ The pin-out file can be found in C:/Users/Samuel/Documents/2025/COMPSYS-305-Labs
 +-------------------------------------------------------------+----------------------+--------------------------------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 47 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
 ; ALMs needed [=A-B+C]                                        ; 47                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 54 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 55 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
 ;         [a] ALMs used for LUT logic and registers           ; 20                   ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 31                   ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 32                   ; 0                              ;
 ;         [c] ALMs used for registers                         ; 3                    ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                    ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 7 / 18480 ( < 1 % )  ; 0 / 18480 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 8 / 18480 ( < 1 % )  ; 0 / 18480 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 18480 ( 0 % )    ; 0 / 18480 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                    ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                    ; 0                              ;
@@ -685,11 +685,11 @@ The pin-out file can be found in C:/Users/Samuel/Documents/2025/COMPSYS-305-Labs
 ;     -- Logic LABs                                           ; 7                    ; 0                              ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
-; Combinational ALUT usage for logic                          ; 82                   ; 0                              ;
+; Combinational ALUT usage for logic                          ; 83                   ; 0                              ;
 ;     -- 7 input functions                                    ; 0                    ; 0                              ;
-;     -- 6 input functions                                    ; 12                   ; 0                              ;
-;     -- 5 input functions                                    ; 17                   ; 0                              ;
-;     -- 4 input functions                                    ; 17                   ; 0                              ;
+;     -- 6 input functions                                    ; 11                   ; 0                              ;
+;     -- 5 input functions                                    ; 18                   ; 0                              ;
+;     -- 4 input functions                                    ; 18                   ; 0                              ;
 ;     -- <=3 input functions                                  ; 36                   ; 0                              ;
 ; Combinational ALUT usage for route-throughs                 ; 1                    ; 0                              ;
 ; Memory ALUT usage                                           ; 0                    ; 0                              ;
@@ -719,8 +719,8 @@ The pin-out file can be found in C:/Users/Samuel/Documents/2025/COMPSYS-305-Labs
 ;     -- Registered Output Connections                        ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Internal Connections                                        ;                      ;                                ;
-;     -- Total Connections                                    ; 483                  ; 0                              ;
-;     -- Registered Connections                               ; 258                  ; 0                              ;
+;     -- Total Connections                                    ; 486                  ; 0                              ;
+;     -- Registered Connections                               ; 260                  ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; External Connections                                        ;                      ;                                ;
 ;     -- Top                                                  ; 0                    ; 0                              ;
@@ -1311,14 +1311,14 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-----------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node        ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                     ; Library Name ;
 +-----------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-------------------------------------------------------------------------+--------------+
-; |top_level_timer                  ; 47.0 (20.5)          ; 53.0 (20.8)                      ; 6.0 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 82 (35)             ; 45 (30)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 34   ; 0            ; |top_level_timer                                                        ; work         ;
-;    |BCD_to_SevenSeg:seg0|         ; 5.2 (5.2)            ; 7.3 (7.3)                        ; 2.1 (2.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg0                                   ; work         ;
-;    |BCD_to_SevenSeg:seg1|         ; 5.2 (5.2)            ; 7.3 (7.3)                        ; 2.2 (2.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg1                                   ; work         ;
-;    |BCD_to_SevenSeg:seg2|         ; 4.2 (4.2)            ; 4.2 (4.2)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 9 (9)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg2                                   ; work         ;
-;    |three_digit_timer:timer_inst| ; 11.4 (2.0)           ; 13.5 (2.3)                       ; 2.1 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 18 (3)              ; 15 (3)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst                           ; work         ;
-;       |BCD_Counter:min_ones_inst| ; 2.6 (2.6)            ; 4.2 (4.2)                        ; 1.6 (1.6)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:min_ones_inst ; work         ;
-;       |BCD_Counter:sec_ones_inst| ; 3.0 (3.0)            ; 3.0 (3.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst ; work         ;
-;       |BCD_Counter:sec_tens_inst| ; 3.7 (3.7)            ; 4.0 (4.0)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst ; work         ;
+; |top_level_timer                  ; 47.0 (20.5)          ; 54.0 (20.8)                      ; 7.0 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 83 (35)             ; 45 (30)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 34   ; 0            ; |top_level_timer                                                        ; work         ;
+;    |BCD_to_SevenSeg:seg0|         ; 5.5 (5.5)            ; 7.0 (7.0)                        ; 1.5 (1.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg0                                   ; work         ;
+;    |BCD_to_SevenSeg:seg1|         ; 4.9 (4.9)            ; 4.9 (4.9)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg1                                   ; work         ;
+;    |BCD_to_SevenSeg:seg2|         ; 5.1 (5.1)            ; 5.2 (5.2)                        ; 0.1 (0.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg2                                   ; work         ;
+;    |three_digit_timer:timer_inst| ; 10.9 (2.3)           ; 16.1 (2.5)                       ; 5.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 18 (3)              ; 15 (3)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst                           ; work         ;
+;       |BCD_Counter:min_ones_inst| ; 2.6 (2.6)            ; 4.8 (4.8)                        ; 2.3 (2.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:min_ones_inst ; work         ;
+;       |BCD_Counter:sec_ones_inst| ; 2.3 (2.3)            ; 3.8 (3.8)                        ; 1.4 (1.4)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst ; work         ;
+;       |BCD_Counter:sec_tens_inst| ; 3.7 (3.7)            ; 5.0 (5.0)                        ; 1.3 (1.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst ; work         ;
 +-----------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1361,7 +1361,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HEX2[5]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; HEX2[6]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; KEY[0]   ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; CLOCK_50 ; Input    ; -- ; (0)  ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; CLOCK_50 ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +----------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
 
@@ -1384,7 +1384,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Enable~0     ; 0                 ; 0       ;
 ;      - last_key1~0  ; 0                 ; 0       ;
 ; CLOCK_50            ;                   ;         ;
-;      - tick_1hz     ; 1                 ; 0       ;
+;      - tick_1hz     ; 0                 ; 0       ;
 +---------------------+-------------------+---------+
 
 
@@ -1395,11 +1395,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; CLOCK_50                                                            ; PIN_M9             ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
 ; CLOCK_50                                                            ; PIN_M9             ; 29      ; Clock        ; yes    ; Global Clock         ; GCLK5            ; --                        ;
-; Equal3~4                                                            ; LABCELL_X26_Y2_N15 ; 27      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[0]~1 ; LABCELL_X32_Y2_N18 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[0]~1 ; LABCELL_X31_Y2_N36 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[3]~1 ; LABCELL_X31_Y2_N54 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; tick_1hz                                                            ; FF_X26_Y2_N20      ; 15      ; Clock        ; no     ; --                   ; --               ; --                        ;
+; Equal3~4                                                            ; LABCELL_X32_Y2_N15 ; 27      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[0]~1 ; LABCELL_X35_Y1_N15 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[0]~1 ; LABCELL_X36_Y1_N57 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[3]~1 ; LABCELL_X35_Y1_N9  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; tick_1hz                                                            ; FF_X32_Y2_N26      ; 15      ; Clock        ; no     ; --                   ; --               ; --                        ;
 +---------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1419,8 +1419,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------+---------+
 ; Equal3~4                                                            ; 27      ;
 ; timer_reset                                                         ; 17      ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[0]   ; 17      ;
 ; tick_1hz                                                            ; 15      ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[0]   ; 15      ;
 ; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[0]   ; 14      ;
 ; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[0]   ; 14      ;
 ; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[2]   ; 14      ;
@@ -1441,7 +1441,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[3]~1 ; 4       ;
 ; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[0]~1 ; 4       ;
 ; BCD_to_SevenSeg:seg1|Equal0~0                                       ; 3       ;
-; BCD_to_SevenSeg:seg0|Equal0~0                                       ; 3       ;
+; BCD_to_SevenSeg:seg0|SevenSeg_out~9                                 ; 3       ;
 ; KEY[0]~input                                                        ; 2       ;
 ; clk_divider[11]                                                     ; 2       ;
 ; clk_divider[10]                                                     ; 2       ;
@@ -1479,6 +1479,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Equal3~1                                                            ; 1       ;
 ; Equal3~0                                                            ; 1       ;
 ; process_0~0                                                         ; 1       ;
+; BCD_to_SevenSeg:seg2|Equal0~0                                       ; 1       ;
 ; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter~4    ; 1       ;
 ; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter~3    ; 1       ;
 ; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter~2    ; 1       ;
@@ -1578,14 +1579,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------+------------------------+
 ; Interconnect Resource Type ; Usage                  ;
 +----------------------------+------------------------+
-; Block interconnects        ; 83 / 140,056 ( < 1 % ) ;
+; Block interconnects        ; 84 / 140,056 ( < 1 % ) ;
 ; C12 interconnects          ; 1 / 6,048 ( < 1 % )    ;
-; C2 interconnects           ; 28 / 54,648 ( < 1 % )  ;
-; C4 interconnects           ; 19 / 25,920 ( < 1 % )  ;
-; Local interconnects        ; 47 / 36,960 ( < 1 % )  ;
-; R14 interconnects          ; 7 / 5,984 ( < 1 % )    ;
-; R3 interconnects           ; 52 / 60,192 ( < 1 % )  ;
-; R6 interconnects           ; 51 / 127,072 ( < 1 % ) ;
+; C2 interconnects           ; 26 / 54,648 ( < 1 % )  ;
+; C4 interconnects           ; 13 / 25,920 ( < 1 % )  ;
+; Local interconnects        ; 48 / 36,960 ( < 1 % )  ;
+; R14 interconnects          ; 8 / 5,984 ( < 1 % )    ;
+; R3 interconnects           ; 40 / 60,192 ( < 1 % )  ;
+; R6 interconnects           ; 49 / 127,072 ( < 1 % ) ;
 +----------------------------+------------------------+
 
 
@@ -1597,11 +1598,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DQS bus muxes                ; 0 / 17 ( 0 % )         ;
 ; DQS-18 I/O buses             ; 0 / 17 ( 0 % )         ;
 ; DQS-9 I/O buses              ; 0 / 17 ( 0 % )         ;
-; Direct links                 ; 15 / 140,056 ( < 1 % ) ;
+; Direct links                 ; 16 / 140,056 ( < 1 % ) ;
 ; Global clocks                ; 1 / 16 ( 6 % )         ;
 ; Quadrant clocks              ; 0 / 88 ( 0 % )         ;
-; R14/C12 interconnect drivers ; 8 / 9,504 ( < 1 % )    ;
-; Spine clocks                 ; 2 / 120 ( 2 % )        ;
+; R14/C12 interconnect drivers ; 9 / 9,504 ( < 1 % )    ;
+; Spine clocks                 ; 1 / 120 ( < 1 % )      ;
 ; Wire stub REs                ; 0 / 7,344 ( 0 % )      ;
 +------------------------------+------------------------+
 
@@ -1745,10 +1746,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; tick_1hz        ; CLOCK_50             ; 8.6               ;
-; CLOCK_50        ; CLOCK_50             ; 1.6               ;
-; tick_1hz        ; CLOCK_50,tick_1hz    ; 1.5               ;
-; tick_1hz        ; tick_1hz             ; 1.0               ;
+; CLOCK_50        ; CLOCK_50             ; 7.4               ;
+; tick_1hz        ; CLOCK_50             ; 7.0               ;
+; tick_1hz        ; tick_1hz             ; 2.9               ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using either the TimeQuest Timing Analyzer or the Classic Timing Analyzer.
@@ -1759,32 +1759,49 @@ This will disable optimization of problematic paths and expose them for further 
 +-------------------------------------------------------------------+-------------------------------------------------------------------+-------------------+
 ; Source Register                                                   ; Destination Register                                              ; Delay Added in ns ;
 +-------------------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[0] ; timer_reset                                                       ; 1.611             ;
-; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[2] ; timer_reset                                                       ; 1.578             ;
-; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[1] ; timer_reset                                                       ; 1.573             ;
-; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[3] ; timer_reset                                                       ; 1.557             ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[1] ; timer_reset                                                       ; 1.363             ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[0] ; timer_reset                                                       ; 1.347             ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[2] ; timer_reset                                                       ; 1.320             ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[3] ; timer_reset                                                       ; 1.313             ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[2] ; timer_reset                                                       ; 1.285             ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[0] ; timer_reset                                                       ; 1.282             ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[3] ; timer_reset                                                       ; 1.282             ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[1] ; timer_reset                                                       ; 1.278             ;
-; clk_divider[1]                                                    ; tick_1hz                                                          ; 0.412             ;
-; clk_divider[0]                                                    ; tick_1hz                                                          ; 0.374             ;
-; clk_divider[7]                                                    ; tick_1hz                                                          ; 0.272             ;
-; clk_divider[6]                                                    ; tick_1hz                                                          ; 0.271             ;
-; clk_divider[4]                                                    ; tick_1hz                                                          ; 0.255             ;
-; clk_divider[3]                                                    ; tick_1hz                                                          ; 0.219             ;
-; three_digit_timer:timer_inst|reset_sec_tens                       ; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[0] ; 0.139             ;
-; clk_divider[9]                                                    ; tick_1hz                                                          ; 0.101             ;
-; clk_divider[8]                                                    ; tick_1hz                                                          ; 0.101             ;
-; clk_divider[5]                                                    ; tick_1hz                                                          ; 0.101             ;
-; clk_divider[2]                                                    ; tick_1hz                                                          ; 0.047             ;
-; three_digit_timer:timer_inst|en_min_ones                          ; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[1] ; 0.041             ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[0] ; timer_reset                                                       ; 1.542             ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[3] ; timer_reset                                                       ; 1.402             ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[2] ; timer_reset                                                       ; 1.371             ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[0] ; timer_reset                                                       ; 1.366             ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[1] ; timer_reset                                                       ; 1.357             ;
+; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[1] ; timer_reset                                                       ; 1.235             ;
+; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[0] ; timer_reset                                                       ; 1.219             ;
+; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[3] ; timer_reset                                                       ; 1.193             ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[3] ; timer_reset                                                       ; 1.188             ;
+; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[2] ; timer_reset                                                       ; 1.185             ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[1] ; timer_reset                                                       ; 1.148             ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[2] ; timer_reset                                                       ; 1.148             ;
+; clk_divider[1]                                                    ; tick_1hz                                                          ; 0.927             ;
+; clk_divider[0]                                                    ; tick_1hz                                                          ; 0.889             ;
+; clk_divider[4]                                                    ; tick_1hz                                                          ; 0.738             ;
+; clk_divider[7]                                                    ; tick_1hz                                                          ; 0.673             ;
+; clk_divider[6]                                                    ; tick_1hz                                                          ; 0.669             ;
+; clk_divider[3]                                                    ; tick_1hz                                                          ; 0.623             ;
+; clk_divider[9]                                                    ; tick_1hz                                                          ; 0.600             ;
+; clk_divider[2]                                                    ; tick_1hz                                                          ; 0.459             ;
+; clk_divider[5]                                                    ; tick_1hz                                                          ; 0.400             ;
+; clk_divider[8]                                                    ; tick_1hz                                                          ; 0.394             ;
+; last_key1                                                         ; Enable                                                            ; 0.291             ;
+; clk_divider[15]                                                   ; tick_1hz                                                          ; 0.274             ;
+; clk_divider[12]                                                   ; tick_1hz                                                          ; 0.272             ;
+; three_digit_timer:timer_inst|reset_sec_tens                       ; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[0] ; 0.247             ;
+; clk_divider[22]                                                   ; tick_1hz                                                          ; 0.232             ;
+; clk_divider[16]                                                   ; tick_1hz                                                          ; 0.223             ;
+; clk_divider[18]                                                   ; tick_1hz                                                          ; 0.221             ;
+; clk_divider[14]                                                   ; tick_1hz                                                          ; 0.218             ;
+; clk_divider[21]                                                   ; tick_1hz                                                          ; 0.199             ;
+; clk_divider[20]                                                   ; tick_1hz                                                          ; 0.189             ;
+; clk_divider[13]                                                   ; tick_1hz                                                          ; 0.185             ;
+; clk_divider[19]                                                   ; tick_1hz                                                          ; 0.121             ;
+; clk_divider[25]                                                   ; tick_1hz                                                          ; 0.119             ;
+; clk_divider[24]                                                   ; tick_1hz                                                          ; 0.119             ;
+; clk_divider[23]                                                   ; tick_1hz                                                          ; 0.119             ;
+; three_digit_timer:timer_inst|en_sec_tens                          ; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[3] ; 0.090             ;
+; tick_1hz                                                          ; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[0] ; 0.087             ;
+; timer_reset                                                       ; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[3] ; 0.045             ;
+; clk_divider[17]                                                   ; tick_1hz                                                          ; 0.028             ;
 +-------------------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-Note: This table only shows the top 24 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 41 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -2167,7 +2184,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.33 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.38 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2176,9 +2193,9 @@ Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/Samuel/Documents/2025/COMPSYS-305-Labs/lab 3/quartus/output_files/lab-3.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 351 warnings
-    Info: Peak virtual memory: 5606 megabytes
-    Info: Processing ended: Fri Apr 11 03:16:15 2025
-    Info: Elapsed time: 00:00:16
+    Info: Peak virtual memory: 5622 megabytes
+    Info: Processing ended: Fri Apr 11 03:39:53 2025
+    Info: Elapsed time: 00:00:18
     Info: Total CPU time (on all processors): 00:00:16
 
 

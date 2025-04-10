@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for lab-3
-Fri Apr 11 03:16:24 2025
+Fri Apr 11 03:40:01 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -131,8 +131,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------+-----------------+------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
 +------------+-----------------+------------+------+
-; 250.19 MHz ; 250.19 MHz      ; CLOCK_50   ;      ;
-; 351.99 MHz ; 351.99 MHz      ; tick_1hz   ;      ;
+; 249.25 MHz ; 249.25 MHz      ; CLOCK_50   ;      ;
+; 376.93 MHz ; 376.93 MHz      ; tick_1hz   ;      ;
 +------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -148,8 +148,8 @@ HTML report is unavailable in plain text report export.
 +----------+--------+-----------------+
 ; Clock    ; Slack  ; End Point TNS   ;
 +----------+--------+-----------------+
-; tick_1hz ; -3.703 ; -51.588         ;
-; CLOCK_50 ; -2.997 ; -77.795         ;
+; tick_1hz ; -3.482 ; -48.570         ;
+; CLOCK_50 ; -3.012 ; -77.769         ;
 +----------+--------+-----------------+
 
 
@@ -158,8 +158,8 @@ HTML report is unavailable in plain text report export.
 +----------+--------+----------------+
 ; Clock    ; Slack  ; End Point TNS  ;
 +----------+--------+----------------+
-; CLOCK_50 ; -0.977 ; -0.977         ;
-; tick_1hz ; 0.453  ; 0.000          ;
+; CLOCK_50 ; -1.061 ; -1.061         ;
+; tick_1hz ; 0.373  ; 0.000          ;
 +----------+--------+----------------+
 
 
@@ -180,8 +180,8 @@ No paths to report.
 +----------+--------+-------------------------------+
 ; Clock    ; Slack  ; End Point TNS                 ;
 +----------+--------+-------------------------------+
-; CLOCK_50 ; -0.538 ; -26.047                       ;
-; tick_1hz ; -0.538 ; -13.451                       ;
+; CLOCK_50 ; -0.655 ; -26.141                       ;
+; tick_1hz ; -0.538 ; -12.382                       ;
 +----------+--------+-------------------------------+
 
 
@@ -190,8 +190,8 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; KEY[*]    ; CLOCK_50   ; 2.546 ; 2.952 ; Rise       ; CLOCK_50        ;
-;  KEY[0]   ; CLOCK_50   ; 2.546 ; 2.952 ; Rise       ; CLOCK_50        ;
+; KEY[*]    ; CLOCK_50   ; 1.806 ; 2.466 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 1.806 ; 2.466 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -200,8 +200,8 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; KEY[*]    ; CLOCK_50   ; -0.016 ; -0.472 ; Rise       ; CLOCK_50        ;
-;  KEY[0]   ; CLOCK_50   ; -0.016 ; -0.472 ; Rise       ; CLOCK_50        ;
+; KEY[*]    ; CLOCK_50   ; -0.104 ; -0.571 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; -0.104 ; -0.571 ; Rise       ; CLOCK_50        ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -210,32 +210,32 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; LEDR[*]   ; CLOCK_50   ; 10.129 ; 10.836 ; Rise       ; CLOCK_50        ;
-;  LEDR[0]  ; CLOCK_50   ; 10.129 ; 10.836 ; Rise       ; CLOCK_50        ;
-; HEX0[*]   ; tick_1hz   ; 9.534  ; 9.983  ; Rise       ; tick_1hz        ;
-;  HEX0[0]  ; tick_1hz   ; 9.473  ; 9.983  ; Rise       ; tick_1hz        ;
-;  HEX0[1]  ; tick_1hz   ; 9.240  ; 9.503  ; Rise       ; tick_1hz        ;
-;  HEX0[2]  ; tick_1hz   ; 9.534  ; 9.550  ; Rise       ; tick_1hz        ;
-;  HEX0[3]  ; tick_1hz   ; 9.389  ; 9.882  ; Rise       ; tick_1hz        ;
-;  HEX0[4]  ; tick_1hz   ; 8.616  ; 8.748  ; Rise       ; tick_1hz        ;
-;  HEX0[5]  ; tick_1hz   ; 8.883  ; 9.369  ; Rise       ; tick_1hz        ;
-;  HEX0[6]  ; tick_1hz   ; 8.880  ; 8.705  ; Rise       ; tick_1hz        ;
-; HEX1[*]   ; tick_1hz   ; 8.965  ; 9.318  ; Rise       ; tick_1hz        ;
-;  HEX1[0]  ; tick_1hz   ; 8.644  ; 8.969  ; Rise       ; tick_1hz        ;
-;  HEX1[1]  ; tick_1hz   ; 8.344  ; 8.397  ; Rise       ; tick_1hz        ;
-;  HEX1[2]  ; tick_1hz   ; 8.965  ; 9.318  ; Rise       ; tick_1hz        ;
-;  HEX1[3]  ; tick_1hz   ; 8.343  ; 8.632  ; Rise       ; tick_1hz        ;
-;  HEX1[4]  ; tick_1hz   ; 7.791  ; 7.866  ; Rise       ; tick_1hz        ;
-;  HEX1[5]  ; tick_1hz   ; 8.650  ; 9.026  ; Rise       ; tick_1hz        ;
-;  HEX1[6]  ; tick_1hz   ; 8.457  ; 8.314  ; Rise       ; tick_1hz        ;
-; HEX2[*]   ; tick_1hz   ; 8.946  ; 9.255  ; Rise       ; tick_1hz        ;
-;  HEX2[0]  ; tick_1hz   ; 8.946  ; 9.255  ; Rise       ; tick_1hz        ;
-;  HEX2[1]  ; tick_1hz   ; 8.769  ; 8.649  ; Rise       ; tick_1hz        ;
-;  HEX2[2]  ; tick_1hz   ; 8.812  ; 9.048  ; Rise       ; tick_1hz        ;
-;  HEX2[3]  ; tick_1hz   ; 8.549  ; 8.809  ; Rise       ; tick_1hz        ;
-;  HEX2[4]  ; tick_1hz   ; 7.484  ; 7.741  ; Rise       ; tick_1hz        ;
-;  HEX2[5]  ; tick_1hz   ; 8.929  ; 9.081  ; Rise       ; tick_1hz        ;
-;  HEX2[6]  ; tick_1hz   ; 8.225  ; 7.805  ; Rise       ; tick_1hz        ;
+; LEDR[*]   ; CLOCK_50   ; 10.185 ; 10.730 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 10.185 ; 10.730 ; Rise       ; CLOCK_50        ;
+; HEX0[*]   ; tick_1hz   ; 9.121  ; 9.142  ; Rise       ; tick_1hz        ;
+;  HEX0[0]  ; tick_1hz   ; 8.769  ; 8.829  ; Rise       ; tick_1hz        ;
+;  HEX0[1]  ; tick_1hz   ; 9.121  ; 9.142  ; Rise       ; tick_1hz        ;
+;  HEX0[2]  ; tick_1hz   ; 8.680  ; 8.791  ; Rise       ; tick_1hz        ;
+;  HEX0[3]  ; tick_1hz   ; 8.908  ; 9.011  ; Rise       ; tick_1hz        ;
+;  HEX0[4]  ; tick_1hz   ; 7.742  ; 7.992  ; Rise       ; tick_1hz        ;
+;  HEX0[5]  ; tick_1hz   ; 8.637  ; 8.671  ; Rise       ; tick_1hz        ;
+;  HEX0[6]  ; tick_1hz   ; 7.974  ; 7.868  ; Rise       ; tick_1hz        ;
+; HEX1[*]   ; tick_1hz   ; 8.598  ; 8.696  ; Rise       ; tick_1hz        ;
+;  HEX1[0]  ; tick_1hz   ; 8.529  ; 8.696  ; Rise       ; tick_1hz        ;
+;  HEX1[1]  ; tick_1hz   ; 8.344  ; 8.334  ; Rise       ; tick_1hz        ;
+;  HEX1[2]  ; tick_1hz   ; 8.453  ; 8.681  ; Rise       ; tick_1hz        ;
+;  HEX1[3]  ; tick_1hz   ; 8.314  ; 8.607  ; Rise       ; tick_1hz        ;
+;  HEX1[4]  ; tick_1hz   ; 7.426  ; 7.541  ; Rise       ; tick_1hz        ;
+;  HEX1[5]  ; tick_1hz   ; 8.172  ; 8.241  ; Rise       ; tick_1hz        ;
+;  HEX1[6]  ; tick_1hz   ; 8.598  ; 8.436  ; Rise       ; tick_1hz        ;
+; HEX2[*]   ; tick_1hz   ; 8.537  ; 8.784  ; Rise       ; tick_1hz        ;
+;  HEX2[0]  ; tick_1hz   ; 8.537  ; 8.676  ; Rise       ; tick_1hz        ;
+;  HEX2[1]  ; tick_1hz   ; 8.534  ; 8.478  ; Rise       ; tick_1hz        ;
+;  HEX2[2]  ; tick_1hz   ; 8.510  ; 8.710  ; Rise       ; tick_1hz        ;
+;  HEX2[3]  ; tick_1hz   ; 7.929  ; 8.103  ; Rise       ; tick_1hz        ;
+;  HEX2[4]  ; tick_1hz   ; 6.966  ; 6.965  ; Rise       ; tick_1hz        ;
+;  HEX2[5]  ; tick_1hz   ; 8.513  ; 8.784  ; Rise       ; tick_1hz        ;
+;  HEX2[6]  ; tick_1hz   ; 7.567  ; 7.386  ; Rise       ; tick_1hz        ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -244,32 +244,32 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDR[*]   ; CLOCK_50   ; 9.330 ; 9.789 ; Rise       ; CLOCK_50        ;
-;  LEDR[0]  ; CLOCK_50   ; 9.330 ; 9.789 ; Rise       ; CLOCK_50        ;
-; HEX0[*]   ; tick_1hz   ; 6.796 ; 6.931 ; Rise       ; tick_1hz        ;
-;  HEX0[0]  ; tick_1hz   ; 7.218 ; 7.359 ; Rise       ; tick_1hz        ;
-;  HEX0[1]  ; tick_1hz   ; 7.411 ; 7.237 ; Rise       ; tick_1hz        ;
-;  HEX0[2]  ; tick_1hz   ; 7.016 ; 7.166 ; Rise       ; tick_1hz        ;
-;  HEX0[3]  ; tick_1hz   ; 7.147 ; 7.288 ; Rise       ; tick_1hz        ;
-;  HEX0[4]  ; tick_1hz   ; 6.796 ; 6.986 ; Rise       ; tick_1hz        ;
-;  HEX0[5]  ; tick_1hz   ; 7.021 ; 7.155 ; Rise       ; tick_1hz        ;
-;  HEX0[6]  ; tick_1hz   ; 6.938 ; 6.931 ; Rise       ; tick_1hz        ;
-; HEX1[*]   ; tick_1hz   ; 6.501 ; 6.651 ; Rise       ; tick_1hz        ;
-;  HEX1[0]  ; tick_1hz   ; 6.618 ; 6.756 ; Rise       ; tick_1hz        ;
-;  HEX1[1]  ; tick_1hz   ; 6.804 ; 6.676 ; Rise       ; tick_1hz        ;
-;  HEX1[2]  ; tick_1hz   ; 6.794 ; 6.991 ; Rise       ; tick_1hz        ;
-;  HEX1[3]  ; tick_1hz   ; 6.773 ; 6.906 ; Rise       ; tick_1hz        ;
-;  HEX1[4]  ; tick_1hz   ; 6.501 ; 6.651 ; Rise       ; tick_1hz        ;
-;  HEX1[5]  ; tick_1hz   ; 6.647 ; 6.814 ; Rise       ; tick_1hz        ;
-;  HEX1[6]  ; tick_1hz   ; 7.106 ; 7.000 ; Rise       ; tick_1hz        ;
-; HEX2[*]   ; tick_1hz   ; 6.196 ; 6.286 ; Rise       ; tick_1hz        ;
-;  HEX2[0]  ; tick_1hz   ; 6.711 ; 6.814 ; Rise       ; tick_1hz        ;
-;  HEX2[1]  ; tick_1hz   ; 6.398 ; 6.296 ; Rise       ; tick_1hz        ;
-;  HEX2[2]  ; tick_1hz   ; 6.481 ; 6.626 ; Rise       ; tick_1hz        ;
-;  HEX2[3]  ; tick_1hz   ; 6.196 ; 6.286 ; Rise       ; tick_1hz        ;
-;  HEX2[4]  ; tick_1hz   ; 6.299 ; 6.371 ; Rise       ; tick_1hz        ;
-;  HEX2[5]  ; tick_1hz   ; 6.777 ; 6.834 ; Rise       ; tick_1hz        ;
-;  HEX2[6]  ; tick_1hz   ; 6.763 ; 6.534 ; Rise       ; tick_1hz        ;
+; LEDR[*]   ; CLOCK_50   ; 9.398 ; 9.767 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 9.398 ; 9.767 ; Rise       ; CLOCK_50        ;
+; HEX0[*]   ; tick_1hz   ; 6.383 ; 6.452 ; Rise       ; tick_1hz        ;
+;  HEX0[0]  ; tick_1hz   ; 6.622 ; 6.669 ; Rise       ; tick_1hz        ;
+;  HEX0[1]  ; tick_1hz   ; 6.742 ; 6.692 ; Rise       ; tick_1hz        ;
+;  HEX0[2]  ; tick_1hz   ; 6.413 ; 6.452 ; Rise       ; tick_1hz        ;
+;  HEX0[3]  ; tick_1hz   ; 6.576 ; 6.594 ; Rise       ; tick_1hz        ;
+;  HEX0[4]  ; tick_1hz   ; 6.383 ; 6.504 ; Rise       ; tick_1hz        ;
+;  HEX0[5]  ; tick_1hz   ; 6.496 ; 6.536 ; Rise       ; tick_1hz        ;
+;  HEX0[6]  ; tick_1hz   ; 6.584 ; 6.568 ; Rise       ; tick_1hz        ;
+; HEX1[*]   ; tick_1hz   ; 6.273 ; 6.326 ; Rise       ; tick_1hz        ;
+;  HEX1[0]  ; tick_1hz   ; 6.539 ; 6.615 ; Rise       ; tick_1hz        ;
+;  HEX1[1]  ; tick_1hz   ; 6.412 ; 6.339 ; Rise       ; tick_1hz        ;
+;  HEX1[2]  ; tick_1hz   ; 6.527 ; 6.718 ; Rise       ; tick_1hz        ;
+;  HEX1[3]  ; tick_1hz   ; 6.479 ; 6.571 ; Rise       ; tick_1hz        ;
+;  HEX1[4]  ; tick_1hz   ; 6.273 ; 6.326 ; Rise       ; tick_1hz        ;
+;  HEX1[5]  ; tick_1hz   ; 6.315 ; 6.394 ; Rise       ; tick_1hz        ;
+;  HEX1[6]  ; tick_1hz   ; 7.149 ; 6.878 ; Rise       ; tick_1hz        ;
+; HEX2[*]   ; tick_1hz   ; 5.832 ; 5.877 ; Rise       ; tick_1hz        ;
+;  HEX2[0]  ; tick_1hz   ; 6.433 ; 6.449 ; Rise       ; tick_1hz        ;
+;  HEX2[1]  ; tick_1hz   ; 6.186 ; 6.084 ; Rise       ; tick_1hz        ;
+;  HEX2[2]  ; tick_1hz   ; 6.341 ; 6.443 ; Rise       ; tick_1hz        ;
+;  HEX2[3]  ; tick_1hz   ; 6.030 ; 6.104 ; Rise       ; tick_1hz        ;
+;  HEX2[4]  ; tick_1hz   ; 5.832 ; 5.877 ; Rise       ; tick_1hz        ;
+;  HEX2[5]  ; tick_1hz   ; 6.595 ; 6.790 ; Rise       ; tick_1hz        ;
+;  HEX2[6]  ; tick_1hz   ; 6.613 ; 6.439 ; Rise       ; tick_1hz        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -284,8 +284,8 @@ No synchronizer chains to report.
 +------------+-----------------+------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
 +------------+-----------------+------------+------+
-; 254.58 MHz ; 254.58 MHz      ; CLOCK_50   ;      ;
-; 353.73 MHz ; 353.73 MHz      ; tick_1hz   ;      ;
+; 250.25 MHz ; 250.25 MHz      ; CLOCK_50   ;      ;
+; 373.13 MHz ; 373.13 MHz      ; tick_1hz   ;      ;
 +------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -295,8 +295,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+--------+----------------+
 ; Clock    ; Slack  ; End Point TNS  ;
 +----------+--------+----------------+
-; tick_1hz ; -3.885 ; -53.884        ;
-; CLOCK_50 ; -2.928 ; -76.147        ;
+; tick_1hz ; -3.611 ; -50.378        ;
+; CLOCK_50 ; -2.996 ; -77.434        ;
 +----------+--------+----------------+
 
 
@@ -305,8 +305,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+--------+---------------+
 ; Clock    ; Slack  ; End Point TNS ;
 +----------+--------+---------------+
-; CLOCK_50 ; -1.276 ; -1.276        ;
-; tick_1hz ; 0.412  ; 0.000         ;
+; CLOCK_50 ; -1.302 ; -1.302        ;
+; tick_1hz ; 0.375  ; 0.000         ;
 +----------+--------+---------------+
 
 
@@ -327,8 +327,8 @@ No paths to report.
 +----------+--------+------------------------------+
 ; Clock    ; Slack  ; End Point TNS                ;
 +----------+--------+------------------------------+
-; CLOCK_50 ; -0.551 ; -23.512                      ;
-; tick_1hz ; -0.538 ; -13.154                      ;
+; CLOCK_50 ; -0.681 ; -23.663                      ;
+; tick_1hz ; -0.538 ; -12.272                      ;
 +----------+--------+------------------------------+
 
 
@@ -337,8 +337,8 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; KEY[*]    ; CLOCK_50   ; 2.415 ; 2.780 ; Rise       ; CLOCK_50        ;
-;  KEY[0]   ; CLOCK_50   ; 2.415 ; 2.780 ; Rise       ; CLOCK_50        ;
+; KEY[*]    ; CLOCK_50   ; 1.617 ; 2.272 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 1.617 ; 2.272 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -347,8 +347,8 @@ No paths to report.
 +-----------+------------+-------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+--------+------------+-----------------+
-; KEY[*]    ; CLOCK_50   ; 0.094 ; -0.387 ; Rise       ; CLOCK_50        ;
-;  KEY[0]   ; CLOCK_50   ; 0.094 ; -0.387 ; Rise       ; CLOCK_50        ;
+; KEY[*]    ; CLOCK_50   ; 0.029 ; -0.469 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 0.029 ; -0.469 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+--------+------------+-----------------+
 
 
@@ -357,32 +357,32 @@ No paths to report.
 +-----------+------------+-------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+--------+------------+-----------------+
-; LEDR[*]   ; CLOCK_50   ; 9.821 ; 10.498 ; Rise       ; CLOCK_50        ;
-;  LEDR[0]  ; CLOCK_50   ; 9.821 ; 10.498 ; Rise       ; CLOCK_50        ;
-; HEX0[*]   ; tick_1hz   ; 9.123 ; 9.563  ; Rise       ; tick_1hz        ;
-;  HEX0[0]  ; tick_1hz   ; 9.047 ; 9.563  ; Rise       ; tick_1hz        ;
-;  HEX0[1]  ; tick_1hz   ; 8.746 ; 9.018  ; Rise       ; tick_1hz        ;
-;  HEX0[2]  ; tick_1hz   ; 9.123 ; 9.087  ; Rise       ; tick_1hz        ;
-;  HEX0[3]  ; tick_1hz   ; 8.982 ; 9.474  ; Rise       ; tick_1hz        ;
-;  HEX0[4]  ; tick_1hz   ; 8.123 ; 8.283  ; Rise       ; tick_1hz        ;
-;  HEX0[5]  ; tick_1hz   ; 8.407 ; 8.890  ; Rise       ; tick_1hz        ;
-;  HEX0[6]  ; tick_1hz   ; 8.402 ; 8.212  ; Rise       ; tick_1hz        ;
-; HEX1[*]   ; tick_1hz   ; 8.542 ; 8.899  ; Rise       ; tick_1hz        ;
-;  HEX1[0]  ; tick_1hz   ; 8.188 ; 8.586  ; Rise       ; tick_1hz        ;
-;  HEX1[1]  ; tick_1hz   ; 7.903 ; 7.991  ; Rise       ; tick_1hz        ;
-;  HEX1[2]  ; tick_1hz   ; 8.542 ; 8.899  ; Rise       ; tick_1hz        ;
-;  HEX1[3]  ; tick_1hz   ; 7.898 ; 8.194  ; Rise       ; tick_1hz        ;
-;  HEX1[4]  ; tick_1hz   ; 7.397 ; 7.446  ; Rise       ; tick_1hz        ;
-;  HEX1[5]  ; tick_1hz   ; 8.164 ; 8.621  ; Rise       ; tick_1hz        ;
-;  HEX1[6]  ; tick_1hz   ; 8.007 ; 7.886  ; Rise       ; tick_1hz        ;
-; HEX2[*]   ; tick_1hz   ; 8.547 ; 8.842  ; Rise       ; tick_1hz        ;
-;  HEX2[0]  ; tick_1hz   ; 8.501 ; 8.842  ; Rise       ; tick_1hz        ;
-;  HEX2[1]  ; tick_1hz   ; 8.360 ; 8.274  ; Rise       ; tick_1hz        ;
-;  HEX2[2]  ; tick_1hz   ; 8.435 ; 8.666  ; Rise       ; tick_1hz        ;
-;  HEX2[3]  ; tick_1hz   ; 8.112 ; 8.332  ; Rise       ; tick_1hz        ;
-;  HEX2[4]  ; tick_1hz   ; 7.040 ; 7.300  ; Rise       ; tick_1hz        ;
-;  HEX2[5]  ; tick_1hz   ; 8.547 ; 8.690  ; Rise       ; tick_1hz        ;
-;  HEX2[6]  ; tick_1hz   ; 7.803 ; 7.465  ; Rise       ; tick_1hz        ;
+; LEDR[*]   ; CLOCK_50   ; 9.829 ; 10.374 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 9.829 ; 10.374 ; Rise       ; CLOCK_50        ;
+; HEX0[*]   ; tick_1hz   ; 8.736 ; 8.798  ; Rise       ; tick_1hz        ;
+;  HEX0[0]  ; tick_1hz   ; 8.333 ; 8.418  ; Rise       ; tick_1hz        ;
+;  HEX0[1]  ; tick_1hz   ; 8.736 ; 8.798  ; Rise       ; tick_1hz        ;
+;  HEX0[2]  ; tick_1hz   ; 8.343 ; 8.438  ; Rise       ; tick_1hz        ;
+;  HEX0[3]  ; tick_1hz   ; 8.544 ; 8.674  ; Rise       ; tick_1hz        ;
+;  HEX0[4]  ; tick_1hz   ; 7.377 ; 7.585  ; Rise       ; tick_1hz        ;
+;  HEX0[5]  ; tick_1hz   ; 8.211 ; 8.270  ; Rise       ; tick_1hz        ;
+;  HEX0[6]  ; tick_1hz   ; 7.577 ; 7.422  ; Rise       ; tick_1hz        ;
+; HEX1[*]   ; tick_1hz   ; 8.170 ; 8.356  ; Rise       ; tick_1hz        ;
+;  HEX1[0]  ; tick_1hz   ; 8.170 ; 8.356  ; Rise       ; tick_1hz        ;
+;  HEX1[1]  ; tick_1hz   ; 7.983 ; 8.034  ; Rise       ; tick_1hz        ;
+;  HEX1[2]  ; tick_1hz   ; 8.098 ; 8.343  ; Rise       ; tick_1hz        ;
+;  HEX1[3]  ; tick_1hz   ; 7.921 ; 8.244  ; Rise       ; tick_1hz        ;
+;  HEX1[4]  ; tick_1hz   ; 7.078 ; 7.164  ; Rise       ; tick_1hz        ;
+;  HEX1[5]  ; tick_1hz   ; 7.724 ; 7.878  ; Rise       ; tick_1hz        ;
+;  HEX1[6]  ; tick_1hz   ; 8.137 ; 7.994  ; Rise       ; tick_1hz        ;
+; HEX2[*]   ; tick_1hz   ; 8.212 ; 8.312  ; Rise       ; tick_1hz        ;
+;  HEX2[0]  ; tick_1hz   ; 8.212 ; 8.275  ; Rise       ; tick_1hz        ;
+;  HEX2[1]  ; tick_1hz   ; 8.176 ; 8.090  ; Rise       ; tick_1hz        ;
+;  HEX2[2]  ; tick_1hz   ; 8.182 ; 8.304  ; Rise       ; tick_1hz        ;
+;  HEX2[3]  ; tick_1hz   ; 7.576 ; 7.685  ; Rise       ; tick_1hz        ;
+;  HEX2[4]  ; tick_1hz   ; 6.636 ; 6.564  ; Rise       ; tick_1hz        ;
+;  HEX2[5]  ; tick_1hz   ; 8.074 ; 8.312  ; Rise       ; tick_1hz        ;
+;  HEX2[6]  ; tick_1hz   ; 7.142 ; 6.969  ; Rise       ; tick_1hz        ;
 +-----------+------------+-------+--------+------------+-----------------+
 
 
@@ -391,32 +391,32 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDR[*]   ; CLOCK_50   ; 9.043 ; 9.493 ; Rise       ; CLOCK_50        ;
-;  LEDR[0]  ; CLOCK_50   ; 9.043 ; 9.493 ; Rise       ; CLOCK_50        ;
-; HEX0[*]   ; tick_1hz   ; 6.360 ; 6.497 ; Rise       ; tick_1hz        ;
-;  HEX0[0]  ; tick_1hz   ; 6.749 ; 6.908 ; Rise       ; tick_1hz        ;
-;  HEX0[1]  ; tick_1hz   ; 6.945 ; 6.769 ; Rise       ; tick_1hz        ;
-;  HEX0[2]  ; tick_1hz   ; 6.595 ; 6.712 ; Rise       ; tick_1hz        ;
-;  HEX0[3]  ; tick_1hz   ; 6.696 ; 6.844 ; Rise       ; tick_1hz        ;
-;  HEX0[4]  ; tick_1hz   ; 6.360 ; 6.525 ; Rise       ; tick_1hz        ;
-;  HEX0[5]  ; tick_1hz   ; 6.565 ; 6.705 ; Rise       ; tick_1hz        ;
-;  HEX0[6]  ; tick_1hz   ; 6.479 ; 6.497 ; Rise       ; tick_1hz        ;
-; HEX1[*]   ; tick_1hz   ; 6.074 ; 6.212 ; Rise       ; tick_1hz        ;
-;  HEX1[0]  ; tick_1hz   ; 6.196 ; 6.327 ; Rise       ; tick_1hz        ;
-;  HEX1[1]  ; tick_1hz   ; 6.369 ; 6.254 ; Rise       ; tick_1hz        ;
-;  HEX1[2]  ; tick_1hz   ; 6.350 ; 6.523 ; Rise       ; tick_1hz        ;
-;  HEX1[3]  ; tick_1hz   ; 6.320 ; 6.456 ; Rise       ; tick_1hz        ;
-;  HEX1[4]  ; tick_1hz   ; 6.074 ; 6.212 ; Rise       ; tick_1hz        ;
-;  HEX1[5]  ; tick_1hz   ; 6.185 ; 6.362 ; Rise       ; tick_1hz        ;
-;  HEX1[6]  ; tick_1hz   ; 6.633 ; 6.531 ; Rise       ; tick_1hz        ;
-; HEX2[*]   ; tick_1hz   ; 5.742 ; 5.832 ; Rise       ; tick_1hz        ;
-;  HEX2[0]  ; tick_1hz   ; 6.259 ; 6.360 ; Rise       ; tick_1hz        ;
-;  HEX2[1]  ; tick_1hz   ; 5.957 ; 5.858 ; Rise       ; tick_1hz        ;
-;  HEX2[2]  ; tick_1hz   ; 6.044 ; 6.193 ; Rise       ; tick_1hz        ;
-;  HEX2[3]  ; tick_1hz   ; 5.742 ; 5.832 ; Rise       ; tick_1hz        ;
-;  HEX2[4]  ; tick_1hz   ; 5.874 ; 5.915 ; Rise       ; tick_1hz        ;
-;  HEX2[5]  ; tick_1hz   ; 6.372 ; 6.388 ; Rise       ; tick_1hz        ;
-;  HEX2[6]  ; tick_1hz   ; 6.317 ; 6.111 ; Rise       ; tick_1hz        ;
+; LEDR[*]   ; CLOCK_50   ; 9.058 ; 9.446 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 9.058 ; 9.446 ; Rise       ; CLOCK_50        ;
+; HEX0[*]   ; tick_1hz   ; 5.976 ; 6.034 ; Rise       ; tick_1hz        ;
+;  HEX0[0]  ; tick_1hz   ; 6.186 ; 6.238 ; Rise       ; tick_1hz        ;
+;  HEX0[1]  ; tick_1hz   ; 6.318 ; 6.259 ; Rise       ; tick_1hz        ;
+;  HEX0[2]  ; tick_1hz   ; 6.005 ; 6.034 ; Rise       ; tick_1hz        ;
+;  HEX0[3]  ; tick_1hz   ; 6.156 ; 6.181 ; Rise       ; tick_1hz        ;
+;  HEX0[4]  ; tick_1hz   ; 5.976 ; 6.081 ; Rise       ; tick_1hz        ;
+;  HEX0[5]  ; tick_1hz   ; 6.074 ; 6.110 ; Rise       ; tick_1hz        ;
+;  HEX0[6]  ; tick_1hz   ; 6.166 ; 6.162 ; Rise       ; tick_1hz        ;
+; HEX1[*]   ; tick_1hz   ; 5.865 ; 5.915 ; Rise       ; tick_1hz        ;
+;  HEX1[0]  ; tick_1hz   ; 6.143 ; 6.217 ; Rise       ; tick_1hz        ;
+;  HEX1[1]  ; tick_1hz   ; 6.021 ; 5.957 ; Rise       ; tick_1hz        ;
+;  HEX1[2]  ; tick_1hz   ; 6.132 ; 6.325 ; Rise       ; tick_1hz        ;
+;  HEX1[3]  ; tick_1hz   ; 6.080 ; 6.173 ; Rise       ; tick_1hz        ;
+;  HEX1[4]  ; tick_1hz   ; 5.865 ; 5.915 ; Rise       ; tick_1hz        ;
+;  HEX1[5]  ; tick_1hz   ; 5.918 ; 5.990 ; Rise       ; tick_1hz        ;
+;  HEX1[6]  ; tick_1hz   ; 6.713 ; 6.473 ; Rise       ; tick_1hz        ;
+; HEX2[*]   ; tick_1hz   ; 5.426 ; 5.460 ; Rise       ; tick_1hz        ;
+;  HEX2[0]  ; tick_1hz   ; 6.026 ; 6.049 ; Rise       ; tick_1hz        ;
+;  HEX2[1]  ; tick_1hz   ; 5.765 ; 5.678 ; Rise       ; tick_1hz        ;
+;  HEX2[2]  ; tick_1hz   ; 5.921 ; 6.026 ; Rise       ; tick_1hz        ;
+;  HEX2[3]  ; tick_1hz   ; 5.654 ; 5.672 ; Rise       ; tick_1hz        ;
+;  HEX2[4]  ; tick_1hz   ; 5.426 ; 5.460 ; Rise       ; tick_1hz        ;
+;  HEX2[5]  ; tick_1hz   ; 6.211 ; 6.385 ; Rise       ; tick_1hz        ;
+;  HEX2[6]  ; tick_1hz   ; 6.238 ; 6.082 ; Rise       ; tick_1hz        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -431,8 +431,8 @@ No synchronizer chains to report.
 +----------+--------+-----------------+
 ; Clock    ; Slack  ; End Point TNS   ;
 +----------+--------+-----------------+
-; tick_1hz ; -1.430 ; -19.326         ;
-; CLOCK_50 ; -1.049 ; -25.953         ;
+; tick_1hz ; -1.368 ; -18.394         ;
+; CLOCK_50 ; -1.049 ; -26.160         ;
 +----------+--------+-----------------+
 
 
@@ -441,8 +441,8 @@ No synchronizer chains to report.
 +----------+--------+----------------+
 ; Clock    ; Slack  ; End Point TNS  ;
 +----------+--------+----------------+
-; CLOCK_50 ; -0.680 ; -0.680         ;
-; tick_1hz ; 0.149  ; 0.000          ;
+; CLOCK_50 ; -0.861 ; -0.861         ;
+; tick_1hz ; 0.095  ; 0.000          ;
 +----------+--------+----------------+
 
 
@@ -463,8 +463,8 @@ No paths to report.
 +----------+--------+-------------------------------+
 ; Clock    ; Slack  ; End Point TNS                 ;
 +----------+--------+-------------------------------+
-; CLOCK_50 ; -0.618 ; -14.370                       ;
-; tick_1hz ; -0.036 ; -0.512                        ;
+; CLOCK_50 ; -0.715 ; -14.579                       ;
+; tick_1hz ; 0.018  ; 0.000                         ;
 +----------+--------+-------------------------------+
 
 
@@ -473,8 +473,8 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; KEY[*]    ; CLOCK_50   ; 1.155 ; 1.949 ; Rise       ; CLOCK_50        ;
-;  KEY[0]   ; CLOCK_50   ; 1.155 ; 1.949 ; Rise       ; CLOCK_50        ;
+; KEY[*]    ; CLOCK_50   ; 0.811 ; 1.805 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 0.811 ; 1.805 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -483,8 +483,8 @@ No paths to report.
 +-----------+------------+-------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+--------+------------+-----------------+
-; KEY[*]    ; CLOCK_50   ; 0.095 ; -0.777 ; Rise       ; CLOCK_50        ;
-;  KEY[0]   ; CLOCK_50   ; 0.095 ; -0.777 ; Rise       ; CLOCK_50        ;
+; KEY[*]    ; CLOCK_50   ; 0.042 ; -0.866 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 0.042 ; -0.866 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+--------+------------+-----------------+
 
 
@@ -493,32 +493,32 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDR[*]   ; CLOCK_50   ; 5.761 ; 6.365 ; Rise       ; CLOCK_50        ;
-;  LEDR[0]  ; CLOCK_50   ; 5.761 ; 6.365 ; Rise       ; CLOCK_50        ;
-; HEX0[*]   ; tick_1hz   ; 5.427 ; 5.714 ; Rise       ; tick_1hz        ;
-;  HEX0[0]  ; tick_1hz   ; 5.352 ; 5.714 ; Rise       ; tick_1hz        ;
-;  HEX0[1]  ; tick_1hz   ; 5.413 ; 5.445 ; Rise       ; tick_1hz        ;
-;  HEX0[2]  ; tick_1hz   ; 5.427 ; 5.470 ; Rise       ; tick_1hz        ;
-;  HEX0[3]  ; tick_1hz   ; 5.284 ; 5.622 ; Rise       ; tick_1hz        ;
-;  HEX0[4]  ; tick_1hz   ; 5.032 ; 5.131 ; Rise       ; tick_1hz        ;
-;  HEX0[5]  ; tick_1hz   ; 5.112 ; 5.437 ; Rise       ; tick_1hz        ;
-;  HEX0[6]  ; tick_1hz   ; 5.214 ; 5.087 ; Rise       ; tick_1hz        ;
-; HEX1[*]   ; tick_1hz   ; 5.049 ; 5.271 ; Rise       ; tick_1hz        ;
-;  HEX1[0]  ; tick_1hz   ; 4.827 ; 5.096 ; Rise       ; tick_1hz        ;
-;  HEX1[1]  ; tick_1hz   ; 4.811 ; 4.782 ; Rise       ; tick_1hz        ;
-;  HEX1[2]  ; tick_1hz   ; 5.049 ; 5.271 ; Rise       ; tick_1hz        ;
-;  HEX1[3]  ; tick_1hz   ; 4.715 ; 4.954 ; Rise       ; tick_1hz        ;
-;  HEX1[4]  ; tick_1hz   ; 4.446 ; 4.533 ; Rise       ; tick_1hz        ;
-;  HEX1[5]  ; tick_1hz   ; 4.821 ; 5.132 ; Rise       ; tick_1hz        ;
-;  HEX1[6]  ; tick_1hz   ; 4.907 ; 4.747 ; Rise       ; tick_1hz        ;
-; HEX2[*]   ; tick_1hz   ; 4.982 ; 5.273 ; Rise       ; tick_1hz        ;
-;  HEX2[0]  ; tick_1hz   ; 4.982 ; 5.273 ; Rise       ; tick_1hz        ;
-;  HEX2[1]  ; tick_1hz   ; 4.912 ; 4.767 ; Rise       ; tick_1hz        ;
-;  HEX2[2]  ; tick_1hz   ; 4.811 ; 5.048 ; Rise       ; tick_1hz        ;
-;  HEX2[3]  ; tick_1hz   ; 4.922 ; 5.117 ; Rise       ; tick_1hz        ;
-;  HEX2[4]  ; tick_1hz   ; 4.270 ; 4.484 ; Rise       ; tick_1hz        ;
-;  HEX2[5]  ; tick_1hz   ; 4.941 ; 5.109 ; Rise       ; tick_1hz        ;
-;  HEX2[6]  ; tick_1hz   ; 4.782 ; 4.456 ; Rise       ; tick_1hz        ;
+; LEDR[*]   ; CLOCK_50   ; 5.682 ; 6.193 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 5.682 ; 6.193 ; Rise       ; CLOCK_50        ;
+; HEX0[*]   ; tick_1hz   ; 5.126 ; 5.020 ; Rise       ; tick_1hz        ;
+;  HEX0[0]  ; tick_1hz   ; 4.928 ; 5.011 ; Rise       ; tick_1hz        ;
+;  HEX0[1]  ; tick_1hz   ; 5.126 ; 5.020 ; Rise       ; tick_1hz        ;
+;  HEX0[2]  ; tick_1hz   ; 4.824 ; 4.908 ; Rise       ; tick_1hz        ;
+;  HEX0[3]  ; tick_1hz   ; 4.934 ; 5.005 ; Rise       ; tick_1hz        ;
+;  HEX0[4]  ; tick_1hz   ; 4.343 ; 4.590 ; Rise       ; tick_1hz        ;
+;  HEX0[5]  ; tick_1hz   ; 4.847 ; 4.900 ; Rise       ; tick_1hz        ;
+;  HEX0[6]  ; tick_1hz   ; 4.587 ; 4.492 ; Rise       ; tick_1hz        ;
+; HEX1[*]   ; tick_1hz   ; 4.893 ; 4.832 ; Rise       ; tick_1hz        ;
+;  HEX1[0]  ; tick_1hz   ; 4.655 ; 4.794 ; Rise       ; tick_1hz        ;
+;  HEX1[1]  ; tick_1hz   ; 4.654 ; 4.548 ; Rise       ; tick_1hz        ;
+;  HEX1[2]  ; tick_1hz   ; 4.665 ; 4.832 ; Rise       ; tick_1hz        ;
+;  HEX1[3]  ; tick_1hz   ; 4.653 ; 4.819 ; Rise       ; tick_1hz        ;
+;  HEX1[4]  ; tick_1hz   ; 4.121 ; 4.270 ; Rise       ; tick_1hz        ;
+;  HEX1[5]  ; tick_1hz   ; 4.514 ; 4.613 ; Rise       ; tick_1hz        ;
+;  HEX1[6]  ; tick_1hz   ; 4.893 ; 4.822 ; Rise       ; tick_1hz        ;
+; HEX2[*]   ; tick_1hz   ; 4.758 ; 5.044 ; Rise       ; tick_1hz        ;
+;  HEX2[0]  ; tick_1hz   ; 4.679 ; 4.847 ; Rise       ; tick_1hz        ;
+;  HEX2[1]  ; tick_1hz   ; 4.758 ; 4.657 ; Rise       ; tick_1hz        ;
+;  HEX2[2]  ; tick_1hz   ; 4.676 ; 4.874 ; Rise       ; tick_1hz        ;
+;  HEX2[3]  ; tick_1hz   ; 4.376 ; 4.515 ; Rise       ; tick_1hz        ;
+;  HEX2[4]  ; tick_1hz   ; 3.832 ; 3.923 ; Rise       ; tick_1hz        ;
+;  HEX2[5]  ; tick_1hz   ; 4.749 ; 5.044 ; Rise       ; tick_1hz        ;
+;  HEX2[6]  ; tick_1hz   ; 4.403 ; 4.228 ; Rise       ; tick_1hz        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -527,32 +527,32 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDR[*]   ; CLOCK_50   ; 5.393 ; 5.837 ; Rise       ; CLOCK_50        ;
-;  LEDR[0]  ; CLOCK_50   ; 5.393 ; 5.837 ; Rise       ; CLOCK_50        ;
-; HEX0[*]   ; tick_1hz   ; 3.974 ; 4.025 ; Rise       ; tick_1hz        ;
-;  HEX0[0]  ; tick_1hz   ; 4.195 ; 4.317 ; Rise       ; tick_1hz        ;
-;  HEX0[1]  ; tick_1hz   ; 4.342 ; 4.194 ; Rise       ; tick_1hz        ;
-;  HEX0[2]  ; tick_1hz   ; 4.064 ; 4.153 ; Rise       ; tick_1hz        ;
-;  HEX0[3]  ; tick_1hz   ; 4.133 ; 4.245 ; Rise       ; tick_1hz        ;
-;  HEX0[4]  ; tick_1hz   ; 3.974 ; 4.204 ; Rise       ; tick_1hz        ;
-;  HEX0[5]  ; tick_1hz   ; 4.078 ; 4.187 ; Rise       ; tick_1hz        ;
-;  HEX0[6]  ; tick_1hz   ; 4.080 ; 4.025 ; Rise       ; tick_1hz        ;
-; HEX1[*]   ; tick_1hz   ; 3.743 ; 3.867 ; Rise       ; tick_1hz        ;
-;  HEX1[0]  ; tick_1hz   ; 3.833 ; 3.957 ; Rise       ; tick_1hz        ;
-;  HEX1[1]  ; tick_1hz   ; 4.003 ; 3.867 ; Rise       ; tick_1hz        ;
-;  HEX1[2]  ; tick_1hz   ; 3.938 ; 4.118 ; Rise       ; tick_1hz        ;
-;  HEX1[3]  ; tick_1hz   ; 3.893 ; 4.044 ; Rise       ; tick_1hz        ;
-;  HEX1[4]  ; tick_1hz   ; 3.743 ; 3.933 ; Rise       ; tick_1hz        ;
-;  HEX1[5]  ; tick_1hz   ; 3.847 ; 3.997 ; Rise       ; tick_1hz        ;
-;  HEX1[6]  ; tick_1hz   ; 4.174 ; 4.044 ; Rise       ; tick_1hz        ;
-; HEX2[*]   ; tick_1hz   ; 3.607 ; 3.669 ; Rise       ; tick_1hz        ;
-;  HEX2[0]  ; tick_1hz   ; 3.920 ; 4.069 ; Rise       ; tick_1hz        ;
-;  HEX2[1]  ; tick_1hz   ; 3.796 ; 3.669 ; Rise       ; tick_1hz        ;
-;  HEX2[2]  ; tick_1hz   ; 3.741 ; 3.908 ; Rise       ; tick_1hz        ;
-;  HEX2[3]  ; tick_1hz   ; 3.607 ; 3.721 ; Rise       ; tick_1hz        ;
-;  HEX2[4]  ; tick_1hz   ; 3.651 ; 3.785 ; Rise       ; tick_1hz        ;
-;  HEX2[5]  ; tick_1hz   ; 3.945 ; 4.057 ; Rise       ; tick_1hz        ;
-;  HEX2[6]  ; tick_1hz   ; 4.043 ; 3.820 ; Rise       ; tick_1hz        ;
+; LEDR[*]   ; CLOCK_50   ; 5.330 ; 5.736 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 5.330 ; 5.736 ; Rise       ; CLOCK_50        ;
+; HEX0[*]   ; tick_1hz   ; 3.678 ; 3.735 ; Rise       ; tick_1hz        ;
+;  HEX0[0]  ; tick_1hz   ; 3.806 ; 3.887 ; Rise       ; tick_1hz        ;
+;  HEX0[1]  ; tick_1hz   ; 3.913 ; 3.828 ; Rise       ; tick_1hz        ;
+;  HEX0[2]  ; tick_1hz   ; 3.682 ; 3.735 ; Rise       ; tick_1hz        ;
+;  HEX0[3]  ; tick_1hz   ; 3.764 ; 3.817 ; Rise       ; tick_1hz        ;
+;  HEX0[4]  ; tick_1hz   ; 3.678 ; 3.815 ; Rise       ; tick_1hz        ;
+;  HEX0[5]  ; tick_1hz   ; 3.726 ; 3.789 ; Rise       ; tick_1hz        ;
+;  HEX0[6]  ; tick_1hz   ; 3.803 ; 3.754 ; Rise       ; tick_1hz        ;
+; HEX1[*]   ; tick_1hz   ; 3.553 ; 3.628 ; Rise       ; tick_1hz        ;
+;  HEX1[0]  ; tick_1hz   ; 3.699 ; 3.809 ; Rise       ; tick_1hz        ;
+;  HEX1[1]  ; tick_1hz   ; 3.715 ; 3.628 ; Rise       ; tick_1hz        ;
+;  HEX1[2]  ; tick_1hz   ; 3.738 ; 3.896 ; Rise       ; tick_1hz        ;
+;  HEX1[3]  ; tick_1hz   ; 3.688 ; 3.804 ; Rise       ; tick_1hz        ;
+;  HEX1[4]  ; tick_1hz   ; 3.553 ; 3.683 ; Rise       ; tick_1hz        ;
+;  HEX1[5]  ; tick_1hz   ; 3.604 ; 3.745 ; Rise       ; tick_1hz        ;
+;  HEX1[6]  ; tick_1hz   ; 4.150 ; 3.940 ; Rise       ; tick_1hz        ;
+; HEX2[*]   ; tick_1hz   ; 3.339 ; 3.414 ; Rise       ; tick_1hz        ;
+;  HEX2[0]  ; tick_1hz   ; 3.602 ; 3.679 ; Rise       ; tick_1hz        ;
+;  HEX2[1]  ; tick_1hz   ; 3.605 ; 3.477 ; Rise       ; tick_1hz        ;
+;  HEX2[2]  ; tick_1hz   ; 3.621 ; 3.734 ; Rise       ; tick_1hz        ;
+;  HEX2[3]  ; tick_1hz   ; 3.414 ; 3.480 ; Rise       ; tick_1hz        ;
+;  HEX2[4]  ; tick_1hz   ; 3.339 ; 3.414 ; Rise       ; tick_1hz        ;
+;  HEX2[5]  ; tick_1hz   ; 3.772 ; 3.946 ; Rise       ; tick_1hz        ;
+;  HEX2[6]  ; tick_1hz   ; 3.801 ; 3.656 ; Rise       ; tick_1hz        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -567,8 +567,8 @@ No synchronizer chains to report.
 +----------+--------+----------------+
 ; Clock    ; Slack  ; End Point TNS  ;
 +----------+--------+----------------+
-; tick_1hz ; -1.382 ; -18.718        ;
-; CLOCK_50 ; -0.972 ; -21.941        ;
+; tick_1hz ; -1.303 ; -17.730        ;
+; CLOCK_50 ; -0.900 ; -22.468        ;
 +----------+--------+----------------+
 
 
@@ -577,8 +577,8 @@ No synchronizer chains to report.
 +----------+--------+---------------+
 ; Clock    ; Slack  ; End Point TNS ;
 +----------+--------+---------------+
-; CLOCK_50 ; -0.784 ; -0.784        ;
-; tick_1hz ; 0.124  ; 0.000         ;
+; CLOCK_50 ; -0.898 ; -0.898        ;
+; tick_1hz ; 0.079  ; 0.000         ;
 +----------+--------+---------------+
 
 
@@ -599,8 +599,8 @@ No paths to report.
 +----------+--------+------------------------------+
 ; Clock    ; Slack  ; End Point TNS                ;
 +----------+--------+------------------------------+
-; CLOCK_50 ; -0.657 ; -17.201                      ;
-; tick_1hz ; 0.014  ; 0.000                        ;
+; CLOCK_50 ; -0.738 ; -17.363                      ;
+; tick_1hz ; 0.049  ; 0.000                        ;
 +----------+--------+------------------------------+
 
 
@@ -609,8 +609,8 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; KEY[*]    ; CLOCK_50   ; 1.018 ; 1.828 ; Rise       ; CLOCK_50        ;
-;  KEY[0]   ; CLOCK_50   ; 1.018 ; 1.828 ; Rise       ; CLOCK_50        ;
+; KEY[*]    ; CLOCK_50   ; 0.697 ; 1.680 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 0.697 ; 1.680 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -619,8 +619,8 @@ No paths to report.
 +-----------+------------+-------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+--------+------------+-----------------+
-; KEY[*]    ; CLOCK_50   ; 0.144 ; -0.753 ; Rise       ; CLOCK_50        ;
-;  KEY[0]   ; CLOCK_50   ; 0.144 ; -0.753 ; Rise       ; CLOCK_50        ;
+; KEY[*]    ; CLOCK_50   ; 0.098 ; -0.827 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 0.098 ; -0.827 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+--------+------------+-----------------+
 
 
@@ -629,32 +629,32 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDR[*]   ; CLOCK_50   ; 5.309 ; 5.792 ; Rise       ; CLOCK_50        ;
-;  LEDR[0]  ; CLOCK_50   ; 5.309 ; 5.792 ; Rise       ; CLOCK_50        ;
-; HEX0[*]   ; tick_1hz   ; 4.905 ; 5.134 ; Rise       ; tick_1hz        ;
-;  HEX0[0]  ; tick_1hz   ; 4.824 ; 5.134 ; Rise       ; tick_1hz        ;
-;  HEX0[1]  ; tick_1hz   ; 4.850 ; 4.904 ; Rise       ; tick_1hz        ;
-;  HEX0[2]  ; tick_1hz   ; 4.905 ; 4.917 ; Rise       ; tick_1hz        ;
-;  HEX0[3]  ; tick_1hz   ; 4.780 ; 5.072 ; Rise       ; tick_1hz        ;
-;  HEX0[4]  ; tick_1hz   ; 4.507 ; 4.602 ; Rise       ; tick_1hz        ;
-;  HEX0[5]  ; tick_1hz   ; 4.594 ; 4.873 ; Rise       ; tick_1hz        ;
-;  HEX0[6]  ; tick_1hz   ; 4.681 ; 4.567 ; Rise       ; tick_1hz        ;
-; HEX1[*]   ; tick_1hz   ; 4.557 ; 4.743 ; Rise       ; tick_1hz        ;
-;  HEX1[0]  ; tick_1hz   ; 4.382 ; 4.606 ; Rise       ; tick_1hz        ;
-;  HEX1[1]  ; tick_1hz   ; 4.334 ; 4.326 ; Rise       ; tick_1hz        ;
-;  HEX1[2]  ; tick_1hz   ; 4.557 ; 4.743 ; Rise       ; tick_1hz        ;
-;  HEX1[3]  ; tick_1hz   ; 4.275 ; 4.464 ; Rise       ; tick_1hz        ;
-;  HEX1[4]  ; tick_1hz   ; 4.026 ; 4.090 ; Rise       ; tick_1hz        ;
-;  HEX1[5]  ; tick_1hz   ; 4.355 ; 4.619 ; Rise       ; tick_1hz        ;
-;  HEX1[6]  ; tick_1hz   ; 4.407 ; 4.278 ; Rise       ; tick_1hz        ;
-; HEX2[*]   ; tick_1hz   ; 4.489 ; 4.736 ; Rise       ; tick_1hz        ;
-;  HEX2[0]  ; tick_1hz   ; 4.489 ; 4.736 ; Rise       ; tick_1hz        ;
-;  HEX2[1]  ; tick_1hz   ; 4.434 ; 4.327 ; Rise       ; tick_1hz        ;
-;  HEX2[2]  ; tick_1hz   ; 4.356 ; 4.551 ; Rise       ; tick_1hz        ;
-;  HEX2[3]  ; tick_1hz   ; 4.409 ; 4.568 ; Rise       ; tick_1hz        ;
-;  HEX2[4]  ; tick_1hz   ; 3.839 ; 4.011 ; Rise       ; tick_1hz        ;
-;  HEX2[5]  ; tick_1hz   ; 4.481 ; 4.617 ; Rise       ; tick_1hz        ;
-;  HEX2[6]  ; tick_1hz   ; 4.311 ; 4.052 ; Rise       ; tick_1hz        ;
+; LEDR[*]   ; CLOCK_50   ; 5.227 ; 5.658 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 5.227 ; 5.658 ; Rise       ; CLOCK_50        ;
+; HEX0[*]   ; tick_1hz   ; 4.637 ; 4.565 ; Rise       ; tick_1hz        ;
+;  HEX0[0]  ; tick_1hz   ; 4.446 ; 4.511 ; Rise       ; tick_1hz        ;
+;  HEX0[1]  ; tick_1hz   ; 4.637 ; 4.565 ; Rise       ; tick_1hz        ;
+;  HEX0[2]  ; tick_1hz   ; 4.386 ; 4.451 ; Rise       ; tick_1hz        ;
+;  HEX0[3]  ; tick_1hz   ; 4.478 ; 4.542 ; Rise       ; tick_1hz        ;
+;  HEX0[4]  ; tick_1hz   ; 3.917 ; 4.135 ; Rise       ; tick_1hz        ;
+;  HEX0[5]  ; tick_1hz   ; 4.373 ; 4.415 ; Rise       ; tick_1hz        ;
+;  HEX0[6]  ; tick_1hz   ; 4.145 ; 4.064 ; Rise       ; tick_1hz        ;
+; HEX1[*]   ; tick_1hz   ; 4.406 ; 4.371 ; Rise       ; tick_1hz        ;
+;  HEX1[0]  ; tick_1hz   ; 4.232 ; 4.359 ; Rise       ; tick_1hz        ;
+;  HEX1[1]  ; tick_1hz   ; 4.215 ; 4.151 ; Rise       ; tick_1hz        ;
+;  HEX1[2]  ; tick_1hz   ; 4.225 ; 4.371 ; Rise       ; tick_1hz        ;
+;  HEX1[3]  ; tick_1hz   ; 4.215 ; 4.347 ; Rise       ; tick_1hz        ;
+;  HEX1[4]  ; tick_1hz   ; 3.749 ; 3.866 ; Rise       ; tick_1hz        ;
+;  HEX1[5]  ; tick_1hz   ; 4.079 ; 4.169 ; Rise       ; tick_1hz        ;
+;  HEX1[6]  ; tick_1hz   ; 4.406 ; 4.356 ; Rise       ; tick_1hz        ;
+; HEX2[*]   ; tick_1hz   ; 4.284 ; 4.520 ; Rise       ; tick_1hz        ;
+;  HEX2[0]  ; tick_1hz   ; 4.224 ; 4.363 ; Rise       ; tick_1hz        ;
+;  HEX2[1]  ; tick_1hz   ; 4.284 ; 4.219 ; Rise       ; tick_1hz        ;
+;  HEX2[2]  ; tick_1hz   ; 4.225 ; 4.390 ; Rise       ; tick_1hz        ;
+;  HEX2[3]  ; tick_1hz   ; 3.948 ; 4.061 ; Rise       ; tick_1hz        ;
+;  HEX2[4]  ; tick_1hz   ; 3.474 ; 3.523 ; Rise       ; tick_1hz        ;
+;  HEX2[5]  ; tick_1hz   ; 4.283 ; 4.520 ; Rise       ; tick_1hz        ;
+;  HEX2[6]  ; tick_1hz   ; 3.962 ; 3.833 ; Rise       ; tick_1hz        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -663,32 +663,32 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDR[*]   ; CLOCK_50   ; 4.965 ; 5.318 ; Rise       ; CLOCK_50        ;
-;  LEDR[0]  ; CLOCK_50   ; 4.965 ; 5.318 ; Rise       ; CLOCK_50        ;
-; HEX0[*]   ; tick_1hz   ; 3.576 ; 3.634 ; Rise       ; tick_1hz        ;
-;  HEX0[0]  ; tick_1hz   ; 3.768 ; 3.872 ; Rise       ; tick_1hz        ;
-;  HEX0[1]  ; tick_1hz   ; 3.903 ; 3.778 ; Rise       ; tick_1hz        ;
-;  HEX0[2]  ; tick_1hz   ; 3.677 ; 3.748 ; Rise       ; tick_1hz        ;
-;  HEX0[3]  ; tick_1hz   ; 3.729 ; 3.822 ; Rise       ; tick_1hz        ;
-;  HEX0[4]  ; tick_1hz   ; 3.576 ; 3.756 ; Rise       ; tick_1hz        ;
-;  HEX0[5]  ; tick_1hz   ; 3.663 ; 3.753 ; Rise       ; tick_1hz        ;
-;  HEX0[6]  ; tick_1hz   ; 3.670 ; 3.634 ; Rise       ; tick_1hz        ;
-; HEX1[*]   ; tick_1hz   ; 3.379 ; 3.478 ; Rise       ; tick_1hz        ;
-;  HEX1[0]  ; tick_1hz   ; 3.458 ; 3.551 ; Rise       ; tick_1hz        ;
-;  HEX1[1]  ; tick_1hz   ; 3.588 ; 3.478 ; Rise       ; tick_1hz        ;
-;  HEX1[2]  ; tick_1hz   ; 3.537 ; 3.683 ; Rise       ; tick_1hz        ;
-;  HEX1[3]  ; tick_1hz   ; 3.510 ; 3.637 ; Rise       ; tick_1hz        ;
-;  HEX1[4]  ; tick_1hz   ; 3.379 ; 3.528 ; Rise       ; tick_1hz        ;
-;  HEX1[5]  ; tick_1hz   ; 3.450 ; 3.576 ; Rise       ; tick_1hz        ;
-;  HEX1[6]  ; tick_1hz   ; 3.739 ; 3.630 ; Rise       ; tick_1hz        ;
-; HEX2[*]   ; tick_1hz   ; 3.223 ; 3.294 ; Rise       ; tick_1hz        ;
-;  HEX2[0]  ; tick_1hz   ; 3.513 ; 3.628 ; Rise       ; tick_1hz        ;
-;  HEX2[1]  ; tick_1hz   ; 3.395 ; 3.294 ; Rise       ; tick_1hz        ;
-;  HEX2[2]  ; tick_1hz   ; 3.346 ; 3.490 ; Rise       ; tick_1hz        ;
-;  HEX2[3]  ; tick_1hz   ; 3.223 ; 3.313 ; Rise       ; tick_1hz        ;
-;  HEX2[4]  ; tick_1hz   ; 3.269 ; 3.367 ; Rise       ; tick_1hz        ;
-;  HEX2[5]  ; tick_1hz   ; 3.547 ; 3.628 ; Rise       ; tick_1hz        ;
-;  HEX2[6]  ; tick_1hz   ; 3.624 ; 3.454 ; Rise       ; tick_1hz        ;
+; LEDR[*]   ; CLOCK_50   ; 4.901 ; 5.243 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 4.901 ; 5.243 ; Rise       ; CLOCK_50        ;
+; HEX0[*]   ; tick_1hz   ; 3.311 ; 3.365 ; Rise       ; tick_1hz        ;
+;  HEX0[0]  ; tick_1hz   ; 3.421 ; 3.488 ; Rise       ; tick_1hz        ;
+;  HEX0[1]  ; tick_1hz   ; 3.526 ; 3.454 ; Rise       ; tick_1hz        ;
+;  HEX0[2]  ; tick_1hz   ; 3.327 ; 3.365 ; Rise       ; tick_1hz        ;
+;  HEX0[3]  ; tick_1hz   ; 3.397 ; 3.438 ; Rise       ; tick_1hz        ;
+;  HEX0[4]  ; tick_1hz   ; 3.311 ; 3.426 ; Rise       ; tick_1hz        ;
+;  HEX0[5]  ; tick_1hz   ; 3.348 ; 3.398 ; Rise       ; tick_1hz        ;
+;  HEX0[6]  ; tick_1hz   ; 3.426 ; 3.390 ; Rise       ; tick_1hz        ;
+; HEX1[*]   ; tick_1hz   ; 3.207 ; 3.278 ; Rise       ; tick_1hz        ;
+;  HEX1[0]  ; tick_1hz   ; 3.341 ; 3.433 ; Rise       ; tick_1hz        ;
+;  HEX1[1]  ; tick_1hz   ; 3.344 ; 3.278 ; Rise       ; tick_1hz        ;
+;  HEX1[2]  ; tick_1hz   ; 3.367 ; 3.499 ; Rise       ; tick_1hz        ;
+;  HEX1[3]  ; tick_1hz   ; 3.338 ; 3.429 ; Rise       ; tick_1hz        ;
+;  HEX1[4]  ; tick_1hz   ; 3.207 ; 3.315 ; Rise       ; tick_1hz        ;
+;  HEX1[5]  ; tick_1hz   ; 3.245 ; 3.353 ; Rise       ; tick_1hz        ;
+;  HEX1[6]  ; tick_1hz   ; 3.727 ; 3.552 ; Rise       ; tick_1hz        ;
+; HEX2[*]   ; tick_1hz   ; 2.992 ; 3.047 ; Rise       ; tick_1hz        ;
+;  HEX2[0]  ; tick_1hz   ; 3.239 ; 3.303 ; Rise       ; tick_1hz        ;
+;  HEX2[1]  ; tick_1hz   ; 3.232 ; 3.134 ; Rise       ; tick_1hz        ;
+;  HEX2[2]  ; tick_1hz   ; 3.250 ; 3.341 ; Rise       ; tick_1hz        ;
+;  HEX2[3]  ; tick_1hz   ; 3.072 ; 3.110 ; Rise       ; tick_1hz        ;
+;  HEX2[4]  ; tick_1hz   ; 2.992 ; 3.047 ; Rise       ; tick_1hz        ;
+;  HEX2[5]  ; tick_1hz   ; 3.418 ; 3.542 ; Rise       ; tick_1hz        ;
+;  HEX2[6]  ; tick_1hz   ; 3.438 ; 3.322 ; Rise       ; tick_1hz        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -703,12 +703,12 @@ No synchronizer chains to report.
 +------------------+----------+--------+----------+---------+---------------------+
 ; Clock            ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+----------+--------+----------+---------+---------------------+
-; Worst-case Slack ; -3.885   ; -1.276 ; N/A      ; N/A     ; -0.657              ;
-;  CLOCK_50        ; -2.997   ; -1.276 ; N/A      ; N/A     ; -0.657              ;
-;  tick_1hz        ; -3.885   ; 0.124  ; N/A      ; N/A     ; -0.538              ;
-; Design-wide TNS  ; -130.031 ; -1.276 ; 0.0      ; 0.0     ; -39.498             ;
-;  CLOCK_50        ; -77.795  ; -1.276 ; N/A      ; N/A     ; -26.047             ;
-;  tick_1hz        ; -53.884  ; 0.000  ; N/A      ; N/A     ; -13.451             ;
+; Worst-case Slack ; -3.611   ; -1.302 ; N/A      ; N/A     ; -0.738              ;
+;  CLOCK_50        ; -3.012   ; -1.302 ; N/A      ; N/A     ; -0.738              ;
+;  tick_1hz        ; -3.611   ; 0.079  ; N/A      ; N/A     ; -0.538              ;
+; Design-wide TNS  ; -127.812 ; -1.302 ; 0.0      ; 0.0     ; -38.523             ;
+;  CLOCK_50        ; -77.769  ; -1.302 ; N/A      ; N/A     ; -26.141             ;
+;  tick_1hz        ; -50.378  ; 0.000  ; N/A      ; N/A     ; -12.382             ;
 +------------------+----------+--------+----------+---------+---------------------+
 
 
@@ -717,8 +717,8 @@ No synchronizer chains to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; KEY[*]    ; CLOCK_50   ; 2.546 ; 2.952 ; Rise       ; CLOCK_50        ;
-;  KEY[0]   ; CLOCK_50   ; 2.546 ; 2.952 ; Rise       ; CLOCK_50        ;
+; KEY[*]    ; CLOCK_50   ; 1.806 ; 2.466 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 1.806 ; 2.466 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -727,8 +727,8 @@ No synchronizer chains to report.
 +-----------+------------+-------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+--------+------------+-----------------+
-; KEY[*]    ; CLOCK_50   ; 0.144 ; -0.387 ; Rise       ; CLOCK_50        ;
-;  KEY[0]   ; CLOCK_50   ; 0.144 ; -0.387 ; Rise       ; CLOCK_50        ;
+; KEY[*]    ; CLOCK_50   ; 0.098 ; -0.469 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 0.098 ; -0.469 ; Rise       ; CLOCK_50        ;
 +-----------+------------+-------+--------+------------+-----------------+
 
 
@@ -737,32 +737,32 @@ No synchronizer chains to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; LEDR[*]   ; CLOCK_50   ; 10.129 ; 10.836 ; Rise       ; CLOCK_50        ;
-;  LEDR[0]  ; CLOCK_50   ; 10.129 ; 10.836 ; Rise       ; CLOCK_50        ;
-; HEX0[*]   ; tick_1hz   ; 9.534  ; 9.983  ; Rise       ; tick_1hz        ;
-;  HEX0[0]  ; tick_1hz   ; 9.473  ; 9.983  ; Rise       ; tick_1hz        ;
-;  HEX0[1]  ; tick_1hz   ; 9.240  ; 9.503  ; Rise       ; tick_1hz        ;
-;  HEX0[2]  ; tick_1hz   ; 9.534  ; 9.550  ; Rise       ; tick_1hz        ;
-;  HEX0[3]  ; tick_1hz   ; 9.389  ; 9.882  ; Rise       ; tick_1hz        ;
-;  HEX0[4]  ; tick_1hz   ; 8.616  ; 8.748  ; Rise       ; tick_1hz        ;
-;  HEX0[5]  ; tick_1hz   ; 8.883  ; 9.369  ; Rise       ; tick_1hz        ;
-;  HEX0[6]  ; tick_1hz   ; 8.880  ; 8.705  ; Rise       ; tick_1hz        ;
-; HEX1[*]   ; tick_1hz   ; 8.965  ; 9.318  ; Rise       ; tick_1hz        ;
-;  HEX1[0]  ; tick_1hz   ; 8.644  ; 8.969  ; Rise       ; tick_1hz        ;
-;  HEX1[1]  ; tick_1hz   ; 8.344  ; 8.397  ; Rise       ; tick_1hz        ;
-;  HEX1[2]  ; tick_1hz   ; 8.965  ; 9.318  ; Rise       ; tick_1hz        ;
-;  HEX1[3]  ; tick_1hz   ; 8.343  ; 8.632  ; Rise       ; tick_1hz        ;
-;  HEX1[4]  ; tick_1hz   ; 7.791  ; 7.866  ; Rise       ; tick_1hz        ;
-;  HEX1[5]  ; tick_1hz   ; 8.650  ; 9.026  ; Rise       ; tick_1hz        ;
-;  HEX1[6]  ; tick_1hz   ; 8.457  ; 8.314  ; Rise       ; tick_1hz        ;
-; HEX2[*]   ; tick_1hz   ; 8.946  ; 9.255  ; Rise       ; tick_1hz        ;
-;  HEX2[0]  ; tick_1hz   ; 8.946  ; 9.255  ; Rise       ; tick_1hz        ;
-;  HEX2[1]  ; tick_1hz   ; 8.769  ; 8.649  ; Rise       ; tick_1hz        ;
-;  HEX2[2]  ; tick_1hz   ; 8.812  ; 9.048  ; Rise       ; tick_1hz        ;
-;  HEX2[3]  ; tick_1hz   ; 8.549  ; 8.809  ; Rise       ; tick_1hz        ;
-;  HEX2[4]  ; tick_1hz   ; 7.484  ; 7.741  ; Rise       ; tick_1hz        ;
-;  HEX2[5]  ; tick_1hz   ; 8.929  ; 9.081  ; Rise       ; tick_1hz        ;
-;  HEX2[6]  ; tick_1hz   ; 8.225  ; 7.805  ; Rise       ; tick_1hz        ;
+; LEDR[*]   ; CLOCK_50   ; 10.185 ; 10.730 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 10.185 ; 10.730 ; Rise       ; CLOCK_50        ;
+; HEX0[*]   ; tick_1hz   ; 9.121  ; 9.142  ; Rise       ; tick_1hz        ;
+;  HEX0[0]  ; tick_1hz   ; 8.769  ; 8.829  ; Rise       ; tick_1hz        ;
+;  HEX0[1]  ; tick_1hz   ; 9.121  ; 9.142  ; Rise       ; tick_1hz        ;
+;  HEX0[2]  ; tick_1hz   ; 8.680  ; 8.791  ; Rise       ; tick_1hz        ;
+;  HEX0[3]  ; tick_1hz   ; 8.908  ; 9.011  ; Rise       ; tick_1hz        ;
+;  HEX0[4]  ; tick_1hz   ; 7.742  ; 7.992  ; Rise       ; tick_1hz        ;
+;  HEX0[5]  ; tick_1hz   ; 8.637  ; 8.671  ; Rise       ; tick_1hz        ;
+;  HEX0[6]  ; tick_1hz   ; 7.974  ; 7.868  ; Rise       ; tick_1hz        ;
+; HEX1[*]   ; tick_1hz   ; 8.598  ; 8.696  ; Rise       ; tick_1hz        ;
+;  HEX1[0]  ; tick_1hz   ; 8.529  ; 8.696  ; Rise       ; tick_1hz        ;
+;  HEX1[1]  ; tick_1hz   ; 8.344  ; 8.334  ; Rise       ; tick_1hz        ;
+;  HEX1[2]  ; tick_1hz   ; 8.453  ; 8.681  ; Rise       ; tick_1hz        ;
+;  HEX1[3]  ; tick_1hz   ; 8.314  ; 8.607  ; Rise       ; tick_1hz        ;
+;  HEX1[4]  ; tick_1hz   ; 7.426  ; 7.541  ; Rise       ; tick_1hz        ;
+;  HEX1[5]  ; tick_1hz   ; 8.172  ; 8.241  ; Rise       ; tick_1hz        ;
+;  HEX1[6]  ; tick_1hz   ; 8.598  ; 8.436  ; Rise       ; tick_1hz        ;
+; HEX2[*]   ; tick_1hz   ; 8.537  ; 8.784  ; Rise       ; tick_1hz        ;
+;  HEX2[0]  ; tick_1hz   ; 8.537  ; 8.676  ; Rise       ; tick_1hz        ;
+;  HEX2[1]  ; tick_1hz   ; 8.534  ; 8.478  ; Rise       ; tick_1hz        ;
+;  HEX2[2]  ; tick_1hz   ; 8.510  ; 8.710  ; Rise       ; tick_1hz        ;
+;  HEX2[3]  ; tick_1hz   ; 7.929  ; 8.103  ; Rise       ; tick_1hz        ;
+;  HEX2[4]  ; tick_1hz   ; 6.966  ; 6.965  ; Rise       ; tick_1hz        ;
+;  HEX2[5]  ; tick_1hz   ; 8.513  ; 8.784  ; Rise       ; tick_1hz        ;
+;  HEX2[6]  ; tick_1hz   ; 7.567  ; 7.386  ; Rise       ; tick_1hz        ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -771,32 +771,32 @@ No synchronizer chains to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; LEDR[*]   ; CLOCK_50   ; 4.965 ; 5.318 ; Rise       ; CLOCK_50        ;
-;  LEDR[0]  ; CLOCK_50   ; 4.965 ; 5.318 ; Rise       ; CLOCK_50        ;
-; HEX0[*]   ; tick_1hz   ; 3.576 ; 3.634 ; Rise       ; tick_1hz        ;
-;  HEX0[0]  ; tick_1hz   ; 3.768 ; 3.872 ; Rise       ; tick_1hz        ;
-;  HEX0[1]  ; tick_1hz   ; 3.903 ; 3.778 ; Rise       ; tick_1hz        ;
-;  HEX0[2]  ; tick_1hz   ; 3.677 ; 3.748 ; Rise       ; tick_1hz        ;
-;  HEX0[3]  ; tick_1hz   ; 3.729 ; 3.822 ; Rise       ; tick_1hz        ;
-;  HEX0[4]  ; tick_1hz   ; 3.576 ; 3.756 ; Rise       ; tick_1hz        ;
-;  HEX0[5]  ; tick_1hz   ; 3.663 ; 3.753 ; Rise       ; tick_1hz        ;
-;  HEX0[6]  ; tick_1hz   ; 3.670 ; 3.634 ; Rise       ; tick_1hz        ;
-; HEX1[*]   ; tick_1hz   ; 3.379 ; 3.478 ; Rise       ; tick_1hz        ;
-;  HEX1[0]  ; tick_1hz   ; 3.458 ; 3.551 ; Rise       ; tick_1hz        ;
-;  HEX1[1]  ; tick_1hz   ; 3.588 ; 3.478 ; Rise       ; tick_1hz        ;
-;  HEX1[2]  ; tick_1hz   ; 3.537 ; 3.683 ; Rise       ; tick_1hz        ;
-;  HEX1[3]  ; tick_1hz   ; 3.510 ; 3.637 ; Rise       ; tick_1hz        ;
-;  HEX1[4]  ; tick_1hz   ; 3.379 ; 3.528 ; Rise       ; tick_1hz        ;
-;  HEX1[5]  ; tick_1hz   ; 3.450 ; 3.576 ; Rise       ; tick_1hz        ;
-;  HEX1[6]  ; tick_1hz   ; 3.739 ; 3.630 ; Rise       ; tick_1hz        ;
-; HEX2[*]   ; tick_1hz   ; 3.223 ; 3.294 ; Rise       ; tick_1hz        ;
-;  HEX2[0]  ; tick_1hz   ; 3.513 ; 3.628 ; Rise       ; tick_1hz        ;
-;  HEX2[1]  ; tick_1hz   ; 3.395 ; 3.294 ; Rise       ; tick_1hz        ;
-;  HEX2[2]  ; tick_1hz   ; 3.346 ; 3.490 ; Rise       ; tick_1hz        ;
-;  HEX2[3]  ; tick_1hz   ; 3.223 ; 3.313 ; Rise       ; tick_1hz        ;
-;  HEX2[4]  ; tick_1hz   ; 3.269 ; 3.367 ; Rise       ; tick_1hz        ;
-;  HEX2[5]  ; tick_1hz   ; 3.547 ; 3.628 ; Rise       ; tick_1hz        ;
-;  HEX2[6]  ; tick_1hz   ; 3.624 ; 3.454 ; Rise       ; tick_1hz        ;
+; LEDR[*]   ; CLOCK_50   ; 4.901 ; 5.243 ; Rise       ; CLOCK_50        ;
+;  LEDR[0]  ; CLOCK_50   ; 4.901 ; 5.243 ; Rise       ; CLOCK_50        ;
+; HEX0[*]   ; tick_1hz   ; 3.311 ; 3.365 ; Rise       ; tick_1hz        ;
+;  HEX0[0]  ; tick_1hz   ; 3.421 ; 3.488 ; Rise       ; tick_1hz        ;
+;  HEX0[1]  ; tick_1hz   ; 3.526 ; 3.454 ; Rise       ; tick_1hz        ;
+;  HEX0[2]  ; tick_1hz   ; 3.327 ; 3.365 ; Rise       ; tick_1hz        ;
+;  HEX0[3]  ; tick_1hz   ; 3.397 ; 3.438 ; Rise       ; tick_1hz        ;
+;  HEX0[4]  ; tick_1hz   ; 3.311 ; 3.426 ; Rise       ; tick_1hz        ;
+;  HEX0[5]  ; tick_1hz   ; 3.348 ; 3.398 ; Rise       ; tick_1hz        ;
+;  HEX0[6]  ; tick_1hz   ; 3.426 ; 3.390 ; Rise       ; tick_1hz        ;
+; HEX1[*]   ; tick_1hz   ; 3.207 ; 3.278 ; Rise       ; tick_1hz        ;
+;  HEX1[0]  ; tick_1hz   ; 3.341 ; 3.433 ; Rise       ; tick_1hz        ;
+;  HEX1[1]  ; tick_1hz   ; 3.344 ; 3.278 ; Rise       ; tick_1hz        ;
+;  HEX1[2]  ; tick_1hz   ; 3.367 ; 3.499 ; Rise       ; tick_1hz        ;
+;  HEX1[3]  ; tick_1hz   ; 3.338 ; 3.429 ; Rise       ; tick_1hz        ;
+;  HEX1[4]  ; tick_1hz   ; 3.207 ; 3.315 ; Rise       ; tick_1hz        ;
+;  HEX1[5]  ; tick_1hz   ; 3.245 ; 3.353 ; Rise       ; tick_1hz        ;
+;  HEX1[6]  ; tick_1hz   ; 3.727 ; 3.552 ; Rise       ; tick_1hz        ;
+; HEX2[*]   ; tick_1hz   ; 2.992 ; 3.047 ; Rise       ; tick_1hz        ;
+;  HEX2[0]  ; tick_1hz   ; 3.239 ; 3.303 ; Rise       ; tick_1hz        ;
+;  HEX2[1]  ; tick_1hz   ; 3.232 ; 3.134 ; Rise       ; tick_1hz        ;
+;  HEX2[2]  ; tick_1hz   ; 3.250 ; 3.341 ; Rise       ; tick_1hz        ;
+;  HEX2[3]  ; tick_1hz   ; 3.072 ; 3.110 ; Rise       ; tick_1hz        ;
+;  HEX2[4]  ; tick_1hz   ; 2.992 ; 3.047 ; Rise       ; tick_1hz        ;
+;  HEX2[5]  ; tick_1hz   ; 3.418 ; 3.542 ; Rise       ; tick_1hz        ;
+;  HEX2[6]  ; tick_1hz   ; 3.438 ; 3.322 ; Rise       ; tick_1hz        ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -1028,7 +1028,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Apr 11 03:16:19 2025
+    Info: Processing started: Fri Apr 11 03:39:57 2025
 Info: Command: quartus_sta lab-3 -c lab-3
 Info: qsta_default_script.tcl version: #1
 Warning (20013): Ignored assignments for entity "DE0_CV_Default" -- entity does not exist in design
@@ -1069,96 +1069,96 @@ Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.703
+Info (332146): Worst-case setup slack is -3.482
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -3.703       -51.588 tick_1hz 
-    Info (332119):    -2.997       -77.795 CLOCK_50 
-Info (332146): Worst-case hold slack is -0.977
+    Info (332119):    -3.482       -48.570 tick_1hz 
+    Info (332119):    -3.012       -77.769 CLOCK_50 
+Info (332146): Worst-case hold slack is -1.061
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.977        -0.977 CLOCK_50 
-    Info (332119):     0.453         0.000 tick_1hz 
+    Info (332119):    -1.061        -1.061 CLOCK_50 
+    Info (332119):     0.373         0.000 tick_1hz 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.538
+Info (332146): Worst-case minimum pulse width slack is -0.655
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.538       -26.047 CLOCK_50 
-    Info (332119):    -0.538       -13.451 tick_1hz 
+    Info (332119):    -0.655       -26.141 CLOCK_50 
+    Info (332119):    -0.538       -12.382 tick_1hz 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.885
+Info (332146): Worst-case setup slack is -3.611
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -3.885       -53.884 tick_1hz 
-    Info (332119):    -2.928       -76.147 CLOCK_50 
-Info (332146): Worst-case hold slack is -1.276
+    Info (332119):    -3.611       -50.378 tick_1hz 
+    Info (332119):    -2.996       -77.434 CLOCK_50 
+Info (332146): Worst-case hold slack is -1.302
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.276        -1.276 CLOCK_50 
-    Info (332119):     0.412         0.000 tick_1hz 
+    Info (332119):    -1.302        -1.302 CLOCK_50 
+    Info (332119):     0.375         0.000 tick_1hz 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.551
+Info (332146): Worst-case minimum pulse width slack is -0.681
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.551       -23.512 CLOCK_50 
-    Info (332119):    -0.538       -13.154 tick_1hz 
+    Info (332119):    -0.681       -23.663 CLOCK_50 
+    Info (332119):    -0.538       -12.272 tick_1hz 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -1.430
+Info (332146): Worst-case setup slack is -1.368
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.430       -19.326 tick_1hz 
-    Info (332119):    -1.049       -25.953 CLOCK_50 
-Info (332146): Worst-case hold slack is -0.680
+    Info (332119):    -1.368       -18.394 tick_1hz 
+    Info (332119):    -1.049       -26.160 CLOCK_50 
+Info (332146): Worst-case hold slack is -0.861
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.680        -0.680 CLOCK_50 
-    Info (332119):     0.149         0.000 tick_1hz 
+    Info (332119):    -0.861        -0.861 CLOCK_50 
+    Info (332119):     0.095         0.000 tick_1hz 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.618
+Info (332146): Worst-case minimum pulse width slack is -0.715
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.618       -14.370 CLOCK_50 
-    Info (332119):    -0.036        -0.512 tick_1hz 
+    Info (332119):    -0.715       -14.579 CLOCK_50 
+    Info (332119):     0.018         0.000 tick_1hz 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -1.382
+Info (332146): Worst-case setup slack is -1.303
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.382       -18.718 tick_1hz 
-    Info (332119):    -0.972       -21.941 CLOCK_50 
-Info (332146): Worst-case hold slack is -0.784
+    Info (332119):    -1.303       -17.730 tick_1hz 
+    Info (332119):    -0.900       -22.468 CLOCK_50 
+Info (332146): Worst-case hold slack is -0.898
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.784        -0.784 CLOCK_50 
-    Info (332119):     0.124         0.000 tick_1hz 
+    Info (332119):    -0.898        -0.898 CLOCK_50 
+    Info (332119):     0.079         0.000 tick_1hz 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.657
+Info (332146): Worst-case minimum pulse width slack is -0.738
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.657       -17.201 CLOCK_50 
-    Info (332119):     0.014         0.000 tick_1hz 
+    Info (332119):    -0.738       -17.363 CLOCK_50 
+    Info (332119):     0.049         0.000 tick_1hz 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 5134 megabytes
-    Info: Processing ended: Fri Apr 11 03:16:24 2025
-    Info: Elapsed time: 00:00:05
+    Info: Peak virtual memory: 5126 megabytes
+    Info: Processing ended: Fri Apr 11 03:40:01 2025
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 
 

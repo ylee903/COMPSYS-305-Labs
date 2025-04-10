@@ -77,8 +77,8 @@ BEGIN
             END IF;
             last_key1 <= KEY(0);
 
-            -- Auto-reset when 3:58 is reached
-            IF Q_min_ones = "0011" AND Q_sec_tens = "0101" AND Q_sec_ones = "1000" THEN
+            -- Auto-reset to 0 when 3:59 is reached
+            IF Q_min_ones = "0011" AND Q_sec_tens = "0101" AND Q_sec_ones = "1001" THEN
                 timer_reset <= '1';
             ELSE
                 timer_reset <= '0';
@@ -92,7 +92,7 @@ BEGIN
     PROCESS (CLOCK_50)
     BEGIN
         IF rising_edge(CLOCK_50) THEN -- Detect rising edge of 50 MHz clock
-            IF clk_divider = 19_999_999 THEN -- 49_999_999 for 1 hz, 9_999_999 for 10 hz , 999_999 for 100 hz
+            IF clk_divider = 4_999_999 THEN -- 49_999_999 for 1 hz, 9_999_999 for 10 hz , 999_999 for 100 hz
                 clk_divider <= (OTHERS => '0'); -- (set all bits set to zero) assign to all 26 bits of clk_divider
                 one_hz_clk <= NOT one_hz_clk; -- Toggle the 1 Hz clock signal
                 tick_1hz <= '1'; -- Generate a 1-cycle wide pulse (tick), this is done by imediatly in the next tick chaing to 0 under "Else"
