@@ -40,12 +40,18 @@ ARCHITECTURE Behavioral OF top_level_timer IS
     SIGNAL tick_1hz : STD_LOGIC := '0'; -- One-cycle pulse indicating a 1Hz clock tick
     SIGNAL one_hz_clk : STD_LOGIC := '0'; -- Divided clock signal toggling at 1 Hz
 
-    SIGNAL last_key1 : STD_LOGIC := '1'; -- Last state of KEY[0] (push button) for edge detection
+    SIGNAL last_key : STD_LOGIC := '1'; -- Last state of KEY[0] (push button) for edge detection
 
     SIGNAL timer_reset : STD_LOGIC := '0';
 
-    signal start_latched : std_logic := '0';
+    SIGNAL start_latched : STD_LOGIC := '0';
 
+    SIGNAL key_falling : STD_LOGIC := '0';
+
+    SIGNAL Target_Min : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL Target_SecT : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL Target_SecO : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL max_reached : STD_LOGIC := '0';
     -- === Component Declarations === These are external modules (like building blocks) that we plan to use inside this design.
 
     -- Declare the three-digit timer component (external module)
@@ -70,36 +76,84 @@ ARCHITECTURE Behavioral OF top_level_timer IS
 
 BEGIN
 
-    -- Detect falling edge on KEY[1] to start counting
+    -- Detect falling edge on KEY[0] to start counting
     PROCESS (CLOCK_50)
+
+        VARIABLE tmp_sec_ones : UNSIGNED(3 DOWNTO 0);
+        VARIABLE tmp_sec_tens : UNSIGNED(3 DOWNTO 0);
+        VARIABLE tmp_min_ones : UNSIGNED(3 DOWNTO 0);
+        
     BEGIN
         IF rising_edge(CLOCK_50) THEN
-
-            -- KEY[0] Falling Edge to trigger start
-            IF last_key1 = '1' AND KEY(0) = '0' THEN
-                Enable <= '1';
-                start_latched <= '1';
-            END IF;
-
-            -- Reset Enable and start_latched after timer reaches 3:59
-            IF timer_reset = '1' THEN
-                Enable <= '0';
-                start_latched <= '0';
-            END IF;
-
-            -- Track KEY(0) state for falling edge detection
-            last_key1 <= KEY(0);
-
-            -- 3:59 Reset Detection
-            IF Q_min_ones = "0011" AND Q_sec_tens = "0101" AND Q_sec_ones = "1001" THEN
-                timer_reset <= '1';
+            -- Detect falling edge
+            IF last_key = '1' AND KEY(0) = '0' THEN
+                key_falling <= '1';
             ELSE
-                timer_reset <= '0';
+                key_falling <= '0';
+            END IF;
+            last_key <= KEY(0);
+
+            -- On falling edge of KEY(0): latch SW values, cap, subtract 1, store target
+            IF key_falling = '1' THEN
+                -- Read switches
+                tmp_sec_ones := UNSIGNED(SW(3 DOWNTO 0));
+                tmp_sec_tens := UNSIGNED(SW(7 DOWNTO 4));
+                tmp_min_ones := UNSIGNED("00" & SW(9 DOWNTO 8));
+
+                -- Cap values
+                IF tmp_sec_ones > 9 THEN
+                    tmp_sec_ones := "1001";
+                END IF;
+                IF tmp_sec_tens > 5 THEN
+                    tmp_sec_tens := "0101";
+                END IF;
+                IF tmp_min_ones > 3 THEN
+                    tmp_min_ones := "0011";
+                END IF;
+
+                -- Subtract 1 second
+                IF tmp_sec_ones > 0 THEN
+                    tmp_sec_ones := tmp_sec_ones - 1;
+                ELSE
+                    tmp_sec_ones := "1001";
+                    IF tmp_sec_tens > 0 THEN
+                        tmp_sec_tens := tmp_sec_tens - 1;
+                    ELSE
+                        tmp_sec_tens := "0101";
+                        IF tmp_min_ones > 0 THEN
+                            tmp_min_ones := tmp_min_ones - 1;
+                        ELSE
+                            tmp_sec_ones := "0000";
+                            tmp_sec_tens := "0000";
+                            tmp_min_ones := "0000";
+                        END IF;
+                    END IF;
+                END IF;
+
+                -- Store final target values
+                Target_SecO <= STD_LOGIC_VECTOR(tmp_sec_ones);
+                Target_SecT <= STD_LOGIC_VECTOR(tmp_sec_tens);
+                Target_Min <= STD_LOGIC_VECTOR(tmp_min_ones);
+
+                -- Reset and start timer
+                Reset <= '1';
+                Enable <= '1';
+                max_reached <= '0';
+            ELSE
+                Reset <= '0'; -- Only pulse reset for 1 cycle
             END IF;
 
+            -- Check if timer reached stored target
+            IF Q_min_ones = Target_Min AND Q_sec_tens = Target_SecT AND Q_sec_ones = Target_SecO THEN
+                max_reached <= '1';
+            END IF;
+
+            -- Disable timer when target time reached
+            IF max_reached = '1' THEN
+                Enable <= '0';
+            END IF;
         END IF;
     END PROCESS;
-    
     -- === Clock Divider Process ===
     -- Purpose: Convert 50 MHz input clock into a 1 Hz pulse (tick_1hz) and toggling clock (one_hz_clk)
     PROCESS (CLOCK_50)
