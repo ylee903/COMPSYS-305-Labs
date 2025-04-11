@@ -44,6 +44,8 @@ ARCHITECTURE Behavioral OF top_level_timer IS
 
     SIGNAL timer_reset : STD_LOGIC := '0';
 
+    signal start_latched : std_logic := '0';
+
     -- === Component Declarations === These are external modules (like building blocks) that we plan to use inside this design.
 
     -- Declare the three-digit timer component (external module)
@@ -72,12 +74,23 @@ BEGIN
     PROCESS (CLOCK_50)
     BEGIN
         IF rising_edge(CLOCK_50) THEN
+
+            -- KEY[0] Falling Edge to trigger start
             IF last_key1 = '1' AND KEY(0) = '0' THEN
                 Enable <= '1';
+                start_latched <= '1';
             END IF;
+
+            -- Reset Enable and start_latched after timer reaches 3:59
+            IF timer_reset = '1' THEN
+                Enable <= '0';
+                start_latched <= '0';
+            END IF;
+
+            -- Track KEY(0) state for falling edge detection
             last_key1 <= KEY(0);
 
-            -- Auto-reset to 0 when 3:59 is reached
+            -- 3:59 Reset Detection
             IF Q_min_ones = "0011" AND Q_sec_tens = "0101" AND Q_sec_ones = "1001" THEN
                 timer_reset <= '1';
             ELSE
@@ -86,7 +99,7 @@ BEGIN
 
         END IF;
     END PROCESS;
-
+    
     -- === Clock Divider Process ===
     -- Purpose: Convert 50 MHz input clock into a 1 Hz pulse (tick_1hz) and toggling clock (one_hz_clk)
     PROCESS (CLOCK_50)
