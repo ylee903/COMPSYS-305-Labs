@@ -11,6 +11,7 @@ ENTITY three_digit_timer IS
         Clk : IN STD_LOGIC; -- Clock input signal; STD_LOGIC is either 0/1
         Reset : IN STD_LOGIC; -- Asynchronous reset input (active high)
         Enable : IN STD_LOGIC; -- Enable input (active high)
+	Data_In : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
         Min_ones : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); -- Minutes ones digit output (BCD 0–3)
         Sec_tens : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); -- Seconds tens digit output (BCD 0–5)
         Sec_ones : OUT STD_LOGIC_VECTOR(3 DOWNTO 0) -- Seconds ones digit output (BCD 0–9)
@@ -19,16 +20,18 @@ END ENTITY;
 
 -- Architecture body begins, named 'structural' to reflect component usage
 ARCHITECTURE structural OF three_digit_timer IS
-
     -- === Internal signal declarations ===
 
     SIGNAL s_sec_ones : STD_LOGIC_VECTOR(3 DOWNTO 0); -- Stores seconds ones value
     SIGNAL s_sec_tens : STD_LOGIC_VECTOR(3 DOWNTO 0); -- Stores seconds tens value
     SIGNAL s_min_ones : STD_LOGIC_VECTOR(3 DOWNTO 0); -- Stores minutes ones value
+    SIGNAL load_timer : STD_LOGIC;
 
     SIGNAL en_sec_tens    : STD_LOGIC := '0'; -- Enable for seconds tens counter
     SIGNAL en_min_ones    : STD_LOGIC := '0'; -- Enable for minutes ones counter
     SIGNAL reset_sec_tens : STD_LOGIC := '0'; -- Signal to reset tens seconds counters
+    SIGNAL reset_sec_tens_internal : STD_LOGIC;
+
 
     -- === Component declaration ===
     -- BCD_Counter is a 4-bit Binary-Coded Decimal counter component
@@ -43,6 +46,7 @@ ARCHITECTURE structural OF three_digit_timer IS
     END COMPONENT;
 
 BEGIN
+    reset_sec_tens_internal <= Reset OR reset_sec_tens;
 
     -- === Seconds Ones Digit (0–9) ===
     -- Instantiates a BCD_Counter for seconds ones place
@@ -61,7 +65,7 @@ BEGIN
 	BEGIN
             IF Reset = '1' THEN -- If global reset is active
                 en_sec_tens <= '0'; -- Disable seconds tens
-            ELSIF Enable = '1' AND s_sec_ones = "1000" THEN -- If counting is enabled and seconds ones is at 8
+            ELSIF Enable = '1' AND s_sec_ones = "1001" THEN -- If counting is enabled and seconds ones is at 8
                 en_sec_tens <= '1'; -- Enable seconds tens to increment on next tick
             ELSE
                 en_sec_tens <= '0'; -- Otherwise keep it disabled
@@ -73,7 +77,7 @@ BEGIN
     sec_tens_inst : BCD_Counter
     PORT MAP(
         Clk => Clk, -- Connect clock
-        Reset => Reset OR reset_sec_tens, -- Reset on global/seconds/full reset
+        Reset => reset_sec_tens_internal, -- Use Internal Reset
         Enable => en_sec_tens, -- Enabled only when seconds ones rolls over
         Direction => '1', -- Count up
         Q_Out => s_sec_tens -- Output signal

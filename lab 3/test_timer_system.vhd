@@ -1,144 +1,110 @@
--- Include IEEE standard library for logic types
 LIBRARY IEEE;
--- Use the standard logic package (defines std_logic, std_logic_vector, etc.)
 USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
 
--- === Entity Declaration ===
--- Testbench entity for the timer system (no ports because it's self-contained)
 ENTITY test_timer_system IS
 END ENTITY;
 
--- === Architecture Definition ===
--- Architecture is named 'tb' (testbench)
-ARCHITECTURE tb OF test_timer_system IS
+ARCHITECTURE behavior OF test_timer_system IS
 
-    -- === Constant Declarations ===
-
-    -- Define the clock period for simulation (50 MHz clock has a 20 ns period)
-    CONSTANT CLOCK_PERIOD : TIME := 20 ns;
-
-    -- === Signal Declarations ===
-
-    SIGNAL Clk       : STD_LOGIC := '0';                         -- Simulated clock signal
-    SIGNAL Reset     : STD_LOGIC := '0';                         -- Reset signal (active high)
-    SIGNAL Enable    : STD_LOGIC := '1';                         -- Enable signal for counters (active high)
-
-    SIGNAL Q_Ones    : STD_LOGIC_VECTOR(3 DOWNTO 0);             -- Output from ones digit counter
-    SIGNAL Q_Tens    : STD_LOGIC_VECTOR(3 DOWNTO 0);             -- Output from tens digit counter
-
-    SIGNAL SEG_Ones  : STD_LOGIC_VECTOR(6 DOWNTO 0);             -- 7-segment output for ones digit
-    SIGNAL SEG_Tens  : STD_LOGIC_VECTOR(6 DOWNTO 0);             -- 7-segment output for tens digit
-
-    -- === Component Declarations ===
-
-    -- Declare the BCD_Counter component to be instantiated
-    COMPONENT BCD_Counter
+    -- DUT Declaration
+    COMPONENT three_digit_timer
         PORT (
-            Clk       : IN STD_LOGIC;                            -- Clock input
-            Reset     : IN STD_LOGIC;                            -- Reset input (active high)
-            Enable    : IN STD_LOGIC;                            -- Enable input (active high)
-            Direction : IN STD_LOGIC;                            -- '1' for up counting
-            Q_Out     : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)         -- 4-bit BCD output
+            Clk       : IN  STD_LOGIC;
+            Reset     : IN  STD_LOGIC;
+            Enable    : IN  STD_LOGIC;
+            Min_ones  : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+            Sec_tens  : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+            Sec_ones  : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
         );
     END COMPONENT;
 
-    -- Declare the BCD_to_SevenSeg component to convert BCD to 7-segment
     COMPONENT BCD_to_SevenSeg
         PORT (
-            BCD_digit     : IN STD_LOGIC_VECTOR(3 DOWNTO 0);     -- 4-bit BCD input
-            SevenSeg_out  : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)     -- Corresponding 7-segment output
+            BCD_digit : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+            SevenSeg_out : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
         );
     END COMPONENT;
 
-    -- Intermediate signal to control whether the tens counter should increment
-    SIGNAL Tens_Enable : STD_LOGIC := '0';
+    -- Signals for Timer
+    SIGNAL Clk      : STD_LOGIC := '0';
+    SIGNAL Reset    : STD_LOGIC := '0';
+    SIGNAL Enable   : STD_LOGIC := '0';
+    SIGNAL Min_ones : STD_LOGIC_VECTOR(3 DOWNTO 0);
+    SIGNAL Sec_tens : STD_LOGIC_VECTOR(3 DOWNTO 0);
+    SIGNAL Sec_ones : STD_LOGIC_VECTOR(3 DOWNTO 0);
+
+    -- Signals for Seven Segment Outputs
+    SIGNAL seg_min_ones : STD_LOGIC_VECTOR(6 DOWNTO 0);
+    SIGNAL seg_sec_tens : STD_LOGIC_VECTOR(6 DOWNTO 0);
+    SIGNAL seg_sec_ones : STD_LOGIC_VECTOR(6 DOWNTO 0);
 
 BEGIN
 
-    -- === Clock Generation Process ===
-    -- Continuously toggles the clock every half cycle to simulate a 50 MHz clock
-    clock_proc : PROCESS
+    -- Instantiate Timer System
+    uut: three_digit_timer
+        PORT MAP (
+            Clk      => Clk,
+            Reset    => Reset,
+            Enable   => Enable,
+            Min_ones => Min_ones,
+            Sec_tens => Sec_tens,
+            Sec_ones => Sec_ones
+        );
+
+    -- Instantiate BCD to Seven Segment Converters
+    min_ones_disp : BCD_to_SevenSeg
+        PORT MAP (
+            BCD_digit => Min_ones,
+            SevenSeg_out => seg_min_ones
+        );
+
+    sec_tens_disp : BCD_to_SevenSeg
+        PORT MAP (
+            BCD_digit => Sec_tens,
+            SevenSeg_out => seg_sec_tens
+        );
+
+    sec_ones_disp : BCD_to_SevenSeg
+        PORT MAP (
+            BCD_digit => Sec_ones,
+            SevenSeg_out => seg_sec_ones
+        );
+
+    -- Clock Generation 50 MHz
+    Clk_process : PROCESS
     BEGIN
-        WHILE true LOOP
-            Clk <= '0';                                -- Set clock low
-            WAIT FOR CLOCK_PERIOD / 2;                 -- Wait half period (10 ns)
-            Clk <= '1';                                -- Set clock high
-            WAIT FOR CLOCK_PERIOD / 2;                 -- Wait another 10 ns
-        END LOOP;
+        Clk <= '0';
+        WAIT FOR 10 ns;
+        Clk <= '1';
+        WAIT FOR 10 ns;
     END PROCESS;
 
-    -- === Ones Digit Counter ===
-    -- Instantiates a BCD counter for the ones digit (0 to 9)
-    ones_counter : BCD_Counter
-    PORT MAP (
-        Clk       => Clk,                              -- Connect clock signal
-        Reset     => Reset,                            -- Connect reset
-        Enable    => Enable,                           -- Enable always controlled externally
-        Direction => '1',                              -- Count up
-        Q_Out     => Q_Ones                            -- Connect to internal signal for output
-    );
-
-    -- === Tens Digit Counter ===
-    -- Instantiates a BCD counter for the tens digit (0 to 9, up to 99 combined)
-    tens_counter : BCD_Counter
-    PORT MAP (
-        Clk       => Clk,                              -- Connect clock
-        Reset     => Reset,                            -- Connect reset
-        Enable    => Tens_Enable,                      -- Enable only when ones digit rolls over
-        Direction => '1',                              -- Count up
-        Q_Out     => Q_Tens                            -- Connect to internal signal for output
-    );
-
-    -- === Enable Logic for Tens Counter ===
-    -- Enable the tens counter when the ones digit reaches 9
-
-    	IF Reset = '1' THEN
-        	Tens_Enable <= '0';
-    	ELSIF Enable = '1' AND Q_Ones = "1000" THEN
-        	Tens_Enable <= '1';
-    	ELSE
-        	Tens_Enable <= '0';
-    	END IF;
-
-
-    -- === 7-Segment Decoder for Ones Digit ===
-    -- Converts BCD ones digit into 7-segment output pattern
-    ones_seg : BCD_to_SevenSeg
-    PORT MAP (
-        BCD_digit     => Q_Ones,                        -- Connect ones BCD output
-        SevenSeg_out  => SEG_Ones                       -- Connect to segment output
-    );
-
-    -- === 7-Segment Decoder for Tens Digit ===
-    -- Converts BCD tens digit into 7-segment output pattern
-    tens_seg : BCD_to_SevenSeg
-    PORT MAP (
-        BCD_digit     => Q_Tens,                        -- Connect tens BCD output
-        SevenSeg_out  => SEG_Tens                       -- Connect to segment output
-    );
-
-    -- === Stimulus Process ===
-    -- Defines the input behavior and test sequence for the testbench
-    stim_proc : PROCESS
+    -- Stimulus
+    Stim_proc : PROCESS
     BEGIN
-        -- === Initial Reset ===
-        -- Hold reset high to initialize counters
         Reset <= '1';
-        WAIT FOR 40 ns;                                 -- Wait for two clock cycles
-        Reset <= '0';                                   -- Release reset
+        WAIT FOR 100 ns;
+        Reset <= '0';
 
-        -- === Allow Timer to Run ===
-        -- Simulate regular operation: count from 00 to approx. 99
-        WAIT FOR 2000 ns;                               -- Let the timer run for 2 µs
+        Enable <= '1';
 
-        -- === Optional Disable / Re-enable ===
-        -- Temporarily disable counting
-        Enable <= '0';                                  -- Pause counting
-        WAIT FOR 100 ns;                                -- Short delay
-        Enable <= '1';                                  -- Resume counting
+        -- Simulate 70 seconds of counting
+        WAIT FOR 250 * 1000000000 ns / 50e6; 
 
-        -- === End of Simulation ===
-        WAIT;                                           -- Wait forever (halts simulation)
+        Enable <= '0';
+
+        WAIT FOR 200 ns;
+
+        Reset <= '1';
+        WAIT FOR 50 ns;
+        Reset <= '0';
+
+        WAIT FOR 500 ns;
+
+        WAIT;
     END PROCESS;
 
 END ARCHITECTURE;
+
+
