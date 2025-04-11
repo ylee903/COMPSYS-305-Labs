@@ -82,7 +82,7 @@ BEGIN
         VARIABLE tmp_sec_ones : UNSIGNED(3 DOWNTO 0);
         VARIABLE tmp_sec_tens : UNSIGNED(3 DOWNTO 0);
         VARIABLE tmp_min_ones : UNSIGNED(3 DOWNTO 0);
-        
+
     BEGIN
         IF rising_edge(CLOCK_50) THEN
             -- Detect falling edge
@@ -111,24 +111,6 @@ BEGIN
                     tmp_min_ones := "0011";
                 END IF;
 
-                -- Subtract 1 second
-                IF tmp_sec_ones > 0 THEN
-                    tmp_sec_ones := tmp_sec_ones - 1;
-                ELSE
-                    tmp_sec_ones := "1001";
-                    IF tmp_sec_tens > 0 THEN
-                        tmp_sec_tens := tmp_sec_tens - 1;
-                    ELSE
-                        tmp_sec_tens := "0101";
-                        IF tmp_min_ones > 0 THEN
-                            tmp_min_ones := tmp_min_ones - 1;
-                        ELSE
-                            tmp_sec_ones := "0000";
-                            tmp_sec_tens := "0000";
-                            tmp_min_ones := "0000";
-                        END IF;
-                    END IF;
-                END IF;
 
                 -- Store final target values
                 Target_SecO <= STD_LOGIC_VECTOR(tmp_sec_ones);
