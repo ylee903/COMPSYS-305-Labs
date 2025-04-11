@@ -92,15 +92,27 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
-					"strict" : false
-				},
-				{
 					"name" : "KEY[0]",
 					"strict" : false
 				},
 				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
 					"name" : "SW[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[6]",
 					"strict" : false
 				},
 				{
@@ -112,7 +124,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[2]",
+					"name" : "SW[8]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[9]",
 					"strict" : false
 				},
 				{
@@ -121,22 +137,6 @@
 				},
 				{
 					"name" : "SW[5]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[6]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[7]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[9]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[8]",
 					"strict" : false
 				}
 			]

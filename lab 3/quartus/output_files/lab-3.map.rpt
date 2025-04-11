@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab-3
-Fri Apr 11 16:08:50 2025
+Fri Apr 11 17:22:51 2025
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -15,15 +15,13 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
   9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Port Connectivity Checks: "three_digit_timer:timer_inst|BCD_Counter:min_ones_inst"
- 13. Port Connectivity Checks: "three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst"
- 14. Port Connectivity Checks: "three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst"
- 15. Port Connectivity Checks: "three_digit_timer:timer_inst"
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "three_digit_timer:timer_inst|BCD_Counter:min_ones_inst"
+ 12. Port Connectivity Checks: "three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst"
+ 13. Port Connectivity Checks: "three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -49,7 +47,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Apr 11 16:08:50 2025           ;
+; Analysis & Synthesis Status     ; Successful - Fri Apr 11 17:22:51 2025           ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                   ; lab-3                                           ;
 ; Top-level Entity Name           ; top_level_timer                                 ;
@@ -190,14 +188,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 51             ;
+; Estimate of Logic utilization (ALMs needed) ; 48             ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 87             ;
+; Combinational ALUT usage for logic          ; 84             ;
 ;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 14             ;
-;     -- 5 input functions                    ; 4              ;
-;     -- 4 input functions                    ; 36             ;
-;     -- <=3 input functions                  ; 33             ;
+;     -- 6 input functions                    ; 10             ;
+;     -- 5 input functions                    ; 6              ;
+;     -- 4 input functions                    ; 30             ;
+;     -- <=3 input functions                  ; 38             ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 53             ;
 ;                                             ;                ;
@@ -206,9 +204,9 @@ refer to the applicable agreement for further details.
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 40             ;
-; Total fan-out                               ; 518            ;
-; Average fan-out                             ; 2.49           ;
+; Maximum fan-out                             ; 39             ;
+; Total fan-out                               ; 497            ;
+; Average fan-out                             ; 2.42           ;
 +---------------------------------------------+----------------+
 
 
@@ -217,29 +215,27 @@ refer to the applicable agreement for further details.
 +-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                     ; Entity Name       ; Library Name ;
 +-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+-------------------+--------------+
-; |top_level_timer                  ; 87 (51)             ; 53 (40)                   ; 0                 ; 0          ; 34   ; 0            ; |top_level_timer                                                        ; top_level_timer   ; work         ;
-;    |BCD_to_SevenSeg:seg0|         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg0                                   ; BCD_to_SevenSeg   ; work         ;
+; |top_level_timer                  ; 84 (44)             ; 53 (39)                   ; 0                 ; 0          ; 34   ; 0            ; |top_level_timer                                                        ; top_level_timer   ; work         ;
+;    |BCD_to_SevenSeg:seg0|         ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg0                                   ; BCD_to_SevenSeg   ; work         ;
 ;    |BCD_to_SevenSeg:seg1|         ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg1                                   ; BCD_to_SevenSeg   ; work         ;
 ;    |BCD_to_SevenSeg:seg2|         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg2                                   ; BCD_to_SevenSeg   ; work         ;
-;    |three_digit_timer:timer_inst| ; 14 (1)              ; 13 (1)                    ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst                           ; three_digit_timer ; work         ;
-;       |BCD_Counter:min_ones_inst| ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:min_ones_inst ; BCD_Counter       ; work         ;
-;       |BCD_Counter:sec_ones_inst| ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst ; BCD_Counter       ; work         ;
+;    |three_digit_timer:timer_inst| ; 17 (2)              ; 14 (2)                    ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst                           ; three_digit_timer ; work         ;
+;       |BCD_Counter:min_ones_inst| ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:min_ones_inst ; BCD_Counter       ; work         ;
+;       |BCD_Counter:sec_ones_inst| ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst ; BCD_Counter       ; work         ;
 ;       |BCD_Counter:sec_tens_inst| ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst ; BCD_Counter       ; work         ;
 +-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                 ;
-+---------------------------------------------+------------------------------------------------------+
-; Register name                               ; Reason for Removal                                   ;
-+---------------------------------------------+------------------------------------------------------+
-; three_digit_timer:timer_inst|reset_sec_tens ; Merged with three_digit_timer:timer_inst|en_min_ones ;
-; Target_Min[3]                               ; Merged with Target_Min[2]                            ;
-; Target_Min[2]                               ; Stuck at GND due to stuck port data_in               ;
-; Target_SecT[3]                              ; Stuck at GND due to stuck port data_in               ;
-; Total Number of Removed Registers = 4       ;                                                      ;
-+---------------------------------------------+------------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; Target_Min[2,3]                       ; Stuck at GND due to stuck port data_in ;
+; Target_SecT[3]                        ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 3 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -252,19 +248,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 19    ;
+; Number of registers using Clock Enable       ; 21    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; last_key                               ; 1       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -272,10 +258,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |top_level_timer|Target_SecT[1]                                                    ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |top_level_timer|Target_SecT[0]                                                    ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |top_level_timer|Target_Min[0]                                                     ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[2] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[0] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[3] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[1] ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top_level_timer|BCD_to_SevenSeg:seg0|SevenSeg_out[5]                              ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top_level_timer|BCD_to_SevenSeg:seg1|SevenSeg_out[5]                              ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top_level_timer|BCD_to_SevenSeg:seg2|SevenSeg_out[5]                              ;
@@ -309,38 +294,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------+-------+----------+-----------------------------------------------------+
 
 
-+----------------------------------------------------------+
-; Port Connectivity Checks: "three_digit_timer:timer_inst" ;
-+-------+-------+----------+-------------------------------+
-; Port  ; Type  ; Severity ; Details                       ;
-+-------+-------+----------+-------------------------------+
-; reset ; Input ; Info     ; Stuck at GND                  ;
-+-------+-------+----------+-------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; arriav_ff             ; 53                          ;
-;     ENA               ; 19                          ;
+;     ENA               ; 21                          ;
 ;     SCLR              ; 26                          ;
-;     plain             ; 8                           ;
-; arriav_lcell_comb     ; 93                          ;
+;     plain             ; 6                           ;
+; arriav_lcell_comb     ; 90                          ;
 ;     arith             ; 26                          ;
 ;         1 data inputs ; 26                          ;
-;     normal            ; 67                          ;
-;         1 data inputs ; 9                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 36                          ;
-;         5 data inputs ; 4                           ;
-;         6 data inputs ; 14                          ;
+;     normal            ; 64                          ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 30                          ;
+;         5 data inputs ; 6                           ;
+;         6 data inputs ; 10                          ;
 ; boundary_port         ; 34                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.50                        ;
-; Average LUT depth     ; 2.07                        ;
+; Average LUT depth     ; 1.98                        ;
 +-----------------------+-----------------------------+
 
 
@@ -359,7 +335,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Fri Apr 11 16:08:42 2025
+    Info: Processing started: Fri Apr 11 17:22:43 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab-3 -c lab-3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -376,11 +352,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file /users/
     Info (12022): Found design unit 1: BCD_Counter-behavior File: C:/Users/ylee903/COMPSYS-305-Labs/lab 3/bcd_counter.vhd Line: 15
     Info (12023): Found entity 1: BCD_Counter File: C:/Users/ylee903/COMPSYS-305-Labs/lab 3/bcd_counter.vhd Line: 5
 Info (12127): Elaborating entity "top_level_timer" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at top_level_timer.vhd(39): object "Reset" assigned a value but never read File: C:/Users/ylee903/COMPSYS-305-Labs/lab 3/top_level_timer.vhd Line: 39
-Warning (10540): VHDL Signal Declaration warning at top_level_timer.vhd(45): used explicit default value for signal "timer_reset" because signal was never assigned a value File: C:/Users/ylee903/COMPSYS-305-Labs/lab 3/top_level_timer.vhd Line: 45
-Info (12128): Elaborating entity "three_digit_timer" for hierarchy "three_digit_timer:timer_inst" File: C:/Users/ylee903/COMPSYS-305-Labs/lab 3/top_level_timer.vhd Line: 175
+Info (12128): Elaborating entity "three_digit_timer" for hierarchy "three_digit_timer:timer_inst" File: C:/Users/ylee903/COMPSYS-305-Labs/lab 3/top_level_timer.vhd Line: 138
 Info (12128): Elaborating entity "BCD_Counter" for hierarchy "three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst" File: C:/Users/ylee903/COMPSYS-305-Labs/lab 3/three_digit_timer.vhd Line: 49
-Info (12128): Elaborating entity "BCD_to_SevenSeg" for hierarchy "BCD_to_SevenSeg:seg0" File: C:/Users/ylee903/COMPSYS-305-Labs/lab 3/top_level_timer.vhd Line: 188
+Info (12128): Elaborating entity "BCD_to_SevenSeg" for hierarchy "BCD_to_SevenSeg:seg0" File: C:/Users/ylee903/COMPSYS-305-Labs/lab 3/top_level_timer.vhd Line: 151
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 24 assignments for entity "DE0_CV_Default" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE0_CV_Default -section_id Top was ignored
@@ -413,10 +387,10 @@ Info (21057): Implemented 122 device resources after synthesis - the final resou
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 22 output pins
     Info (21061): Implemented 88 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
-    Info: Peak virtual memory: 4938 megabytes
-    Info: Processing ended: Fri Apr 11 16:08:50 2025
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
+    Info: Peak virtual memory: 4908 megabytes
+    Info: Processing ended: Fri Apr 11 17:22:51 2025
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:15
+    Info: Total CPU time (on all processors): 00:00:16
 
 
