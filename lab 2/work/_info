@@ -1,221 +1,153 @@
 m255
-K4
-z2
-Z0 !s99 nomlopt
-R0
-R0
-!s11e vcom 2022.1 2022.01, Jan 29 2022
+K3
 13
-!s112 1.1
-!i10d 8192
-!i10e 25
-!i10f 100
 cModel Technology
-Z1 dC:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/lab 2
-T_opt
-!s110 1743729596
-V6J8ljEcU`h:MKJ^^9^dF;1
-04 16 2 work test_bcd_counter tb 1
-=1-cc96e530f30d-67ef33bb-2ca-44f4
-R0
-Z2 !s124 OEM100
-Z3 o-quiet -auto_acc_if_foreign -work work +acc
-Z4 tCvgOpt 0
-n@_opt
-Z5 OL;O;2022.1;75
-R1
-T_opt1
-!s110 1743733615
-VO6^I;9T@M3FX;2iGW@l@c1
-04 22 2 work test_two_digit_counter tb 1
-=1-cc96e530f30d-67ef436e-27c-6630
-R0
-R2
-R3
-R4
-n@_opt1
-R5
-R1
-T_opt2
-!s110 1743733646
-VVKCSf<VBK@;K<hNgHifc?1
-04 11 8 work bcd_counter behavior 1
-=1-cc96e530f30d-67ef438e-15a-30c4
-R0
-R2
-R3
-R4
-n@_opt2
-R5
+Z0 dC:\Users\samue\Documents\2025\COMPSYS-305-Labs\lab 2
 Ebcd_counter
-Z6 w1743136740
-Z7 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
-Z8 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
-Z9 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
-!i122 0
-R1
-Z10 8C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/lab 2/bcd_counter.vhd
-Z11 FC:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/lab 2/bcd_counter.vhd
+Z1 w1744208520
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\samue\Documents\2025\COMPSYS-305-Labs\lab 2
+Z6 8C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 2/bcd_counter.vhd
+Z7 FC:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 2/bcd_counter.vhd
 l0
-L5 1
-VEgSNNLDZO;U:CWkJ5emhm2
-!s100 Pib3^P^I@KDTkVQUXgLbF2
-Z12 OL;C;2022.1;75
+L5
+VPOZ:dT05YkHaJAZILgnYO0
+Z8 OV;C;10.1d;51
 32
-Z13 !s110 1743729538
+Z9 !s108 1745591920.028000
+Z10 !s90 -reportprogress|300|-work|work|C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 2/bcd_counter.vhd|
+Z11 !s107 C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 2/bcd_counter.vhd|
+Z12 o-work work -O0
+Z13 tExplicit 1
+!s100 P7?kFQO^=4RDVN[N72lY`2
 !i10b 1
-Z14 !s108 1743729538.000000
-Z15 !s90 -reportprogress|300|-work|work|C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/lab 2/bcd_counter.vhd|
-Z16 !s107 C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/lab 2/bcd_counter.vhd|
-!i113 0
-Z17 o-work work
-Z18 tExplicit 1 CvgOpt 0
 Abehavior
-R7
-R8
-R9
-DEx4 work 11 bcd_counter 0 22 EgSNNLDZO;U:CWkJ5emhm2
-!i122 0
+R2
+R3
+R4
+DEx4 work 11 bcd_counter 0 22 POZ:dT05YkHaJAZILgnYO0
 l31
-L15 70
-VO1]ML[E<m`=]eDdJj70:@2
-!s100 6:`lI4[HDfPJ97F6GUaL[1
-R12
+L15
+VO;W<QZ1;R0S7<z9PjZoOd3
+R8
 32
+R9
+R10
+R11
+R12
+R13
+!s100 UCcG2PR^K_lVGjbICFGb]1
+!i10b 1
+Etest_bcd_counter
+R1
+R2
+R3
+R4
+R5
+Z14 8C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 2/ztest_bcd_counter.vhd
+Z15 FC:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 2/ztest_bcd_counter.vhd
+l0
+L5
+VhPUjRZS<ILLa0Rh1RQ6iF0
+R8
+32
+Z16 !s108 1745591921.428000
+Z17 !s90 -reportprogress|300|-work|work|C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 2/ztest_bcd_counter.vhd|
+Z18 !s107 C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 2/ztest_bcd_counter.vhd|
+R12
+R13
+!s100 QDiSKHIHjf=?EEBWBh<m90
+!i10b 1
+Atb
+R2
+R3
+R4
+DEx4 work 16 test_bcd_counter 0 22 hPUjRZS<ILLa0Rh1RQ6iF0
+l24
+L8
+VOQYW2NZ=en8Qd]1>WcCEN0
+!s100 <02H@PaKA9KLG99iE?LNQ1
+R8
+32
+R16
+R17
+R18
+R12
 R13
 !i10b 1
-R14
-R15
-R16
-!i113 0
-R17
-R18
-Etest_bcd_counter
-Z19 w1743134221
-R7
-R8
-R9
-!i122 2
-R1
-Z20 8C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/lab 2/ztest_bcd_counter.vhd
-Z21 FC:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/lab 2/ztest_bcd_counter.vhd
-l0
-L5 1
-Vc:ZmXoWgEAWdA=L=^AS_V0
-!s100 <A^eQU873I]Ha1<ZXflQ=1
-R12
-32
-Z22 !s110 1743729541
-!i10b 1
-Z23 !s108 1743729541.000000
-Z24 !s90 -reportprogress|300|-work|work|C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/lab 2/ztest_bcd_counter.vhd|
-Z25 !s107 C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/lab 2/ztest_bcd_counter.vhd|
-!i113 0
-R17
-R18
-Atb
-R7
-R8
-R9
-DEx4 work 16 test_bcd_counter 0 22 c:ZmXoWgEAWdA=L=^AS_V0
-!i122 2
-l24
-L8 59
-VAP_R_B7FQNzX6T`Jnb7Be2
-!s100 dDdFdgfP:>>DVGkEUO[>J2
-R12
-32
-R22
-!i10b 1
-R23
-R24
-R25
-!i113 0
-R17
-R18
 Etest_two_digit_counter
-Z26 w1743142612
-R7
-R8
-R9
-!i122 3
 R1
-Z27 8C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/lab 2/ztest_two_digit_counter.vhd
-Z28 FC:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/lab 2/ztest_two_digit_counter.vhd
+R2
+R3
+R4
+R5
+Z19 8C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 2/ztest_two_digit_counter.vhd
+Z20 FC:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 2/ztest_two_digit_counter.vhd
 l0
-L5 1
-V7?feZ>eePFe]bdA;`F18e2
-!s100 dWiJoL2@<:HOUM2<AlMQI3
-R12
-32
-Z29 !s110 1743729542
-!i10b 1
-Z30 !s108 1743729542.000000
-Z31 !s90 -reportprogress|300|-work|work|C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/lab 2/ztest_two_digit_counter.vhd|
-Z32 !s107 C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/lab 2/ztest_two_digit_counter.vhd|
-!i113 0
-R17
-R18
-Atb
-R7
+L5
+VBO:olJebFNdNCGZZo4jcY0
+!s100 <[iUI^4dja7JbJ];@8C4?0
 R8
-R9
-DEx4 work 22 test_two_digit_counter 0 22 7?feZ>eePFe]bdA;`F18e2
-!i122 3
-l28
-L10 57
-V9H0ZBEG@?R]n]NGhTOKBC1
-!s100 JD>KZ<YD4`<>2P=VB469j1
+32
+!i10b 1
+Z21 !s108 1745591923.618000
+Z22 !s90 -reportprogress|300|-work|work|C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 2/ztest_two_digit_counter.vhd|
+Z23 !s107 C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 2/ztest_two_digit_counter.vhd|
 R12
+R13
+Atb
+R2
+R3
+R4
+Z24 DEx4 work 22 test_two_digit_counter 0 22 BO:olJebFNdNCGZZo4jcY0
+l28
+L10
+Z25 VG2LIn8_a9FdVBRc>XJT4T3
+Z26 !s100 =Y>SaZK9WOk9o_XFgAhKS3
+R8
+32
+!i10b 1
+R21
+R22
+R23
+R12
+R13
+Etwo_digit_counter
+R1
+R2
+R3
+R4
+R5
+Z27 8C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 2/two_digit_counter.vhd
+Z28 FC:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 2/two_digit_counter.vhd
+l0
+L5
+VzS_YWz1;jnI^R@H0z8Q[R1
+R8
+32
+Z29 !s108 1745591918.042000
+Z30 !s90 -reportprogress|300|-work|work|C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 2/two_digit_counter.vhd|
+Z31 !s107 C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 2/two_digit_counter.vhd|
+R12
+R13
+!s100 ^C6:_WOfj>KOhlzF_0zXX1
+!i10b 1
+Astructural
+R2
+R3
+R4
+DEx4 work 17 two_digit_counter 0 22 zS_YWz1;jnI^R@H0z8Q[R1
+l36
+L17
+VPd3kb2S5hY5SS6nXhN:Ck0
+R8
 32
 R29
-!i10b 1
 R30
 R31
-R32
-!i113 0
-R17
-R18
-Etwo_digit_counter
-Z33 w1743143371
-R7
-R8
-R9
-!i122 1
-R1
-Z34 8C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/lab 2/two_digit_counter.vhd
-Z35 FC:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/lab 2/two_digit_counter.vhd
-l0
-L5 1
-Vh@`<1Gfzkzf?bS2^GOKzY1
-!s100 D8h0NmNX4HJNHFg3UM@R;0
 R12
-32
-Z36 !s110 1743729539
+R13
+!s100 6dMlA<[]mH@OgdfBohh7b2
 !i10b 1
-Z37 !s108 1743729539.000000
-Z38 !s90 -reportprogress|300|-work|work|C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/lab 2/two_digit_counter.vhd|
-Z39 !s107 C:/Users/ylee903/OneDrive - The University of Auckland/university stuff/2025/S01/compsys 305/Lab 3/lab 2/two_digit_counter.vhd|
-!i113 0
-R17
-R18
-Astructural
-R7
-R8
-R9
-DEx4 work 17 two_digit_counter 0 22 h@`<1Gfzkzf?bS2^GOKzY1
-!i122 1
-l36
-L17 62
-VL=YaM2foNYaP4KEIll4OI0
-!s100 lgLTW?=`0`FXX:20Ohhzk2
-R12
-32
-R36
-!i10b 1
-R37
-R38
-R39
-!i113 0
-R17
-R18

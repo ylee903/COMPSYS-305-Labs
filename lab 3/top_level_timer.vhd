@@ -163,6 +163,8 @@ END PROCESS;
                 Q_sec_ones = target_sec_ones THEN
                     send_to_Enable_2 <= '0';  -- Stop counting
                 END IF;
+            ELSE
+                send_to_Enable_2 <= '1';  -- Resume counting
             END IF;
         END IF;
     END PROCESS;
