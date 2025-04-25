@@ -16,7 +16,7 @@ L5
 VPOZ:dT05YkHaJAZILgnYO0
 Z8 OV;C;10.1d;51
 32
-Z9 !s108 1745591130.473000
+Z9 !s108 1745593399.627000
 Z10 !s90 -reportprogress|300|-work|work|C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/bcd_counter.vhd|
 Z11 !s107 C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/bcd_counter.vhd|
 Z12 o-work work -O0
@@ -52,7 +52,7 @@ L14
 VL7KGj;C]XLXGz5;jF;Q1o3
 R8
 32
-Z17 !s108 1745591133.648000
+Z17 !s108 1745593401.305000
 Z18 !s90 -reportprogress|300|-work|work|C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/BCD_to_7Seg.vhd|
 Z19 !s107 C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/BCD_to_7Seg.vhd|
 R12
@@ -76,60 +76,95 @@ R13
 !s100 YEDdZbWZn:OMbP75jU3;`0
 !i10b 1
 Etest_timer_system
-w1745463042
+Z20 w1745593310
+R2
 R3
 R4
 R5
-8C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/test_timer_system.vhd
-FC:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/test_timer_system.vhd
+Z21 8C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/test_timer_system.vhd
+Z22 FC:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/test_timer_system.vhd
 l0
-L8
-V@kD7AMkedc0`TKUPM=Z`@2
-!s100 LD4NNW>8EJF;IleB^ezn=2
+L5
+V7zhF`[SU?Cb8W@Zahk`W32
+!s100 UnJgGeNn]9o16<g389;@X1
 R8
 32
 !i10b 1
-!s108 1745591550.068000
-!s90 -reportprogress|300|-work|work|C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/test_timer_system.vhd|
-!s107 C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/test_timer_system.vhd|
+Z23 !s108 1745593405.752000
+Z24 !s90 -reportprogress|300|-work|work|C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/test_timer_system.vhd|
+Z25 !s107 C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/test_timer_system.vhd|
+R12
+R13
+Atb
+R2
+R3
+R4
+Z26 DEx4 work 17 test_timer_system 0 22 7zhF`[SU?Cb8W@Zahk`W32
+l37
+L8
+VbfN:jgNO]QZTo<NLLAPBg2
+!s100 ANd=7c?k4NPg4:d>;MjFC0
+R8
+32
+!i10b 1
+R23
+R24
+R25
 R12
 R13
 Ethree_digit_timer
-w1745585899
+Z27 w1745592774
 R2
 R3
 R4
 R5
-8C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/three_digit_timer.vhd
-FC:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/three_digit_timer.vhd
+Z28 8C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/three_digit_timer.vhd
+Z29 FC:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/three_digit_timer.vhd
 l0
-L9
+L7
 VFCZ6I^X[6C@<J38PIREZ23
 R8
 32
+Z30 !s108 1745593402.781000
+Z31 !s90 -reportprogress|300|-work|work|C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/three_digit_timer.vhd|
+Z32 !s107 C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/three_digit_timer.vhd|
 R12
 R13
-!s100 d;kHANEncD0Xz>fCVagdj3
+!s100 ?HDHdU15DRSImOVVc0e?f1
 !i10b 1
-!s108 1745591542.627000
-!s90 -reportprogress|300|-work|work|C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/three_digit_timer.vhd|
-!s107 C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/three_digit_timer.vhd|
+Astructural
+R2
+R3
+R4
+DEx4 work 17 three_digit_timer 0 22 FCZ6I^X[6C@<J38PIREZ23
+l44
+L19
+VW3SI^>I[47T96X3eS0<aQ0
+R8
+32
+R30
+R31
+R32
+R12
+R13
+!s100 jIEY4Gjfog><XI3KRf[Jo3
+!i10b 1
 Etop_level_timer
-Z20 w1745589624
+Z33 w1745592396
 R2
 R3
 R4
 R5
-Z21 8C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/top_level_timer.vhd
-Z22 FC:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/top_level_timer.vhd
+Z34 8C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/top_level_timer.vhd
+Z35 FC:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/top_level_timer.vhd
 l0
 L5
 Vlm?D:cK4Fd6n:<0?IL3122
 R8
 32
-Z23 !s108 1745591537.595000
-Z24 !s90 -reportprogress|300|-work|work|C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/top_level_timer.vhd|
-Z25 !s107 C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/top_level_timer.vhd|
+Z36 !s108 1745593404.215000
+Z37 !s90 -reportprogress|300|-work|work|C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/top_level_timer.vhd|
+Z38 !s107 C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/top_level_timer.vhd|
 R12
 R13
 !s100 AfA=A;bT4aJZ@@NZVZJRm2
@@ -141,13 +176,13 @@ R4
 DEx4 work 15 top_level_timer 0 22 lm?D:cK4Fd6n:<0?IL3122
 l64
 L17
-VcdT8J5Wo9KZzonBS0I=nn0
+V944neaPaL6;>mocW=GS>K2
+!s100 3enjKffcnTfk_b=RAZdHj2
 R8
 32
-R23
-R24
-R25
+R36
+R37
+R38
 R12
 R13
-!s100 3kC3Ioi?XI0GkgE6:^EEz2
 !i10b 1

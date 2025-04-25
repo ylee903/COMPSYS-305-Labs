@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab-3
-Sat Apr 26 02:46:52 2025
+Sat Apr 26 04:00:31 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -47,13 +47,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +-------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status         ; Successful - Sat Apr 26 02:46:52 2025           ;
+; Analysis & Synthesis Status         ; Successful - Sat Apr 26 04:00:31 2025           ;
 ; Quartus II 64-Bit Version           ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                       ; lab-3                                           ;
 ; Top-level Entity Name               ; top_level_timer                                 ;
 ; Family                              ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)         ; N/A                                             ;
-; Total registers                     ; 53                                              ;
+; Total registers                     ; 51                                              ;
 ; Total pins                          ; 35                                              ;
 ; Total virtual pins                  ; 0                                               ;
 ; Total block memory bits             ; 0                                               ;
@@ -184,23 +184,23 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 52             ;
+; Estimate of Logic utilization (ALMs needed) ; 47             ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 90             ;
+; Combinational ALUT usage for logic          ; 84             ;
 ;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 12             ;
-;     -- 5 input functions                    ; 19             ;
-;     -- 4 input functions                    ; 21             ;
-;     -- <=3 input functions                  ; 38             ;
+;     -- 6 input functions                    ; 9              ;
+;     -- 5 input functions                    ; 24             ;
+;     -- 4 input functions                    ; 15             ;
+;     -- <=3 input functions                  ; 36             ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 53             ;
+; Dedicated logic registers                   ; 51             ;
 ;                                             ;                ;
 ; I/O pins                                    ; 35             ;
 ; Total DSP Blocks                            ; 0              ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 39             ;
-; Total fan-out                               ; 540            ;
-; Average fan-out                             ; 2.54           ;
+; Total fan-out                               ; 513            ;
+; Average fan-out                             ; 2.50           ;
 +---------------------------------------------+----------------+
 
 
@@ -209,12 +209,12 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node        ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                     ; Library Name ;
 +-----------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+--------------+
-; |top_level_timer                  ; 90 (44)           ; 53 (39)      ; 0                 ; 0          ; 35   ; 0            ; |top_level_timer                                                        ; work         ;
-;    |BCD_to_SevenSeg:seg0|         ; 10 (10)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg0                                   ; work         ;
-;    |BCD_to_SevenSeg:seg1|         ; 10 (10)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg1                                   ; work         ;
-;    |BCD_to_SevenSeg:seg2|         ; 9 (9)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg2                                   ; work         ;
-;    |three_digit_timer:timer_inst| ; 17 (2)            ; 14 (2)       ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst                           ; work         ;
-;       |BCD_Counter:min_ones_inst| ; 5 (5)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:min_ones_inst ; work         ;
+; |top_level_timer                  ; 84 (44)           ; 51 (39)      ; 0                 ; 0          ; 35   ; 0            ; |top_level_timer                                                        ; work         ;
+;    |BCD_to_SevenSeg:seg0|         ; 8 (8)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg0                                   ; work         ;
+;    |BCD_to_SevenSeg:seg1|         ; 8 (8)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg1                                   ; work         ;
+;    |BCD_to_SevenSeg:seg2|         ; 8 (8)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg2                                   ; work         ;
+;    |three_digit_timer:timer_inst| ; 16 (0)            ; 12 (0)       ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst                           ; work         ;
+;       |BCD_Counter:min_ones_inst| ; 6 (6)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:min_ones_inst ; work         ;
 ;       |BCD_Counter:sec_ones_inst| ; 5 (5)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst ; work         ;
 ;       |BCD_Counter:sec_tens_inst| ; 5 (5)             ; 4 (4)        ; 0                 ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst ; work         ;
 +-----------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------+--------------+
@@ -237,7 +237,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 53    ;
+; Total registers                              ; 51    ;
 ; Number of registers using Synchronous Clear  ; 26    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -262,10 +262,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[0] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[1] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[1] ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top_level_timer|BCD_to_SevenSeg:seg0|SevenSeg_out[5]                              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[1] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[0] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[0] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top_level_timer|BCD_to_SevenSeg:seg0|SevenSeg_out[3]                              ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top_level_timer|BCD_to_SevenSeg:seg1|SevenSeg_out[3]                              ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top_level_timer|BCD_to_SevenSeg:seg2|SevenSeg_out[5]                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
@@ -313,7 +313,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Apr 26 02:46:51 2025
+    Info: Processing started: Sat Apr 26 04:00:30 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab-3 -c lab-3
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file /users/samue/documents/2025/compsys-305-labs/lab 3/top_level_timer.vhd
@@ -360,13 +360,13 @@ Warning (20013): Ignored assignments for entity "DE0_CV_Default" -- entity does 
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE0_CV_Default -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 130 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 124 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 23 output pins
-    Info (21061): Implemented 95 logic cells
+    Info (21061): Implemented 89 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 26 warnings
     Info: Peak virtual memory: 4689 megabytes
-    Info: Processing ended: Sat Apr 26 02:46:52 2025
+    Info: Processing ended: Sat Apr 26 04:00:31 2025
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
