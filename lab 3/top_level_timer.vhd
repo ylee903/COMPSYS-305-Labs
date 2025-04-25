@@ -35,12 +35,10 @@ ARCHITECTURE Behavioral OF top_level_timer IS
 
     SIGNAL send_to_Enable_1 : STD_LOGIC := '0';
     SIGNAL send_to_Enable_2 : STD_LOGIC := '1';
-
-
     -- Captured values (capped)
-    signal target_sec_ones  : STD_LOGIC_VECTOR(3 downto 0) := (others => '0');
-    signal target_sec_tens  : STD_LOGIC_VECTOR(3 downto 0) := (others => '0');
-    signal target_min_ones  : STD_LOGIC_VECTOR(3 downto 0) := (others => '0');
+    SIGNAL target_sec_ones : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL target_sec_tens : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL target_min_ones : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
 
     -- === Component declarations ===
     COMPONENT three_digit_timer
@@ -65,47 +63,47 @@ BEGIN
 
     -- === Button press logic ===
     PROCESS (CLOCK_50)
-    variable sw_ones  : unsigned(3 downto 0);
-    variable sw_tens  : unsigned(3 downto 0);
-    variable sw_mins  : unsigned(1 downto 0);
-BEGIN
-    IF rising_edge(CLOCK_50) THEN
-        IF KEY(0) = '0' THEN  -- Button pressed (active-low)
+        VARIABLE sw_ones : unsigned(3 DOWNTO 0);
+        VARIABLE sw_tens : unsigned(3 DOWNTO 0);
+        VARIABLE sw_mins : unsigned(1 DOWNTO 0);
+    BEGIN
+        IF rising_edge(CLOCK_50) THEN
+            IF KEY(0) = '0' THEN -- Button pressed (active-low)
 
-            -- Store full raw switch value
-            initial_switch_value <= SW;
+                -- Store full raw switch value
+                initial_switch_value <= SW;
 
-            -- === CAP AND STORE EACH SECTION ===
-            sw_ones := unsigned(SW(3 downto 0));
-            IF sw_ones > 9 THEN
-                target_sec_ones <= "1001";  -- 9
+                -- === CAP AND STORE EACH SECTION ===
+                sw_ones := unsigned(SW(3 DOWNTO 0));
+                IF sw_ones > 9 THEN
+                    target_sec_ones <= "1001"; -- 9
+                ELSE
+                    target_sec_ones <= STD_LOGIC_VECTOR(sw_ones);
+                END IF;
+
+                sw_tens := unsigned(SW(7 DOWNTO 4));
+                IF sw_tens > 5 THEN
+                    target_sec_tens <= "0101"; -- 5
+                ELSE
+                    target_sec_tens <= STD_LOGIC_VECTOR(sw_tens);
+                END IF;
+
+                sw_mins := unsigned(SW(9 DOWNTO 8));
+                IF sw_mins > 3 THEN
+                    target_min_ones <= "0011"; -- 3
+                ELSE
+                    target_min_ones <= "00" & STD_LOGIC_VECTOR(sw_mins); -- Now it's 4 bits
+                END IF;
+
+                -- Trigger timer reset & enable
+                send_to_Enable_1 <= '1';
+                send_to_reset_1 <= '1';
+
             ELSE
-                target_sec_ones <= std_logic_vector(sw_ones);
+                send_to_reset_1 <= '0';
             END IF;
-
-            sw_tens := unsigned(SW(7 downto 4));
-            IF sw_tens > 5 THEN
-                target_sec_tens <= "0101";  -- 5
-            ELSE
-                target_sec_tens <= std_logic_vector(sw_tens);
-            END IF;
-
-            sw_mins := unsigned(SW(9 downto 8));
-            IF sw_mins > 3 THEN
-                target_min_ones <= "0011";  -- 3
-            ELSE
-                target_min_ones <= "00" & std_logic_vector(sw_mins);  -- Now it's 4 bits
-            END IF;
-
-            -- Trigger timer reset & enable
-            send_to_Enable_1 <= '1';
-            send_to_reset_1 <= '1';
-
-        ELSE
-            send_to_reset_1 <= '0';
         END IF;
-    END IF;
-END PROCESS;
+    END PROCESS;
     -- === Clock Divider ===
     PROCESS (CLOCK_50)
     BEGIN
@@ -151,24 +149,27 @@ END PROCESS;
         SevenSeg_out => HEX2
     );
 
-
-
     -- Stop counting when the timer reaches the stored value
     PROCESS (CLOCK_50)
     BEGIN
-        IF rising_edge(CLOCK_50) THEN
+        IF falling_edge(CLOCK_50) THEN
             IF Enable = '1' THEN
                 IF Q_min_ones = target_min_ones AND
-                Q_sec_tens = target_sec_tens AND
-                Q_sec_ones = target_sec_ones THEN
-                    send_to_Enable_2 <= '0';  -- Stop counting
+                    Q_sec_tens = target_sec_tens AND
+                    Q_sec_ones = target_sec_ones THEN
+                    send_to_Enable_2 <= '0'; -- Stop counting
+                END IF;
+
+            ELSE
+                IF KEY(0) = '0' THEN -- Button pressed (active-low)
+                    send_to_Enable_2 <= '1'; -- Reset the enable signal
                 END IF;
             END IF;
         END IF;
     END PROCESS;
 
     Reset <= send_to_reset_1;
-    Enable <= send_to_Enable_1 and send_to_Enable_2;
+    Enable <= send_to_Enable_1 AND send_to_Enable_2;
 
     -- === Debug LED ===
     LEDR(0) <= Enable;

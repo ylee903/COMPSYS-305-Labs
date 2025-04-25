@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab-3
-Sat Apr 26 01:06:54 2025
+Sat Apr 26 04:17:27 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -47,7 +47,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +-------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status         ; Successful - Sat Apr 26 01:06:53 2025           ;
+; Analysis & Synthesis Status         ; Successful - Sat Apr 26 04:17:27 2025           ;
 ; Quartus II 64-Bit Version           ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                       ; lab-3                                           ;
 ; Top-level Entity Name               ; top_level_timer                                 ;
@@ -184,13 +184,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 52             ;
+; Estimate of Logic utilization (ALMs needed) ; 53             ;
 ;                                             ;                ;
 ; Combinational ALUT usage for logic          ; 90             ;
 ;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 13             ;
-;     -- 5 input functions                    ; 19             ;
-;     -- 4 input functions                    ; 20             ;
+;     -- 6 input functions                    ; 14             ;
+;     -- 5 input functions                    ; 17             ;
+;     -- 4 input functions                    ; 21             ;
 ;     -- <=3 input functions                  ; 38             ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 53             ;
@@ -252,7 +252,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; send_to_Enable_2                       ; 4       ;
+; send_to_Enable_2                       ; 3       ;
 ; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
 
@@ -263,7 +263,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[0] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[2] ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[1] ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[1] ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top_level_timer|BCD_to_SevenSeg:seg0|SevenSeg_out[5]                              ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top_level_timer|BCD_to_SevenSeg:seg1|SevenSeg_out[3]                              ;
@@ -313,7 +313,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Apr 26 01:06:52 2025
+    Info: Processing started: Sat Apr 26 04:17:26 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab-3 -c lab-3
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file /users/samue/documents/2025/compsys-305-labs/lab 3/top_level_timer.vhd
@@ -365,9 +365,9 @@ Info (21057): Implemented 130 device resources after synthesis - the final resou
     Info (21059): Implemented 23 output pins
     Info (21061): Implemented 95 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 26 warnings
-    Info: Peak virtual memory: 4698 megabytes
-    Info: Processing ended: Sat Apr 26 01:06:54 2025
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 4689 megabytes
+    Info: Processing ended: Sat Apr 26 04:17:27 2025
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 
