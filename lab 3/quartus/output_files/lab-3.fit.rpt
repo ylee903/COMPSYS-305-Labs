@@ -1,5 +1,5 @@
 Fitter report for lab-3
-Sat Apr 26 04:17:45 2025
+Sun Apr 27 03:09:27 2025
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -65,7 +65,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                        ;
 +-------------------------------------+-------------------------------------------------+
-; Fitter Status                       ; Successful - Sat Apr 26 04:17:45 2025           ;
+; Fitter Status                       ; Successful - Sun Apr 27 03:09:27 2025           ;
 ; Quartus II 64-Bit Version           ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                       ; lab-3                                           ;
 ; Top-level Entity Name               ; top_level_timer                                 ;
@@ -74,7 +74,7 @@ applicable agreement for further details.
 ; Timing Models                       ; Final                                           ;
 ; Logic utilization (in ALMs)         ; 52 / 18,480 ( < 1 % )                           ;
 ; Total registers                     ; 53                                              ;
-; Total pins                          ; 35 / 224 ( 16 % )                               ;
+; Total pins                          ; 38 / 224 ( 17 % )                               ;
 ; Total virtual pins                  ; 0                                               ;
 ; Total block memory bits             ; 0 / 3,153,920 ( 0 % )                           ;
 ; Total DSP Blocks                    ; 0 / 66 ( 0 % )                                  ;
@@ -165,6 +165,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------+--------------------------------------+
 ; LEDR[0]  ; Missing drive strength and slew rate ;
 ; LEDR[1]  ; Missing drive strength and slew rate ;
+; LEDR[2]  ; Missing drive strength and slew rate ;
+; LEDR[3]  ; Missing drive strength and slew rate ;
+; LEDR[4]  ; Missing drive strength and slew rate ;
 ; HEX0[0]  ; Missing drive strength and slew rate ;
 ; HEX0[1]  ; Missing drive strength and slew rate ;
 ; HEX0[2]  ; Missing drive strength and slew rate ;
@@ -341,9 +344,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Location     ;                ;              ; KEY[1]        ; PIN_W9        ; QSF Assignment ;
 ; Location     ;                ;              ; KEY[2]        ; PIN_M7        ; QSF Assignment ;
 ; Location     ;                ;              ; KEY[3]        ; PIN_M6        ; QSF Assignment ;
-; Location     ;                ;              ; LEDR[2]       ; PIN_W2        ; QSF Assignment ;
-; Location     ;                ;              ; LEDR[3]       ; PIN_Y3        ; QSF Assignment ;
-; Location     ;                ;              ; LEDR[4]       ; PIN_N2        ; QSF Assignment ;
 ; Location     ;                ;              ; LEDR[5]       ; PIN_N1        ; QSF Assignment ;
 ; Location     ;                ;              ; LEDR[6]       ; PIN_U2        ; QSF Assignment ;
 ; Location     ;                ;              ; LEDR[7]       ; PIN_U1        ; QSF Assignment ;
@@ -512,9 +512,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; I/O Standard ;                ;              ; KEY[1]        ; 3.3-V LVTTL   ; QSF Assignment ;
 ; I/O Standard ;                ;              ; KEY[2]        ; 3.3-V LVTTL   ; QSF Assignment ;
 ; I/O Standard ;                ;              ; KEY[3]        ; 3.3-V LVTTL   ; QSF Assignment ;
-; I/O Standard ;                ;              ; LEDR[2]       ; 3.3-V LVTTL   ; QSF Assignment ;
-; I/O Standard ;                ;              ; LEDR[3]       ; 3.3-V LVTTL   ; QSF Assignment ;
-; I/O Standard ;                ;              ; LEDR[4]       ; 3.3-V LVTTL   ; QSF Assignment ;
 ; I/O Standard ;                ;              ; LEDR[5]       ; 3.3-V LVTTL   ; QSF Assignment ;
 ; I/O Standard ;                ;              ; LEDR[6]       ; 3.3-V LVTTL   ; QSF Assignment ;
 ; I/O Standard ;                ;              ; LEDR[7]       ; 3.3-V LVTTL   ; QSF Assignment ;
@@ -554,8 +551,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 215 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 215 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 223 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 223 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -578,7 +575,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 215     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 223     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 0       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -596,12 +593,12 @@ The pin-out file can be found in C:/Users/samue/Documents/2025/COMPSYS-305-Labs/
 +-------------------------------------------------------------+---------------+-------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 52 / 18,480   ; < 1 % ;
 ; ALMs needed [=A-B+C]                                        ; 52            ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 62 / 18,480   ; < 1 % ;
-;         [a] ALMs used for LUT logic and registers           ; 22            ;       ;
-;         [b] ALMs used for LUT logic                         ; 35            ;       ;
-;         [c] ALMs used for registers                         ; 5             ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 65 / 18,480   ; < 1 % ;
+;         [a] ALMs used for LUT logic and registers           ; 20            ;       ;
+;         [b] ALMs used for LUT logic                         ; 38            ;       ;
+;         [c] ALMs used for registers                         ; 7             ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0             ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 10 / 18,480   ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 13 / 18,480   ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 18,480    ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0             ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0             ;       ;
@@ -614,13 +611,13 @@ The pin-out file can be found in C:/Users/samue/Documents/2025/COMPSYS-305-Labs/
 ;     -- Logic LABs                                           ; 9             ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0             ;       ;
 ;                                                             ;               ;       ;
-; Combinational ALUT usage for logic                          ; 92            ;       ;
+; Combinational ALUT usage for logic                          ; 94            ;       ;
 ;     -- 7 input functions                                    ; 0             ;       ;
-;     -- 6 input functions                                    ; 14            ;       ;
-;     -- 5 input functions                                    ; 17            ;       ;
-;     -- 4 input functions                                    ; 21            ;       ;
+;     -- 6 input functions                                    ; 13            ;       ;
+;     -- 5 input functions                                    ; 18            ;       ;
+;     -- 4 input functions                                    ; 23            ;       ;
 ;     -- <=3 input functions                                  ; 40            ;       ;
-; Combinational ALUT usage for route-throughs                 ; 2             ;       ;
+; Combinational ALUT usage for route-throughs                 ; 0             ;       ;
 ; Dedicated logic registers                                   ; 53            ;       ;
 ;     -- By type:                                             ;               ;       ;
 ;         -- Primary logic registers                          ; 53 / 36,960   ; < 1 % ;
@@ -630,7 +627,7 @@ The pin-out file can be found in C:/Users/samue/Documents/2025/COMPSYS-305-Labs/
 ;         -- Routing optimization registers                   ; 0             ;       ;
 ;                                                             ;               ;       ;
 ; Virtual pins                                                ; 0             ;       ;
-; I/O pins                                                    ; 35 / 224      ; 16 %  ;
+; I/O pins                                                    ; 38 / 224      ; 17 %  ;
 ;     -- Clock pins                                           ; 2 / 9         ; 22 %  ;
 ;     -- Dedicated input pins                                 ; 0 / 11        ; 0 %   ;
 ;                                                             ;               ;       ;
@@ -651,11 +648,11 @@ The pin-out file can be found in C:/Users/samue/Documents/2025/COMPSYS-305-Labs/
 ; Remote update blocks                                        ; 0 / 1         ; 0 %   ;
 ; Impedance control blocks                                    ; 0 / 3         ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0% / 0% / 0%  ;       ;
-; Peak interconnect usage (total/H/V)                         ; 0% / 0% / 0%  ;       ;
+; Peak interconnect usage (total/H/V)                         ; 0% / 1% / 0%  ;       ;
 ; Maximum fan-out                                             ; 38            ;       ;
 ; Highest non-global fan-out                                  ; 27            ;       ;
-; Total fan-out                                               ; 546           ;       ;
-; Average fan-out                                             ; 2.50          ;       ;
+; Total fan-out                                               ; 556           ;       ;
+; Average fan-out                                             ; 2.48          ;       ;
 +-------------------------------------------------------------+---------------+-------+
 
 
@@ -666,12 +663,12 @@ The pin-out file can be found in C:/Users/samue/Documents/2025/COMPSYS-305-Labs/
 +-------------------------------------------------------------+----------------------+--------------------------------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 52 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
 ; ALMs needed [=A-B+C]                                        ; 52                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 62 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 22                   ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 35                   ; 0                              ;
-;         [c] ALMs used for registers                         ; 5                    ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 65 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 20                   ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 38                   ; 0                              ;
+;         [c] ALMs used for registers                         ; 7                    ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                    ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 10 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 13 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 18480 ( 0 % )    ; 0 / 18480 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                    ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                    ; 0                              ;
@@ -684,13 +681,13 @@ The pin-out file can be found in C:/Users/samue/Documents/2025/COMPSYS-305-Labs/
 ;     -- Logic LABs                                           ; 9                    ; 0                              ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
-; Combinational ALUT usage for logic                          ; 92                   ; 0                              ;
+; Combinational ALUT usage for logic                          ; 94                   ; 0                              ;
 ;     -- 7 input functions                                    ; 0                    ; 0                              ;
-;     -- 6 input functions                                    ; 14                   ; 0                              ;
-;     -- 5 input functions                                    ; 17                   ; 0                              ;
-;     -- 4 input functions                                    ; 21                   ; 0                              ;
+;     -- 6 input functions                                    ; 13                   ; 0                              ;
+;     -- 5 input functions                                    ; 18                   ; 0                              ;
+;     -- 4 input functions                                    ; 23                   ; 0                              ;
 ;     -- <=3 input functions                                  ; 40                   ; 0                              ;
-; Combinational ALUT usage for route-throughs                 ; 2                    ; 0                              ;
+; Combinational ALUT usage for route-throughs                 ; 0                    ; 0                              ;
 ; Memory ALUT usage                                           ; 0                    ; 0                              ;
 ;     -- 64-address deep                                      ; 0                    ; 0                              ;
 ;     -- 32-address deep                                      ; 0                    ; 0                              ;
@@ -705,7 +702,7 @@ The pin-out file can be found in C:/Users/samue/Documents/2025/COMPSYS-305-Labs/
 ;                                                             ;                      ;                                ;
 ;                                                             ;                      ;                                ;
 ; Virtual pins                                                ; 0                    ; 0                              ;
-; I/O pins                                                    ; 35                   ; 0                              ;
+; I/O pins                                                    ; 38                   ; 0                              ;
 ; I/O registers                                               ; 0                    ; 0                              ;
 ; Total block memory bits                                     ; 0                    ; 0                              ;
 ; Total block memory implementation bits                      ; 0                    ; 0                              ;
@@ -718,8 +715,8 @@ The pin-out file can be found in C:/Users/samue/Documents/2025/COMPSYS-305-Labs/
 ;     -- Registered Output Connections                        ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Internal Connections                                        ;                      ;                                ;
-;     -- Total Connections                                    ; 546                  ; 0                              ;
-;     -- Registered Connections                               ; 268                  ; 0                              ;
+;     -- Total Connections                                    ; 556                  ; 0                              ;
+;     -- Registered Connections                               ; 270                  ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; External Connections                                        ;                      ;                                ;
 ;     -- Top                                                  ; 0                    ; 0                              ;
@@ -727,7 +724,7 @@ The pin-out file can be found in C:/Users/samue/Documents/2025/COMPSYS-305-Labs/
 ;                                                             ;                      ;                                ;
 ; Partition Interface                                         ;                      ;                                ;
 ;     -- Input Ports                                          ; 12                   ; 0                              ;
-;     -- Output Ports                                         ; 23                   ; 0                              ;
+;     -- Output Ports                                         ; 26                   ; 0                              ;
 ;     -- Bidir Ports                                          ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Registered Ports                                            ;                      ;                                ;
@@ -794,6 +791,9 @@ The pin-out file can be found in C:/Users/samue/Documents/2025/COMPSYS-305-Labs/
 ; HEX2[6] ; AB21  ; 4A       ; 40           ; 0            ; 74           ; no              ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
 ; LEDR[0] ; AA2   ; 2A       ; 0            ; 18           ; 77           ; no              ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
 ; LEDR[1] ; AA1   ; 2A       ; 0            ; 18           ; 94           ; no              ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; LEDR[2] ; W2    ; 2A       ; 0            ; 18           ; 60           ; no              ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; LEDR[3] ; Y3    ; 2A       ; 0            ; 18           ; 43           ; no              ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
+; LEDR[4] ; N2    ; 2A       ; 0            ; 19           ; 37           ; no              ; 1         ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; Off         ; --                        ; no                         ; no                          ; 0                   ; Off                         ; User                 ; -                    ; -                   ;
 +---------+-------+----------+--------------+--------------+--------------+-----------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -802,7 +802,7 @@ The pin-out file can be found in C:/Users/samue/Documents/2025/COMPSYS-305-Labs/
 +----------+------------------+---------------+--------------+---------------+
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ; VCCPD Voltage ;
 +----------+------------------+---------------+--------------+---------------+
-; 2A       ; 2 / 16 ( 13 % )  ; 3.3V          ; --           ; 3.3V          ;
+; 2A       ; 5 / 16 ( 31 % )  ; 3.3V          ; --           ; 3.3V          ;
 ; 3A       ; 1 / 16 ( 6 % )   ; 3.3V          ; --           ; 3.3V          ;
 ; 3B       ; 2 / 32 ( 6 % )   ; 3.3V          ; --           ; 3.3V          ;
 ; 4A       ; 30 / 48 ( 63 % ) ; 3.3V          ; --           ; 3.3V          ;
@@ -1127,7 +1127,7 @@ The pin-out file can be found in C:/Users/samue/Documents/2025/COMPSYS-305-Labs/
 ; M21      ; 181        ; 5B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; M22      ; 175        ; 5B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; N1       ; 24         ; 2A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
-; N2       ; 26         ; 2A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; N2       ; 26         ; 2A       ; LEDR[4]                         ; output ; 3.3-V LVTTL  ;                     ; Row I/O      ; Y               ; no       ; Off          ;
 ; N3       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; N4       ;            ; --       ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
 ; N5       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -1259,7 +1259,7 @@ The pin-out file can be found in C:/Users/samue/Documents/2025/COMPSYS-305-Labs/
 ; V21      ; 148        ; 4A       ; HEX0[1]                         ; output ; 3.3-V LVTTL  ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; V22      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; W1       ;            ; 2A       ; VREFB2AN0                       ; power  ;              ;                     ; --           ;                 ; --       ; --           ;
-; W2       ; 28         ; 2A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; W2       ; 28         ; 2A       ; LEDR[2]                         ; output ; 3.3-V LVTTL  ;                     ; Row I/O      ; Y               ; no       ; Off          ;
 ; W3       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; W4       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; W5       ; 54         ; 3A       ; #TDI                            ; input  ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -1282,7 +1282,7 @@ The pin-out file can be found in C:/Users/samue/Documents/2025/COMPSYS-305-Labs/
 ; W22      ; 140        ; 4A       ; HEX0[2]                         ; output ; 3.3-V LVTTL  ;                     ; Column I/O   ; Y               ; no       ; Off          ;
 ; Y1       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; Y2       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; Y3       ; 30         ; 2A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
+; Y3       ; 30         ; 2A       ; LEDR[3]                         ; output ; 3.3-V LVTTL  ;                     ; Row I/O      ; Y               ; no       ; Off          ;
 ; Y4       ;            ; 2A       ; VCCIO2A                         ; power  ;              ; 3.3V                ; --           ;                 ; --       ; --           ;
 ; Y5       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; Y6       ;            ;          ; NC                              ;        ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -1311,14 +1311,14 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-----------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node        ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                     ; Library Name ;
 +-----------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-------------------------------------------------------------------------+--------------+
-; |top_level_timer                  ; 51.5 (26.8)          ; 61.0 (28.3)                      ; 9.5 (1.6)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 92 (46)             ; 53 (39)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 35   ; 0            ; |top_level_timer                                                        ; work         ;
-;    |BCD_to_SevenSeg:seg0|         ; 5.2 (5.2)            ; 7.5 (7.5)                        ; 2.3 (2.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg0                                   ; work         ;
-;    |BCD_to_SevenSeg:seg1|         ; 5.7 (5.7)            ; 7.3 (7.3)                        ; 1.7 (1.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg1                                   ; work         ;
-;    |BCD_to_SevenSeg:seg2|         ; 4.3 (4.3)            ; 5.4 (5.4)                        ; 1.2 (1.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 9 (9)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg2                                   ; work         ;
-;    |three_digit_timer:timer_inst| ; 9.7 (1.0)            ; 12.4 (1.0)                       ; 2.8 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 17 (2)              ; 14 (2)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst                           ; work         ;
-;       |BCD_Counter:min_ones_inst| ; 2.9 (2.9)            ; 4.3 (4.3)                        ; 1.3 (1.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:min_ones_inst ; work         ;
-;       |BCD_Counter:sec_ones_inst| ; 2.5 (2.5)            ; 3.3 (3.3)                        ; 0.8 (0.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst ; work         ;
-;       |BCD_Counter:sec_tens_inst| ; 3.2 (3.2)            ; 3.8 (3.8)                        ; 0.6 (0.6)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst ; work         ;
+; |top_level_timer                  ; 52.0 (27.1)          ; 64.5 (28.6)                      ; 12.5 (1.4)                                        ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 94 (46)             ; 53 (39)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 38   ; 0            ; |top_level_timer                                                        ; work         ;
+;    |BCD_to_SevenSeg:seg0|         ; 5.3 (5.3)            ; 7.3 (7.3)                        ; 2.0 (2.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg0                                   ; work         ;
+;    |BCD_to_SevenSeg:seg1|         ; 5.0 (5.0)            ; 7.3 (7.3)                        ; 2.3 (2.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 10 (10)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg1                                   ; work         ;
+;    |BCD_to_SevenSeg:seg2|         ; 4.8 (4.8)            ; 6.7 (6.7)                        ; 1.9 (1.9)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 9 (9)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|BCD_to_SevenSeg:seg2                                   ; work         ;
+;    |three_digit_timer:timer_inst| ; 9.8 (2.0)            ; 14.6 (2.0)                       ; 4.8 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 19 (3)              ; 14 (2)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst                           ; work         ;
+;       |BCD_Counter:min_ones_inst| ; 2.6 (2.6)            ; 4.1 (4.1)                        ; 1.5 (1.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:min_ones_inst ; work         ;
+;       |BCD_Counter:sec_ones_inst| ; 2.8 (2.8)            ; 3.7 (3.7)                        ; 0.9 (0.9)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst ; work         ;
+;       |BCD_Counter:sec_tens_inst| ; 2.4 (2.4)            ; 4.8 (4.8)                        ; 2.4 (2.4)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst ; work         ;
 +-----------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1330,6 +1330,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 ; LEDR[0]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; LEDR[1]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; LEDR[2]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; LEDR[3]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
+; LEDR[4]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; HEX0[0]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; HEX0[1]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; HEX0[2]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
@@ -1351,17 +1354,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HEX2[4]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; HEX2[5]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; HEX2[6]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
-; CLOCK_50 ; Input    ; -- ; (0)  ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; KEY[0]   ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; CLOCK_50 ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; KEY[0]   ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[2]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[3]    ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[3]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[1]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[6]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[7]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[0]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[8]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[5]    ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[9]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[5]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[9]    ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[4]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +----------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
@@ -1372,28 +1375,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Source Pin / Fanout       ; Pad To Core Index ; Setting ;
 +---------------------------+-------------------+---------+
 ; CLOCK_50                  ;                   ;         ;
-;      - tick_1hz           ; 1                 ; 0       ;
+;      - tick_1hz           ; 0                 ; 0       ;
 ; KEY[0]                    ;                   ;         ;
-;      - send_to_Enable_1   ; 1                 ; 0       ;
-;      - target_sec_ones[2] ; 1                 ; 0       ;
-;      - target_sec_ones[3] ; 1                 ; 0       ;
-;      - target_sec_ones[1] ; 1                 ; 0       ;
-;      - target_sec_tens[2] ; 1                 ; 0       ;
-;      - target_sec_ones[0] ; 1                 ; 0       ;
-;      - target_min_ones[0] ; 1                 ; 0       ;
-;      - target_sec_tens[1] ; 1                 ; 0       ;
-;      - target_min_ones[1] ; 1                 ; 0       ;
-;      - target_sec_tens[0] ; 1                 ; 0       ;
-;      - send_to_Enable_2~4 ; 1                 ; 0       ;
-;      - send_to_reset_1~0  ; 1                 ; 0       ;
+;      - send_to_Enable_1   ; 0                 ; 0       ;
+;      - target_sec_ones[2] ; 0                 ; 0       ;
+;      - target_sec_ones[3] ; 0                 ; 0       ;
+;      - target_sec_ones[1] ; 0                 ; 0       ;
+;      - target_sec_tens[2] ; 0                 ; 0       ;
+;      - target_sec_ones[0] ; 0                 ; 0       ;
+;      - target_min_ones[0] ; 0                 ; 0       ;
+;      - target_sec_tens[1] ; 0                 ; 0       ;
+;      - target_min_ones[1] ; 0                 ; 0       ;
+;      - target_sec_tens[0] ; 0                 ; 0       ;
+;      - send_to_Enable_2~4 ; 0                 ; 0       ;
+;      - send_to_reset_1~0  ; 0                 ; 0       ;
 ; SW[2]                     ;                   ;         ;
 ;      - target_sec_ones~0  ; 0                 ; 0       ;
 ;      - target_sec_ones~2  ; 0                 ; 0       ;
 ; SW[3]                     ;                   ;         ;
-;      - target_sec_ones[3] ; 1                 ; 0       ;
-;      - target_sec_ones~0  ; 1                 ; 0       ;
-;      - target_sec_ones~1  ; 1                 ; 0       ;
-;      - target_sec_ones~2  ; 1                 ; 0       ;
+;      - target_sec_ones[3] ; 0                 ; 0       ;
+;      - target_sec_ones~0  ; 0                 ; 0       ;
+;      - target_sec_ones~1  ; 0                 ; 0       ;
+;      - target_sec_ones~2  ; 0                 ; 0       ;
 ; SW[1]                     ;                   ;         ;
 ;      - target_sec_ones~1  ; 0                 ; 0       ;
 ;      - target_sec_ones~2  ; 0                 ; 0       ;
@@ -1410,10 +1413,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[8]                     ;                   ;         ;
 ;      - target_min_ones[0] ; 0                 ; 0       ;
 ; SW[5]                     ;                   ;         ;
-;      - target_sec_tens~1  ; 1                 ; 0       ;
-;      - target_sec_tens~2  ; 1                 ; 0       ;
+;      - target_sec_tens~1  ; 0                 ; 0       ;
+;      - target_sec_tens~2  ; 0                 ; 0       ;
 ; SW[9]                     ;                   ;         ;
-;      - target_min_ones[1] ; 0                 ; 0       ;
+;      - target_min_ones[1] ; 1                 ; 0       ;
 ; SW[4]                     ;                   ;         ;
 ;      - target_sec_tens~2  ; 0                 ; 0       ;
 +---------------------------+-------------------+---------+
@@ -1426,12 +1429,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; CLOCK_50                                                            ; PIN_M9             ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
 ; CLOCK_50                                                            ; PIN_M9             ; 38      ; Clock        ; yes    ; Global Clock         ; GCLK5            ; --                        ;
-; Equal0~4                                                            ; LABCELL_X32_Y2_N15 ; 27      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; Equal0~4                                                            ; LABCELL_X41_Y2_N27 ; 27      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
 ; KEY[0]                                                              ; PIN_U7             ; 12      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[1]~1 ; LABCELL_X36_Y2_N3  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[0]~1 ; LABCELL_X36_Y2_N21 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[1]~1 ; LABCELL_X36_Y2_N12 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; tick_1hz                                                            ; FF_X32_Y2_N26      ; 14      ; Clock        ; no     ; --                   ; --               ; --                        ;
+; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[1]~1 ; LABCELL_X48_Y1_N45 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[3]~1 ; LABCELL_X48_Y1_N30 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[1]~2 ; LABCELL_X47_Y1_N9  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; tick_1hz                                                            ; FF_X47_Y1_N35      ; 14      ; Clock        ; no     ; --                   ; --               ; --                        ;
 +---------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1450,65 +1453,66 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                                ; Fan-Out ;
 +---------------------------------------------------------------------+---------+
 ; Equal0~4                                                            ; 27      ;
-; send_to_reset_1                                                     ; 17      ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[0]   ; 16      ;
 ; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[0]   ; 15      ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[0]   ; 15      ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[2]   ; 15      ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[1]   ; 15      ;
+; send_to_reset_1                                                     ; 15      ;
 ; tick_1hz                                                            ; 14      ;
 ; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[0]   ; 14      ;
 ; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[2]   ; 14      ;
 ; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[1]   ; 14      ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[2]   ; 14      ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[1]   ; 14      ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[3]   ; 14      ;
 ; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[2]   ; 13      ;
 ; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[1]   ; 13      ;
 ; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[3]   ; 13      ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[3]   ; 13      ;
 ; KEY[0]~input                                                        ; 12      ;
 ; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[3]   ; 12      ;
-; three_digit_timer:timer_inst|reset_sec_tens                         ; 5       ;
+; Enable                                                              ; 6       ;
 ; BCD_to_SevenSeg:seg2|SevenSeg_out~0                                 ; 5       ;
 ; BCD_to_SevenSeg:seg1|SevenSeg_out~0                                 ; 5       ;
 ; BCD_to_SevenSeg:seg0|SevenSeg_out~0                                 ; 5       ;
 ; SW[3]~input                                                         ; 4       ;
 ; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[1]~1 ; 4       ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[1]~1 ; 4       ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[0]~1 ; 4       ;
-; Enable                                                              ; 4       ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[1]~2 ; 4       ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[1]~0 ; 4       ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[3]~1 ; 4       ;
+; send_to_Enable_2                                                    ; 4       ;
+; send_to_Enable_1                                                    ; 4       ;
 ; SW[7]~input                                                         ; 3       ;
 ; SW[6]~input                                                         ; 3       ;
+; three_digit_timer:timer_inst|reset_sec_tens                         ; 3       ;
 ; BCD_to_SevenSeg:seg0|Equal0~0                                       ; 3       ;
-; send_to_Enable_2                                                    ; 3       ;
-; send_to_Enable_1                                                    ; 3       ;
 ; SW[5]~input                                                         ; 2       ;
 ; SW[1]~input                                                         ; 2       ;
 ; SW[2]~input                                                         ; 2       ;
 ; BCD_to_SevenSeg:seg1|Equal0~0                                       ; 2       ;
-; clk_divider[14]                                                     ; 2       ;
-; clk_divider[13]                                                     ; 2       ;
-; clk_divider[15]                                                     ; 2       ;
-; clk_divider[16]                                                     ; 2       ;
-; clk_divider[17]                                                     ; 2       ;
-; clk_divider[3]                                                      ; 2       ;
-; clk_divider[8]                                                      ; 2       ;
-; clk_divider[7]                                                      ; 2       ;
-; clk_divider[9]                                                      ; 2       ;
-; clk_divider[10]                                                     ; 2       ;
-; clk_divider[11]                                                     ; 2       ;
-; clk_divider[12]                                                     ; 2       ;
-; clk_divider[19]                                                     ; 2       ;
-; clk_divider[18]                                                     ; 2       ;
 ; clk_divider[20]                                                     ; 2       ;
+; clk_divider[19]                                                     ; 2       ;
 ; clk_divider[21]                                                     ; 2       ;
 ; clk_divider[22]                                                     ; 2       ;
 ; clk_divider[23]                                                     ; 2       ;
-; clk_divider[25]                                                     ; 2       ;
 ; clk_divider[24]                                                     ; 2       ;
-; clk_divider[2]                                                      ; 2       ;
-; clk_divider[1]                                                      ; 2       ;
-; clk_divider[0]                                                      ; 2       ;
+; clk_divider[13]                                                     ; 2       ;
+; clk_divider[12]                                                     ; 2       ;
+; clk_divider[14]                                                     ; 2       ;
+; clk_divider[15]                                                     ; 2       ;
+; clk_divider[16]                                                     ; 2       ;
+; clk_divider[17]                                                     ; 2       ;
+; clk_divider[8]                                                      ; 2       ;
+; clk_divider[25]                                                     ; 2       ;
+; clk_divider[9]                                                      ; 2       ;
+; clk_divider[10]                                                     ; 2       ;
+; clk_divider[18]                                                     ; 2       ;
+; clk_divider[11]                                                     ; 2       ;
 ; clk_divider[6]                                                      ; 2       ;
-; clk_divider[4]                                                      ; 2       ;
+; clk_divider[7]                                                      ; 2       ;
 ; clk_divider[5]                                                      ; 2       ;
+; clk_divider[4]                                                      ; 2       ;
+; clk_divider[3]                                                      ; 2       ;
+; clk_divider[2]                                                      ; 2       ;
+; clk_divider[0]                                                      ; 2       ;
+; clk_divider[1]                                                      ; 2       ;
 ; send_to_Enable_1~feeder                                             ; 1       ;
 ; SW[4]~input                                                         ; 1       ;
 ; SW[9]~input                                                         ; 1       ;
@@ -1516,8 +1520,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[0]~input                                                         ; 1       ;
 ; CLOCK_50~input                                                      ; 1       ;
 ; send_to_reset_1~0                                                   ; 1       ;
-; three_digit_timer:timer_inst|en_min_ones~0                          ; 1       ;
-; three_digit_timer:timer_inst|process_2~0                            ; 1       ;
+; three_digit_timer:timer_inst|en_min_ones~1                          ; 1       ;
 ; Equal0~3                                                            ; 1       ;
 ; Equal0~2                                                            ; 1       ;
 ; Equal0~1                                                            ; 1       ;
@@ -1533,10 +1536,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter~2    ; 1       ;
 ; three_digit_timer:timer_inst|en_min_ones                            ; 1       ;
 ; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter~0    ; 1       ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter~5    ; 1       ;
 ; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter~4    ; 1       ;
 ; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter~3    ; 1       ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter~2    ; 1       ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter~0    ; 1       ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter~1    ; 1       ;
+; three_digit_timer:timer_inst|process_1~0                            ; 1       ;
 ; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter~4    ; 1       ;
 ; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter~3    ; 1       ;
 ; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter~2    ; 1       ;
@@ -1568,7 +1572,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; BCD_to_SevenSeg:seg1|SevenSeg_out[4]~6                              ; 1       ;
 ; BCD_to_SevenSeg:seg1|SevenSeg_out[3]~5                              ; 1       ;
 ; BCD_to_SevenSeg:seg1|SevenSeg_out[2]~4                              ; 1       ;
-; BCD_to_SevenSeg:seg1|SevenSeg_out[3]~3                              ; 1       ;
+; BCD_to_SevenSeg:seg1|SevenSeg_out[5]~3                              ; 1       ;
 ; BCD_to_SevenSeg:seg1|SevenSeg_out[1]~2                              ; 1       ;
 ; BCD_to_SevenSeg:seg1|SevenSeg_out[0]~1                              ; 1       ;
 ; BCD_to_SevenSeg:seg0|SevenSeg_out~8                                 ; 1       ;
@@ -1576,9 +1580,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; BCD_to_SevenSeg:seg0|SevenSeg_out[4]~6                              ; 1       ;
 ; BCD_to_SevenSeg:seg0|SevenSeg_out[3]~5                              ; 1       ;
 ; BCD_to_SevenSeg:seg0|SevenSeg_out[2]~4                              ; 1       ;
-; BCD_to_SevenSeg:seg0|SevenSeg_out[5]~3                              ; 1       ;
+; BCD_to_SevenSeg:seg0|SevenSeg_out[2]~3                              ; 1       ;
 ; BCD_to_SevenSeg:seg0|SevenSeg_out[1]~2                              ; 1       ;
 ; BCD_to_SevenSeg:seg0|SevenSeg_out[0]~1                              ; 1       ;
+; three_digit_timer:timer_inst|en_min_ones~0                          ; 1       ;
 ; Add0~102                                                            ; 1       ;
 ; Add0~101                                                            ; 1       ;
 ; Add0~98                                                             ; 1       ;
@@ -1605,7 +1610,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Add0~57                                                             ; 1       ;
 ; Add0~54                                                             ; 1       ;
 ; Add0~53                                                             ; 1       ;
-; Add0~50                                                             ; 1       ;
 ; Add0~49                                                             ; 1       ;
 ; Add0~46                                                             ; 1       ;
 ; Add0~45                                                             ; 1       ;
@@ -1615,6 +1619,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Add0~37                                                             ; 1       ;
 ; Add0~34                                                             ; 1       ;
 ; Add0~33                                                             ; 1       ;
+; Add0~30                                                             ; 1       ;
 ; Add0~29                                                             ; 1       ;
 ; Add0~26                                                             ; 1       ;
 ; Add0~25                                                             ; 1       ;
@@ -1638,14 +1643,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------+-------------------------+
 ; Interconnect Resource Type ; Usage                   ;
 +----------------------------+-------------------------+
-; Block interconnects        ; 113 / 140,056 ( < 1 % ) ;
-; C12 interconnects          ; 2 / 6,048 ( < 1 % )     ;
-; C2 interconnects           ; 38 / 54,648 ( < 1 % )   ;
-; C4 interconnects           ; 34 / 25,920 ( < 1 % )   ;
+; Block interconnects        ; 131 / 140,056 ( < 1 % ) ;
+; C12 interconnects          ; 4 / 6,048 ( < 1 % )     ;
+; C2 interconnects           ; 41 / 54,648 ( < 1 % )   ;
+; C4 interconnects           ; 22 / 25,920 ( < 1 % )   ;
 ; Local interconnects        ; 55 / 36,960 ( < 1 % )   ;
-; R14 interconnects          ; 11 / 5,984 ( < 1 % )    ;
-; R3 interconnects           ; 54 / 60,192 ( < 1 % )   ;
-; R6 interconnects           ; 56 / 127,072 ( < 1 % )  ;
+; R14 interconnects          ; 22 / 5,984 ( < 1 % )    ;
+; R3 interconnects           ; 58 / 60,192 ( < 1 % )   ;
+; R6 interconnects           ; 72 / 127,072 ( < 1 % )  ;
 +----------------------------+-------------------------+
 
 
@@ -1657,10 +1662,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; DQS bus muxes                ; 0 / 17 ( 0 % )         ;
 ; DQS-18 I/O buses             ; 0 / 17 ( 0 % )         ;
 ; DQS-9 I/O buses              ; 0 / 17 ( 0 % )         ;
-; Direct links                 ; 11 / 140,056 ( < 1 % ) ;
+; Direct links                 ; 22 / 140,056 ( < 1 % ) ;
 ; Global clocks                ; 1 / 16 ( 6 % )         ;
 ; Quadrant clocks              ; 0 / 88 ( 0 % )         ;
-; R14/C12 interconnect drivers ; 12 / 9,504 ( < 1 % )   ;
+; R14/C12 interconnect drivers ; 26 / 9,504 ( < 1 % )   ;
 ; Spine clocks                 ; 1 / 120 ( < 1 % )      ;
 ; Wire stub REs                ; 0 / 7,344 ( 0 % )      ;
 +------------------------------+------------------------+
@@ -1720,12 +1725,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
 ; Pin/Rules          ; IO_000001 ; IO_000002    ; IO_000003 ; IO_000004    ; IO_000005    ; IO_000006 ; IO_000007 ; IO_000008    ; IO_000009 ; IO_000010 ; IO_000011    ; IO_000012    ; IO_000013    ; IO_000014    ; IO_000015    ; IO_000018    ; IO_000019    ; IO_000020    ; IO_000021    ; IO_000022    ; IO_000023    ; IO_000024    ; IO_000026    ; IO_000027    ; IO_000045    ; IO_000046    ; IO_000047    ; IO_000034    ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
-; Total Pass         ; 35        ; 0            ; 35        ; 0            ; 0            ; 35        ; 35        ; 0            ; 35        ; 35        ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
+; Total Pass         ; 38        ; 0            ; 38        ; 0            ; 0            ; 38        ; 38        ; 0            ; 38        ; 38        ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
 ; Total Unchecked    ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
-; Total Inapplicable ; 0         ; 35           ; 0         ; 35           ; 35           ; 0         ; 0         ; 35           ; 0         ; 0         ; 35           ; 35           ; 35           ; 35           ; 35           ; 35           ; 35           ; 35           ; 35           ; 35           ; 35           ; 35           ; 35           ; 35           ; 35           ; 35           ; 35           ; 35           ;
+; Total Inapplicable ; 0         ; 38           ; 0         ; 38           ; 38           ; 0         ; 0         ; 38           ; 0         ; 0         ; 38           ; 38           ; 38           ; 38           ; 38           ; 38           ; 38           ; 38           ; 38           ; 38           ; 38           ; 38           ; 38           ; 38           ; 38           ; 38           ; 38           ; 38           ;
 ; Total Fail         ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
 ; LEDR[0]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; LEDR[1]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; LEDR[2]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; LEDR[3]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
+; LEDR[4]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; HEX0[0]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; HEX0[1]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
 ; HEX0[2]            ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ;
@@ -1801,71 +1809,71 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
-+------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Summary              ;
-+-----------------+----------------------+-------------------+
-; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
-+-----------------+----------------------+-------------------+
-; tick_1hz        ; CLOCK_50             ; 9.7               ;
-; CLOCK_50        ; CLOCK_50             ; 7.7               ;
-; tick_1hz        ; tick_1hz             ; 4.6               ;
-+-----------------+----------------------+-------------------+
++--------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                ;
++-------------------+----------------------+-------------------+
+; Source Clock(s)   ; Destination Clock(s) ; Delay Added in ns ;
++-------------------+----------------------+-------------------+
+; tick_1hz          ; CLOCK_50             ; 9.8               ;
+; CLOCK_50          ; CLOCK_50             ; 5.5               ;
+; tick_1hz          ; tick_1hz             ; 3.5               ;
+; CLOCK_50,tick_1hz ; CLOCK_50             ; 3.2               ;
++-------------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using either the TimeQuest Timing Analyzer or the Classic Timing Analyzer.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                                                                             ;
-+-------------------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-; Source Register                                                   ; Destination Register                                              ; Delay Added in ns ;
-+-------------------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-; clk_divider[4]                                                    ; tick_1hz                                                          ; 0.887             ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[3] ; send_to_Enable_2                                                  ; 0.859             ;
-; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[2] ; send_to_Enable_2                                                  ; 0.852             ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[2] ; send_to_Enable_2                                                  ; 0.847             ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[3] ; send_to_Enable_2                                                  ; 0.839             ;
-; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[3] ; send_to_Enable_2                                                  ; 0.836             ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[0] ; send_to_Enable_2                                                  ; 0.833             ;
-; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[0] ; send_to_Enable_2                                                  ; 0.831             ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[1] ; send_to_Enable_2                                                  ; 0.823             ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[2] ; send_to_Enable_2                                                  ; 0.808             ;
-; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[1] ; send_to_Enable_2                                                  ; 0.800             ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[1] ; send_to_Enable_2                                                  ; 0.792             ;
-; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[0] ; send_to_Enable_2                                                  ; 0.780             ;
-; clk_divider[1]                                                    ; tick_1hz                                                          ; 0.735             ;
-; clk_divider[6]                                                    ; tick_1hz                                                          ; 0.718             ;
-; clk_divider[7]                                                    ; tick_1hz                                                          ; 0.641             ;
-; clk_divider[0]                                                    ; tick_1hz                                                          ; 0.630             ;
-; clk_divider[5]                                                    ; tick_1hz                                                          ; 0.606             ;
-; clk_divider[9]                                                    ; tick_1hz                                                          ; 0.605             ;
-; clk_divider[3]                                                    ; tick_1hz                                                          ; 0.531             ;
-; clk_divider[2]                                                    ; tick_1hz                                                          ; 0.476             ;
-; clk_divider[8]                                                    ; tick_1hz                                                          ; 0.411             ;
-; clk_divider[10]                                                   ; tick_1hz                                                          ; 0.230             ;
-; clk_divider[18]                                                   ; tick_1hz                                                          ; 0.227             ;
-; three_digit_timer:timer_inst|reset_sec_tens                       ; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[0] ; 0.222             ;
-; clk_divider[23]                                                   ; tick_1hz                                                          ; 0.222             ;
-; clk_divider[21]                                                   ; tick_1hz                                                          ; 0.218             ;
-; clk_divider[20]                                                   ; tick_1hz                                                          ; 0.216             ;
-; clk_divider[11]                                                   ; tick_1hz                                                          ; 0.182             ;
-; clk_divider[12]                                                   ; tick_1hz                                                          ; 0.167             ;
-; clk_divider[16]                                                   ; tick_1hz                                                          ; 0.143             ;
-; clk_divider[15]                                                   ; tick_1hz                                                          ; 0.143             ;
-; clk_divider[14]                                                   ; tick_1hz                                                          ; 0.106             ;
-; clk_divider[19]                                                   ; tick_1hz                                                          ; 0.101             ;
-; target_sec_ones[3]                                                ; send_to_Enable_2                                                  ; 0.093             ;
-; target_sec_tens[2]                                                ; send_to_Enable_2                                                  ; 0.078             ;
-; target_sec_tens[1]                                                ; send_to_Enable_2                                                  ; 0.065             ;
-; clk_divider[24]                                                   ; tick_1hz                                                          ; 0.055             ;
-; clk_divider[25]                                                   ; tick_1hz                                                          ; 0.055             ;
-; send_to_Enable_1                                                  ; send_to_Enable_2                                                  ; 0.039             ;
-; target_sec_ones[2]                                                ; send_to_Enable_2                                                  ; 0.038             ;
-; target_min_ones[0]                                                ; send_to_Enable_2                                                  ; 0.029             ;
-; clk_divider[13]                                                   ; tick_1hz                                                          ; 0.022             ;
-; target_sec_ones[1]                                                ; send_to_Enable_2                                                  ; 0.020             ;
-; target_sec_ones[0]                                                ; send_to_Enable_2                                                  ; 0.020             ;
-+-------------------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-Note: This table only shows the top 45 path(s) that have the largest delay added for hold.
++--------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                ;
++-------------------------------------------------------------------+----------------------+-------------------+
+; Source Register                                                   ; Destination Register ; Delay Added in ns ;
++-------------------------------------------------------------------+----------------------+-------------------+
+; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[3] ; send_to_Enable_2     ; 1.710             ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[3] ; send_to_Enable_2     ; 1.705             ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[2] ; send_to_Enable_2     ; 1.693             ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[1] ; send_to_Enable_2     ; 1.636             ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[0] ; send_to_Enable_2     ; 1.635             ;
+; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[2] ; send_to_Enable_2     ; 1.593             ;
+; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[3] ; send_to_Enable_2     ; 1.592             ;
+; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[0] ; send_to_Enable_2     ; 1.578             ;
+; three_digit_timer:timer_inst|BCD_Counter:min_ones_inst|counter[1] ; send_to_Enable_2     ; 1.551             ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[0] ; send_to_Enable_2     ; 1.515             ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst|counter[1] ; send_to_Enable_2     ; 1.504             ;
+; three_digit_timer:timer_inst|BCD_Counter:sec_tens_inst|counter[2] ; send_to_Enable_2     ; 1.494             ;
+; target_sec_ones[2]                                                ; send_to_Enable_2     ; 0.849             ;
+; target_sec_ones[3]                                                ; send_to_Enable_2     ; 0.849             ;
+; target_min_ones[0]                                                ; send_to_Enable_2     ; 0.789             ;
+; send_to_Enable_1                                                  ; send_to_Enable_2     ; 0.789             ;
+; target_sec_tens[1]                                                ; send_to_Enable_2     ; 0.776             ;
+; target_min_ones[1]                                                ; send_to_Enable_2     ; 0.776             ;
+; target_sec_tens[0]                                                ; send_to_Enable_2     ; 0.776             ;
+; target_sec_ones[1]                                                ; send_to_Enable_2     ; 0.747             ;
+; target_sec_tens[2]                                                ; send_to_Enable_2     ; 0.747             ;
+; target_sec_ones[0]                                                ; send_to_Enable_2     ; 0.747             ;
+; clk_divider[1]                                                    ; tick_1hz             ; 0.707             ;
+; clk_divider[0]                                                    ; tick_1hz             ; 0.678             ;
+; clk_divider[4]                                                    ; tick_1hz             ; 0.630             ;
+; clk_divider[7]                                                    ; tick_1hz             ; 0.576             ;
+; clk_divider[6]                                                    ; tick_1hz             ; 0.575             ;
+; clk_divider[3]                                                    ; tick_1hz             ; 0.472             ;
+; clk_divider[9]                                                    ; tick_1hz             ; 0.410             ;
+; clk_divider[5]                                                    ; tick_1hz             ; 0.331             ;
+; clk_divider[8]                                                    ; tick_1hz             ; 0.295             ;
+; clk_divider[2]                                                    ; tick_1hz             ; 0.283             ;
+; clk_divider[21]                                                   ; tick_1hz             ; 0.195             ;
+; clk_divider[20]                                                   ; tick_1hz             ; 0.178             ;
+; clk_divider[24]                                                   ; tick_1hz             ; 0.168             ;
+; clk_divider[10]                                                   ; tick_1hz             ; 0.158             ;
+; clk_divider[12]                                                   ; tick_1hz             ; 0.155             ;
+; clk_divider[23]                                                   ; tick_1hz             ; 0.138             ;
+; clk_divider[16]                                                   ; tick_1hz             ; 0.118             ;
+; clk_divider[19]                                                   ; tick_1hz             ; 0.073             ;
+; clk_divider[14]                                                   ; tick_1hz             ; 0.073             ;
+; clk_divider[15]                                                   ; tick_1hz             ; 0.032             ;
+; clk_divider[11]                                                   ; tick_1hz             ; 0.031             ;
+; clk_divider[13]                                                   ; tick_1hz             ; 0.011             ;
++-------------------------------------------------------------------+----------------------+-------------------+
+Note: This table only shows the top 44 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -2029,9 +2037,6 @@ Warning (15709): Ignored I/O standard assignments to the following nodes
     Warning (15710): Ignored I/O standard assignment to node "KEY[1]"
     Warning (15710): Ignored I/O standard assignment to node "KEY[2]"
     Warning (15710): Ignored I/O standard assignment to node "KEY[3]"
-    Warning (15710): Ignored I/O standard assignment to node "LEDR[2]"
-    Warning (15710): Ignored I/O standard assignment to node "LEDR[3]"
-    Warning (15710): Ignored I/O standard assignment to node "LEDR[4]"
     Warning (15710): Ignored I/O standard assignment to node "LEDR[5]"
     Warning (15710): Ignored I/O standard assignment to node "LEDR[6]"
     Warning (15710): Ignored I/O standard assignment to node "LEDR[7]"
@@ -2201,9 +2206,6 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "KEY[1]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "KEY[2]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "KEY[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDR[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDR[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDR[4]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "LEDR[5]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "LEDR[6]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "LEDR[7]" is assigned to location or region, but does not exist in design
@@ -2242,11 +2244,11 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X33_Y0 to location X43_Y10
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X44_Y0 to location X54_Y10
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.39 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.38 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2254,11 +2256,11 @@ Info (334004): Delay annotation completed successfully
 Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/samue/Documents/2025/COMPSYS-305-Labs/lab 3/quartus/output_files/lab-3.fit.smsg
-Info: Quartus II 64-Bit Fitter was successful. 0 errors, 349 warnings
-    Info: Peak virtual memory: 5625 megabytes
-    Info: Processing ended: Sat Apr 26 04:17:45 2025
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:17
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 343 warnings
+    Info: Peak virtual memory: 5606 megabytes
+    Info: Processing ended: Sun Apr 27 03:09:28 2025
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:16
 
 
 +----------------------------+

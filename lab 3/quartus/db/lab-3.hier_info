@@ -1,4 +1,5 @@
 |top_level_timer
+CLOCK_50 => send_to_Enable_2.CLK
 CLOCK_50 => tick_1hz.CLK
 CLOCK_50 => clk_divider[0].CLK
 CLOCK_50 => clk_divider[1].CLK
@@ -40,7 +41,6 @@ CLOCK_50 => target_sec_ones[0].CLK
 CLOCK_50 => target_sec_ones[1].CLK
 CLOCK_50 => target_sec_ones[2].CLK
 CLOCK_50 => target_sec_ones[3].CLK
-CLOCK_50 => send_to_Enable_2.CLK
 SW[0] => LessThan0.IN8
 SW[0] => target_sec_ones.DATAA
 SW[1] => LessThan0.IN7
@@ -78,6 +78,9 @@ KEY[0] => target_min_ones[0].ENA
 KEY[0] => send_to_Enable_1.ENA
 LEDR[0] <= Enable.DB_MAX_OUTPUT_PORT_TYPE
 LEDR[1] <= send_to_reset_1.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= three_digit_timer:timer_inst.debug_stop_1
+LEDR[3] <= three_digit_timer:timer_inst.debug_stop_2
+LEDR[4] <= three_digit_timer:timer_inst.debug_stop_3
 HEX0[0] <= BCD_to_SevenSeg:seg0.SevenSeg_out[0]
 HEX0[1] <= BCD_to_SevenSeg:seg0.SevenSeg_out[1]
 HEX0[2] <= BCD_to_SevenSeg:seg0.SevenSeg_out[2]
@@ -113,8 +116,11 @@ Reset => en_min_ones.OUTPUTSELECT
 Reset => BCD_Counter:sec_ones_inst.Reset
 Reset => BCD_Counter:min_ones_inst.Reset
 Enable => process_0.IN1
-Enable => process_2.IN1
+Enable => comb.IN1
+Enable => process_1.IN1
+Enable => reset_sec_tens.OUTPUTSELECT
 Enable => BCD_Counter:sec_ones_inst.Enable
+Enable => debug_stop_3.DATAIN
 Min_ones[0] <= BCD_Counter:min_ones_inst.Q_Out[0]
 Min_ones[1] <= BCD_Counter:min_ones_inst.Q_Out[1]
 Min_ones[2] <= BCD_Counter:min_ones_inst.Q_Out[2]
@@ -127,6 +133,9 @@ Sec_ones[0] <= BCD_Counter:sec_ones_inst.Q_Out[0]
 Sec_ones[1] <= BCD_Counter:sec_ones_inst.Q_Out[1]
 Sec_ones[2] <= BCD_Counter:sec_ones_inst.Q_Out[2]
 Sec_ones[3] <= BCD_Counter:sec_ones_inst.Q_Out[3]
+debug_stop_1 <= en_sec_tens.DB_MAX_OUTPUT_PORT_TYPE
+debug_stop_2 <= reset_sec_tens.DB_MAX_OUTPUT_PORT_TYPE
+debug_stop_3 <= Enable.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top_level_timer|three_digit_timer:timer_inst|BCD_Counter:sec_ones_inst
