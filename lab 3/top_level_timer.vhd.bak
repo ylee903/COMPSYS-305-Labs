@@ -7,7 +7,7 @@ ENTITY top_level_timer IS
         CLOCK_50 : IN STD_LOGIC;
         SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
         KEY : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-        LEDR : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+        LEDR : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
         HEX0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
         HEX1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
         HEX2 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
@@ -29,6 +29,11 @@ ARCHITECTURE Behavioral OF top_level_timer IS
     -- === Control ===
     SIGNAL Enable : STD_LOGIC := '0';
     SIGNAL Reset : STD_LOGIC := '0';
+
+    SIGNAL debug_stop_1 : STD_LOGIC := '0'; -- Debug output (not used in this design)
+    SIGNAL debug_stop_2 : STD_LOGIC := '0'; -- Debug output (not used in this design)
+    SIGNAL debug_stop_3 : STD_LOGIC := '0'; -- Debug output (not used in this design)
+
     SIGNAL initial_switch_value : STD_LOGIC_VECTOR(9 DOWNTO 0) := (OTHERS => '0');
 
     SIGNAL send_to_reset_1 : STD_LOGIC := '0';
@@ -48,8 +53,10 @@ ARCHITECTURE Behavioral OF top_level_timer IS
             Enable : IN STD_LOGIC;
             Min_ones : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
             Sec_tens : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-            Sec_ones : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
-            debug_stop : OUT STD_LOGIC_VECTOR(2 DOWNTO 2)
+            Sec_ones : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+            debug_stop_1 : OUT STD_LOGIC;
+            debug_stop_2 : OUT STD_LOGIC;
+            debug_stop_3 : OUT STD_LOGIC
         );
     END COMPONENT;
 
@@ -109,7 +116,7 @@ BEGIN
     PROCESS (CLOCK_50)
     BEGIN
         IF rising_edge(CLOCK_50) THEN
-            IF clk_divider = 24_999_999 THEN -- 50 MHz ÷ 50M = 1Hz (original is 49_999_999) 4_999_999
+            IF clk_divider = 4_999_999 THEN -- 50 MHz ÃƒÆ’Ã‚Â· 50M = 1Hz (original is 49_999_999) 4_999_999 24_999_999
                 clk_divider <= (OTHERS => '0');
                 one_hz_clk <= NOT one_hz_clk;
                 tick_1hz <= '1';
@@ -130,7 +137,10 @@ BEGIN
         Enable => Enable,
         Min_ones => Q_min_ones,
         Sec_tens => Q_sec_tens,
-        Sec_ones => Q_sec_ones
+        Sec_ones => Q_sec_ones,
+        debug_stop_1 => debug_stop_1,
+        debug_stop_2 => debug_stop_2,
+        debug_stop_3 => debug_stop_3
     );
 
     -- === Seven Segment Display ===
@@ -177,6 +187,8 @@ BEGIN
     -- === Debug LED ===
     LEDR(0) <= Enable;
     LEDR(1) <= Reset;
-    LEDR(2) <= debug_stop; -- Debug LED for enable signal
+    LEDR(2) <= debug_stop_1; -- Debug LED for enable signal
+    LEDR(3) <= debug_stop_2; -- Debug LED for enable signal
+    LEDR(4) <= debug_stop_3; -- Debug LED for enable signal
 
 END ARCHITECTURE;

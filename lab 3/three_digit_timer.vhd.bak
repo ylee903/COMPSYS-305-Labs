@@ -11,9 +11,12 @@ ENTITY three_digit_timer IS
         Clk : IN STD_LOGIC; -- Clock input signal; STD_LOGIC is either 0/1
         Reset : IN STD_LOGIC; -- Asynchronous reset input (active high)
         Enable : IN STD_LOGIC; -- Enable input (active high)
-        Min_ones : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); -- Minutes ones digit output (BCD 0–3)
-        Sec_tens : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); -- Seconds tens digit output (BCD 0–5)
-        Sec_ones : OUT STD_LOGIC_VECTOR(3 DOWNTO 0) -- Seconds ones digit output (BCD 0–9)
+        Min_ones : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); -- Minutes ones digit output (BCD 0ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“3)
+        Sec_tens : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); -- Seconds tens digit output (BCD 0ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“5)
+        Sec_ones : OUT STD_LOGIC_VECTOR(3 DOWNTO 0); -- Seconds ones digit output (BCD 0ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“9)
+        debug_stop_1 : OUT STD_LOGIC; -- Debug output (not used in this design)
+        debug_stop_2 : OUT STD_LOGIC; -- Debug output (not used in this design)
+        debug_stop_3 : OUT STD_LOGIC -- Debug output (not used in this design)
     );
 END ENTITY;
 
@@ -26,10 +29,9 @@ ARCHITECTURE structural OF three_digit_timer IS
     SIGNAL s_sec_tens : STD_LOGIC_VECTOR(3 DOWNTO 0); -- Stores seconds tens value
     SIGNAL s_min_ones : STD_LOGIC_VECTOR(3 DOWNTO 0); -- Stores minutes ones value
 
-    SIGNAL en_sec_tens    : STD_LOGIC := '0'; -- Enable for seconds tens counter
-    SIGNAL en_min_ones    : STD_LOGIC := '0'; -- Enable for minutes ones counter
+    SIGNAL en_sec_tens : STD_LOGIC := '0'; -- Enable for seconds tens counter
+    SIGNAL en_min_ones : STD_LOGIC := '0'; -- Enable for minutes ones counter
     SIGNAL reset_sec_tens : STD_LOGIC := '0'; -- Signal to reset tens seconds counters
-
     -- === Component declaration ===
     -- BCD_Counter is a 4-bit Binary-Coded Decimal counter component
     COMPONENT BCD_Counter
@@ -44,7 +46,7 @@ ARCHITECTURE structural OF three_digit_timer IS
 
 BEGIN
 
-    -- === Seconds Ones Digit (0–9) ===
+    -- === Seconds Ones Digit (0ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“9) ===
     -- Instantiates a BCD_Counter for seconds ones place
     sec_ones_inst : BCD_Counter
     PORT MAP(
@@ -57,23 +59,23 @@ BEGIN
 
     -- === Logic to Enable Seconds Tens ===
     -- Triggered when seconds ones digit is about to roll over from 8 to 9
-	PROCESS (Reset, Enable, s_sec_ones)
-	BEGIN
-            IF Reset = '1' THEN -- If global reset is active
-                en_sec_tens <= '0'; -- Disable seconds tens
-            ELSIF Enable = '1' AND s_sec_ones = "1000" THEN -- If counting is enabled and seconds ones is at 8
-                en_sec_tens <= '1'; -- Enable seconds tens to increment on next tick
-            ELSE
-                en_sec_tens <= '0'; -- Otherwise keep it disabled
-            END IF;
-	END PROCESS;
+    PROCESS (Reset, Clk)
+    BEGIN
+        IF Reset = '1' THEN -- If global reset is active
+            en_sec_tens <= '0'; -- Disable seconds tens
+        ELSIF Enable = '1' AND s_sec_ones = "1001" THEN -- If counting is enabled and seconds ones is at 9
+            en_sec_tens <= '1'; -- Enable seconds tens to increment on next tick
+        ELSE
+            en_sec_tens <= '0'; -- Otherwise keep it disabled
+        END IF;
+    END PROCESS;
 
-    -- === Seconds Tens Digit (0–5) ===
+    -- === Seconds Tens Digit (0ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“5) ===
     -- Instantiates a BCD_Counter for seconds tens place
     sec_tens_inst : BCD_Counter
     PORT MAP(
         Clk => Clk, -- Connect clock
-        Reset => Reset OR reset_sec_tens, -- Reset on global/seconds/full reset
+        Reset => Reset OR (reset_sec_tens AND Enable), -- Reset on global/seconds/full reset
         Enable => en_sec_tens, -- Enabled only when seconds ones rolls over
         Direction => '1', -- Count up
         Q_Out => s_sec_tens -- Output signal
@@ -81,14 +83,18 @@ BEGIN
 
     -- === Logic to Reset Seconds ===
     -- When the seconds reaches 59, reset 10's seconds
+
     PROCESS (Clk)
     BEGIN
         IF rising_edge(Clk) THEN
-            IF Enable = '1' AND s_sec_ones = "1000" AND s_sec_tens = "0101" THEN
-                -- If seconds = 58, prepare to reset on next tick
-                reset_sec_tens <= '1';
+            IF Enable = '1' THEN
+                IF s_sec_ones = "1000" AND s_sec_tens = "0101" And Enable = '1'  THEN
+                    reset_sec_tens <= '1';
+                ELSE
+                    reset_sec_tens <= '0';
+                END IF;
             ELSE
-                reset_sec_tens <= '0'; -- Otherwise no reset
+                reset_sec_tens <= '0'; -- Force reset to 0 when disabled
             END IF;
         END IF;
     END PROCESS;
@@ -100,7 +106,7 @@ BEGIN
         IF rising_edge(Clk) THEN
             IF Reset = '1' THEN -- On reset
                 en_min_ones <= '0'; -- Disable minutes counter
-            ELSIF Enable = '1' AND s_sec_ones = "1000" AND s_sec_tens = "0101" THEN
+            ELSIF Enable = '1' AND s_sec_ones = "1001" AND s_sec_tens = "0101" THEN
                 -- If seconds is at 58, get ready to increment minutes ones
                 en_min_ones <= '1';
             ELSE
@@ -109,7 +115,7 @@ BEGIN
         END IF;
     END PROCESS;
 
-    -- === Minutes Ones Digit (0–3) ===
+    -- === Minutes Ones Digit (0ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“3) ===
     -- Instantiates a BCD_Counter for minutes ones place
     min_ones_inst : BCD_Counter
     PORT MAP(
@@ -119,12 +125,14 @@ BEGIN
         Direction => '1', -- Count up
         Q_Out => s_min_ones -- Output signal
     );
-
-
     -- === Output Assignments ===
     -- Connect internal BCD counter outputs to entity outputs
     Sec_ones <= s_sec_ones; -- Connect seconds ones output
     Sec_tens <= s_sec_tens; -- Connect seconds tens output
     Min_ones <= s_min_ones; -- Connect minutes ones output
+    debug_stop_1 <= en_sec_tens; -- Debug output
+    debug_stop_2 <= reset_sec_tens; -- Debug output
+    debug_stop_3 <= Enable; -- Debug output
+    
 
 END ARCHITECTURE;

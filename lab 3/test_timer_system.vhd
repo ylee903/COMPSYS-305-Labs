@@ -94,7 +94,7 @@ BEGIN
 
     	IF Reset = '1' THEN
         	Tens_Enable <= '0';
-    	ELSIF Enable = '1' AND Q_Ones = "1000" THEN
+    	ELSIF Enable = '1' AND Q_Ones = "1001" THEN
         	Tens_Enable <= '1';
     	ELSE
         	Tens_Enable <= '0';

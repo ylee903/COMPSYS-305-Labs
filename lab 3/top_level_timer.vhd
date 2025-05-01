@@ -5,120 +5,47 @@ USE IEEE.NUMERIC_STD.ALL;
 ENTITY top_level_timer IS
     PORT (
         CLOCK_50 : IN STD_LOGIC;
-        SW : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
-        KEY : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-        LEDR : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
-        HEX0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-        HEX1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
-        HEX2 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+        SW       : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
+        KEY      : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+        LEDR     : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+        HEX0     : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+        HEX1     : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+        HEX2     : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
     );
 END ENTITY;
 
 ARCHITECTURE Behavioral OF top_level_timer IS
 
-    -- === Clock division ===
+    -- Clock divider for 1Hz
     SIGNAL clk_divider : unsigned(25 DOWNTO 0) := (OTHERS => '0');
-    SIGNAL one_hz_clk : STD_LOGIC := '0';
-    SIGNAL tick_1hz : STD_LOGIC := '0';
+    SIGNAL tick_1hz    : STD_LOGIC := '0';
 
-    -- === Timer I/O Signals ===
-    SIGNAL Q_sec_ones : STD_LOGIC_VECTOR(3 DOWNTO 0);
-    SIGNAL Q_sec_tens : STD_LOGIC_VECTOR(3 DOWNTO 0);
-    SIGNAL Q_min_ones : STD_LOGIC_VECTOR(3 DOWNTO 0);
+    -- Timer outputs
+    SIGNAL Q_sec_ones, Q_sec_tens, Q_min_ones : STD_LOGIC_VECTOR(3 DOWNTO 0);
 
-    -- === Control ===
-    SIGNAL Enable : STD_LOGIC := '0';
-    SIGNAL Reset : STD_LOGIC := '0';
+    -- Control signals
+    SIGNAL Reset              : STD_LOGIC := '0';
+    SIGNAL Enable             : STD_LOGIC := '0';
+    SIGNAL send_Enable_1     : STD_LOGIC := '0';
+    SIGNAL send_Enable_2     : STD_LOGIC := '1';
+    SIGNAL send_Reset        : STD_LOGIC := '0';
 
-    SIGNAL debug_stop_1 : STD_LOGIC := '0'; -- Debug output (not used in this design)
-    SIGNAL debug_stop_2 : STD_LOGIC := '0'; -- Debug output (not used in this design)
-    SIGNAL debug_stop_3 : STD_LOGIC := '0'; -- Debug output (not used in this design)
+    -- Captured and capped target values from SW
+    SIGNAL target_sec_ones   : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL target_sec_tens   : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL target_min_ones   : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
 
-    SIGNAL initial_switch_value : STD_LOGIC_VECTOR(9 DOWNTO 0) := (OTHERS => '0');
-
-    SIGNAL send_to_reset_1 : STD_LOGIC := '0';
-
-    SIGNAL send_to_Enable_1 : STD_LOGIC := '0';
-    SIGNAL send_to_Enable_2 : STD_LOGIC := '1';
-    -- Captured values (capped)
-    SIGNAL target_sec_ones : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
-    SIGNAL target_sec_tens : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
-    SIGNAL target_min_ones : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
-
-    -- === Component declarations ===
-    COMPONENT three_digit_timer
-        PORT (
-            Clk : IN STD_LOGIC;
-            Reset : IN STD_LOGIC;
-            Enable : IN STD_LOGIC;
-            Min_ones : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-            Sec_tens : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-            Sec_ones : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-            debug_stop_1 : OUT STD_LOGIC;
-            debug_stop_2 : OUT STD_LOGIC;
-            debug_stop_3 : OUT STD_LOGIC
-        );
-    END COMPONENT;
-
-    COMPONENT BCD_to_SevenSeg
-        PORT (
-            BCD_digit : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-            SevenSeg_out : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
-        );
-    END COMPONENT;
+    -- Debug signals from timer
+    SIGNAL debug_stop_1, debug_stop_2, debug_stop_3 : STD_LOGIC;
 
 BEGIN
 
-    -- === Button press logic ===
-    PROCESS (CLOCK_50)
-        VARIABLE sw_ones : unsigned(3 DOWNTO 0);
-        VARIABLE sw_tens : unsigned(3 DOWNTO 0);
-        VARIABLE sw_mins : unsigned(1 DOWNTO 0);
-    BEGIN
-        IF rising_edge(CLOCK_50) THEN
-            IF KEY(0) = '0' THEN -- Button pressed (active-low)
-
-                -- Store full raw switch value
-                initial_switch_value <= SW;
-
-                -- === CAP AND STORE EACH SECTION ===
-                sw_ones := unsigned(SW(3 DOWNTO 0));
-                IF sw_ones > 9 THEN
-                    target_sec_ones <= "1001"; -- 9
-                ELSE
-                    target_sec_ones <= STD_LOGIC_VECTOR(sw_ones);
-                END IF;
-
-                sw_tens := unsigned(SW(7 DOWNTO 4));
-                IF sw_tens > 5 THEN
-                    target_sec_tens <= "0101"; -- 5
-                ELSE
-                    target_sec_tens <= STD_LOGIC_VECTOR(sw_tens);
-                END IF;
-
-                sw_mins := unsigned(SW(9 DOWNTO 8));
-                IF sw_mins > 3 THEN
-                    target_min_ones <= "0011"; -- 3
-                ELSE
-                    target_min_ones <= "00" & STD_LOGIC_VECTOR(sw_mins); -- Now it's 4 bits
-                END IF;
-
-                -- Trigger timer reset & enable
-                send_to_Enable_1 <= '1';
-                send_to_reset_1 <= '1';
-
-            ELSE
-                send_to_reset_1 <= '0';
-            END IF;
-        END IF;
-    END PROCESS;
-    -- === Clock Divider ===
+    -- === 1 Hz Clock Divider ===
     PROCESS (CLOCK_50)
     BEGIN
         IF rising_edge(CLOCK_50) THEN
-            IF clk_divider = 4_999_999 THEN -- 50 MHz ÃƒÆ’Ã‚Â· 50M = 1Hz (original is 49_999_999) 4_999_999 24_999_999
+            IF clk_divider = 49_999_999 THEN
                 clk_divider <= (OTHERS => '0');
-                one_hz_clk <= NOT one_hz_clk;
                 tick_1hz <= '1';
             ELSE
                 clk_divider <= clk_divider + 1;
@@ -127,68 +54,96 @@ BEGIN
         END IF;
     END PROCESS;
 
+    -- === Button Trigger: Capture SW, Cap, and Start ===
+    PROCESS (CLOCK_50)
+        VARIABLE sw_ones : unsigned(3 DOWNTO 0);
+        VARIABLE sw_tens : unsigned(3 DOWNTO 0);
+        VARIABLE sw_mins : unsigned(1 DOWNTO 0);
+    BEGIN
+        IF rising_edge(CLOCK_50) THEN
+            IF KEY(0) = '0' THEN  -- Button press (active-low)
+                -- Capture & cap values
+                sw_ones := unsigned(SW(3 DOWNTO 0));
+                IF sw_ones > 9 THEN
+                    target_sec_ones <= "1001";
+                ELSE
+                    target_sec_ones <= std_logic_vector(sw_ones);
+                END IF;
 
+                sw_tens := unsigned(SW(7 DOWNTO 4));
+                IF sw_tens > 5 THEN
+                    target_sec_tens <= "0101";
+                ELSE
+                    target_sec_tens <= std_logic_vector(sw_tens);
+                END IF;
 
-    -- === Timer Instance ===
-    timer_inst : three_digit_timer
-    PORT MAP(
-        Clk => tick_1hz,
-        Reset => Reset,
-        Enable => Enable,
-        Min_ones => Q_min_ones,
-        Sec_tens => Q_sec_tens,
-        Sec_ones => Q_sec_ones,
-        debug_stop_1 => debug_stop_1,
-        debug_stop_2 => debug_stop_2,
-        debug_stop_3 => debug_stop_3
-    );
+                sw_mins := unsigned(SW(9 DOWNTO 8));
+                IF sw_mins > 3 THEN
+                    target_min_ones <= "0011";
+                ELSE
+                    target_min_ones <= "00" & std_logic_vector(sw_mins);
+                END IF;
 
-    -- === Seven Segment Display ===
-    seg0 : BCD_to_SevenSeg
-    PORT MAP(
-        BCD_digit => Q_sec_ones,
-        SevenSeg_out => HEX0
-    );
+                -- Trigger reset + enable
+                send_Enable_1 <= '1';
+                send_Reset    <= '1';
+            ELSE
+                send_Reset <= '0';
+            END IF;
+        END IF;
+    END PROCESS;
 
-    seg1 : BCD_to_SevenSeg
-    PORT MAP(
-        BCD_digit => Q_sec_tens,
-        SevenSeg_out => HEX1
-    );
-
-    seg2 : BCD_to_SevenSeg
-    PORT MAP(
-        BCD_digit => Q_min_ones,
-        SevenSeg_out => HEX2
-    );
-
-    -- Stop counting when the timer reaches the stored value
+    -- === Timer Stop Condition ===
     PROCESS (CLOCK_50)
     BEGIN
         IF rising_edge(CLOCK_50) THEN
             IF Enable = '1' THEN
                 IF Q_min_ones = target_min_ones AND
-                    Q_sec_tens = target_sec_tens AND
-                    Q_sec_ones = target_sec_ones THEN
-                    send_to_Enable_2 <= '0'; -- Stop counting
+                   Q_sec_tens = target_sec_tens AND
+                   Q_sec_ones = target_sec_ones THEN
+                    send_Enable_2 <= '0';  -- Stop
                 END IF;
-
             ELSE
-                IF KEY(0) = '0' THEN -- Button pressed (active-low)
-                    send_to_Enable_2 <= '1'; -- Reset the enable signal
+                IF KEY(0) = '0' THEN
+                    send_Enable_2 <= '1';  -- Restart enable
                 END IF;
             END IF;
         END IF;
     END PROCESS;
 
-    Reset <= send_to_reset_1;
-    Enable <= send_to_Enable_1 AND send_to_Enable_2;
+    -- Final control logic
+    Reset  <= send_Reset;
+    Enable <= send_Enable_1 AND send_Enable_2;
 
-    -- === Debug LED ===
+    -- === Timer Component ===
+    timer_inst : entity work.three_digit_timer
+        PORT MAP (
+            Clk           => tick_1hz,
+            Reset         => Reset,
+            Enable        => Enable,
+            Min_ones      => Q_min_ones,
+            Sec_tens      => Q_sec_tens,
+            Sec_ones      => Q_sec_ones,
+            debug_stop_1  => debug_stop_1,
+            debug_stop_2  => debug_stop_2,
+            debug_stop_3  => debug_stop_3
+        );
+
+    -- === 7-Segment Converters ===
+    seg0 : entity work.BCD_to_SevenSeg
+        PORT MAP (BCD_digit => Q_sec_ones, SevenSeg_out => HEX0);
+
+    seg1 : entity work.BCD_to_SevenSeg
+        PORT MAP (BCD_digit => Q_sec_tens, SevenSeg_out => HEX1);
+
+    seg2 : entity work.BCD_to_SevenSeg
+        PORT MAP (BCD_digit => Q_min_ones, SevenSeg_out => HEX2);
+
+    -- === LED Indicators ===
     LEDR(0) <= Enable;
     LEDR(1) <= Reset;
-    LEDR(2) <= debug_stop_1; -- Debug LED for enable signal
-    LEDR(3) <= debug_stop_2; -- Debug LED for enable signal
-    LEDR(4) <= debug_stop_3; -- Debug LED for enable signal
+    LEDR(2) <= debug_stop_1;
+    LEDR(3) <= debug_stop_2;
+    LEDR(4) <= NOT send_Enable_2;  -- Time_Out signal
 
 END ARCHITECTURE;
